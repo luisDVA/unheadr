@@ -20,3 +20,10 @@ devtools::use_data(primates2017,primates2017_broken,primates2017_wrapped, overwr
 
 # ignore this file
 devtools::use_build_ignore("R/pkgsetup.R")
+
+# activating git and then gh
+usethis::use_git()
+usethis::use_github()
+
+# readme file
+usethis::use_readme_md()

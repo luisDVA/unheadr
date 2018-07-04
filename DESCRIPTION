@@ -1,0 +1,22 @@
+Package: unheadr
+Type: Package
+Title: Handle Data With Multiple Header Rows
+Version: 0.1.0
+Authors@R: person("Luis D.", "Verde Arregoitia", email = "luis@liomys.mx",
+    role=c("aut","cre"))
+Description: Three verb-like functions that use tidy evaluation in dplyr and 
+    tidyr to work with messy data, usually derived from spreadsheets or pdf 
+    tables. Also includes functions for unwrapping values broken up across two 
+    or more rows.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr (>= 0.7.5),
+    rlang (>= 0.2.1),
+    stringr,
+    tidyr
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

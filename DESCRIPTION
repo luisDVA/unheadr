@@ -20,3 +20,5 @@ RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/luisDVA/unheadr
+BugReports: https://github.com/luisDVA/unheadr/issues

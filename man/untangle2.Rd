@@ -26,7 +26,7 @@ Rectangling extraneous header rows.
 \details{
 For background and examples see
 \url{https://luisdva.github.io/rstats/tidyeval/}. Special thanks to Jenny
-Brian for fixing the initial tidyeval code and overall function structure.
+Bryan for fixing the initial tidyeval code and overall function structure.
 }
 \examples{
 data(primates2017)

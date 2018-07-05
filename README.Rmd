@@ -1,3 +1,18 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 # unheadr
 
 The goal of unheadr is to help wrangle data (often other people's) when it has too many header rows, or when values are wrapped across several rows.

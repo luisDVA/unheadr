@@ -11,6 +11,14 @@ tidyr to work with messy data, usually derived from spreadsheets or pdf
 tables. Also includes functions for unwrapping values broken up across two
 or more rows.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/luisDVA/unheadr}
+  \item Report bugs at \url{https://github.com/luisDVA/unheadr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Luis D. Verde Arregoitia \email{luis@liomys.mx}
 

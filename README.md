@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-unheadr
-=======
+unheadr <img src="man/figures/logosmall.png" align="right" />
+=============================================================
 
 The goal of unheadr is to help wrangle data (often other people's) when it has too many header rows, or when values are wrapped across several rows.
 

@@ -34,9 +34,9 @@ data(primates2017)
 untangle2(primates2017,"DAE$",scientific_name,family)
 # put geographic regions in their own variable (matching them all by name)
 untangle2(primates2017,"Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,family)
-# with magrittr pipes
+# with magrittr pipes (re-exported in this package)
 primates2017 \%>\%
     untangle2("DAE$",scientific_name,family) \%>\%
-    untangle2("Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,family)
+    untangle2("Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,region)
 
 }

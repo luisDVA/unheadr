@@ -24,6 +24,7 @@ data(primates2017)
 ```
 
 The first half of the dataset looks like this:
+
 Notice the rows (e.g. 1, 2, 16 and 20) that actually correspond to values in grouping variables which should be in their own colum. Instead, they are embedded within the data rectangle. To be fair, this is a pretty common practice. In formatted tables and spreadsheets, this information is often centered and merged and shown with nice little colors and font formatting. This looks nice and is easy to read, but hard to work with (for example: counting elements or calculating group-wise summaries).
 
 In this example, values for an implicit 'geographic region' variable and an implicit 'taxonomic family' are embedded in the column that contains our observational units (the scientific names of various primates).
@@ -94,5 +95,7 @@ primates2017 %>%
 | Nycticebus bengalensis       | Bengal Slow Loris            | VU                |      1.21| LORISIDAE       | Asia       |
 | Allocebus trichotis          | Hairy-eared Dwarf Lemur      | VU                |      0.09| CHEIROGALEIDAE  | Madagascar |
 | Microcebus tavaratra         | Tavaratra Mouse Lemur        | VU                |      0.06| CHEIROGALEIDAE  | Madagascar |
+
+Now we can easily perform grouping operations and summarize the data (e.g.: calculating average body mass by Family).
 
 At this point, refer to the links in the vignette and the function help for more information and examples on the use of the other helper functions.

@@ -27,14 +27,18 @@ devtools::install_github("luisDVA/unheadr")
 
 ## Usage
 
+**unheadr() function**  
+
+The star of the package. Puts extraneous embedded headers into their own variable. 
+
 ``` r
 data(primates2017)
 # head(primates2017,n=20)
 ```
 
-The first half of the dataset looks like this:  
+The first half of the dataset looks like the table below:  
 
-Notice the rows (e.g. 1, 2, 16 and 20) that actually correspond to values in grouping variables which should be in their own colum. Instead, they are embedded within the data rectangle. To be fair, this is a pretty common practice. In formatted tables and spreadsheets, this information is often centered and merged and shown with nice little colors and font formatting. This looks nice and is easy to read, but hard to work with (for example: counting elements or calculating group-wise summaries). 
+Notice some rows that actually correspond to values in grouping variables which should be in their own colum. Instead, they are embedded within the data rectangle. To be fair, this is a pretty common practice. In formatted tables and spreadsheets, this information is often centered and merged and shown with nice little colors and font formatting. This looks nice and is easy to read, but hard to work with (for example: counting elements or calculating group-wise summaries). 
 
 
 In this example, values for an implicit 'geographic region' variable and an implicit 'taxonomic family' are embedded in the column that contains our observational units (the scientific names of various primates).  
@@ -62,9 +66,9 @@ In this example, values for an implicit 'geographic region' variable and an impl
 |Nomascus concolor            |Western Black Crested Gibbon |CR              |    7.71|
 |LORISIDAE                    |NA                           |NA              |      NA|
 
-For a tidier structure, these extraneous 'header' rows in the _scientific\_name_ column need to be plucked out and placed in their own variable. This is the main objective of _unheadr_ and what its flagship function _untangle2_ was made for.
+For a tidier structure, these extraneous 'header' rows in the _scientific\_name_ column need to be plucked out and placed in their own variable. This is the main objective of _unheadr_ and _untangle2_ was made for.
 
-If these non-data rows can be matched in bulk with a regular expression because they share a prefix, suffix, or any other commonalities, we can save a lot of time. Otherwise, they can be matched by name. 
+If these non-data rows can be matched in bulk with a regular expression because they share a prefix, suffix, or anyting in common, we can save a lot of time. Otherwise, they can be matched by name. 
 
 Sorting out the jumbled mess in the example data:
 
@@ -106,4 +110,54 @@ primates2017 %>%
 
 Now we can easily perform grouping operations and summarize the data (e.g.: calculating average body mass by Family).
 
+
+
 At this point, refer to the links in the vignette and the function help for more information and examples on the use of the other helper functions. 
+
+**unbreak_vals() function**
+
+This is a niche function for very specific usecases. It uses regex to fix values that are broken up across two rows. This usually happens when we are formatting a table and we need to fit it on a page.
+
+``` r
+dogsDesc <- tibble::tibble(
+  dogs =
+    c("Retriever", "(Golden)", "Retriever", "(Labrador)", "Bulldog", "(French)"),
+  coat = c("long", NA, "short", NA, "short", NA)
+)
+
+head(dogsDesc)
+```
+We can match the opening brackets with regex.
+
+``` r
+unbreak_vals(dogsDesc,"^\\(",dogs, dogs_unbroken)
+```
+
+**unwrap_cols() function**
+
+Use this function to unwrap and glue values that have been wrapped across multiple rows for presentation purposes, with an inconsistent number of empty or NA values padding out the columns.
+
+```r
+# set up the data
+nyk <- tibble::tribble(
+  ~player, ~listed_height_m., ~teams_chronological, ~position,
+  "Marcus Camby", 2.11, "Raptors", "Power forward",
+  NA, NA, "Knicks", "Center",
+  NA, NA, "Nuggets", NA,
+  NA, NA, "Clippers", NA,
+  NA, NA, "Trail Blazers", NA,
+  NA, NA, "Rockets", NA,
+  NA, NA, "Knicks", NA,
+  "Allan Houston", 1.98, "Pistons", "Shooting guard",
+  NA, NA, "Knicks", NA,
+  "Latrell Sprewell", 1.96, "Warriors", "Small forward",
+  NA, NA, "Knicks", NA,
+  NA, NA, "Timberwolves", NA
+)
+```
+Paste the wrapped elements, separating with commas.
+
+``` r
+unwrap_cols(nyk, groupingVar = player, separator = ", ")
+```
+

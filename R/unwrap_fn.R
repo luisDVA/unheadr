@@ -20,6 +20,6 @@ unwrap_cols <- function(df, groupingVar, separator) {
   groupingVar <- dplyr::enquo(groupingVar)
 
   dffilled <- tidyr::fill(df, !!groupingVar)
-  dffilled_grpd <- dplyr::group_by(dffilled, !!groupingVar := forcats::fct_inorder(!!groupingVar))
+  dffilled_grpd <- dplyr::group_by(dffilled, groupingVar := forcats::fct_inorder(!!groupingVar))
   dplyr::summarise_all(dffilled_grpd, dplyr::funs(paste(na.omit(.), collapse = separator)))
 }

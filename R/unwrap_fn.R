@@ -6,7 +6,7 @@
 #' @param separator Character string defining the separator that will delimit
 #'   the elements of the unrwapped value.
 #'
-#' @return A summarized tibble. Order is preserved in the grouping variable.
+#' @return A summarized tibble. Order is preserved in the grouping variable by making it a factor.
 #'
 #' @details For more examples and background, see
 #' \url{https://luisdva.github.io/rstats/unbreaking-vals/}.

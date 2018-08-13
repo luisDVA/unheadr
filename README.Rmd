@@ -76,7 +76,7 @@ Sorting out the jumbled mess in the example data:
 # put taxonomic family in its own variable (matches the suffix "DAE")
 untangle2(primates2017,"DAE$",scientific_name,family)
 # put geographic regions in their own variable (matching them all by name)
-untangle2(primates2017,"Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,family)
+untangle2(primates2017,"Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,region)
 ```
 The function can be used with _magrittr_ pipes as a dplyr-type verb.
 

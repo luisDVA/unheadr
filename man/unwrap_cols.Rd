@@ -16,7 +16,7 @@ values used to as within-group padding.}
 the elements of the unrwapped value.}
 }
 \value{
-A summarized tibble.
+A summarized tibble. Order is preserved in the grouping variable by making it a factor.
 }
 \description{
 Unwrap values and clean up NAs used as padding within observational units.

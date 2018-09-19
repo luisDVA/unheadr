@@ -2,26 +2,25 @@
 % Please edit documentation in R/untangle_fn.R
 \name{untangle2}
 \alias{untangle2}
-\title{Rectangling extraneous header rows.}
+\title{Rectangling embedded subheaders.}
 \usage{
 untangle2(df, regex, orig, new)
 }
 \arguments{
-\item{df}{A data frame with non-data rows embedded in the data rectangle.}
+\item{df}{A data frame with embedded subheaders.}
 
-\item{regex}{Regular expression to match the extraneous headers.}
+\item{regex}{Regular expression to match the subheaders.}
 
-\item{orig}{Variable containing the extraneous header strings.}
+\item{orig}{Variable containing the extraneous subheaders.}
 
-\item{new}{Name of variable that will contain the extraneous header info in a
-tidier format.}
+\item{new}{Name of variable that will contain the group values.}
 }
 \value{
-A tibble without the extra headers and a new variable containing
-  the header data.
+A tibble without the matched subheaders and a new variable containing
+  the grouping data.
 }
 \description{
-Rectangling extraneous header rows.
+Rectangling embedded subheaders.
 }
 \details{
 For background and examples see

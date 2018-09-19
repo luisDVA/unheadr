@@ -1,13 +1,12 @@
-#' Rectangling extraneous header rows.
+#' Rectangling embedded subheaders.
 #'
-#' @param df A data frame with non-data rows embedded in the data rectangle.
-#' @param regex Regular expression to match the extraneous headers.
-#' @param orig Variable containing the extraneous header strings.
-#' @param new Name of variable that will contain the extraneous header info in a
-#'   tidier format.
+#' @param df A data frame with embedded subheaders.
+#' @param regex Regular expression to match the subheaders.
+#' @param orig Variable containing the extraneous subheaders.
+#' @param new Name of variable that will contain the group values.
 #'
-#' @return A tibble without the extra headers and a new variable containing
-#'   the header data.
+#' @return A tibble without the matched subheaders and a new variable containing
+#'   the grouping data.
 #'
 #' @details For background and examples see
 #' \url{https://luisdva.github.io/rstats/tidyeval/}. Special thanks to Jenny

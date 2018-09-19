@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 ```
 
 # unheadr <img src="man/figures/logosmall.png" align="right" />
-The goal of unheadr is to help wrangle data (often other people's) when it has too many header rows, or when values are wrapped across several rows.
+The goal of unheadr is to help wrangle data (often other people's) when it has embedded subheaders, or when values are wrapped across several rows.
 
 ## Installation
 
@@ -29,7 +29,7 @@ devtools::install_github("luisDVA/unheadr")
 
 **unheadr() function**  
 
-The star of the package. Puts extraneous embedded headers into their own variable. 
+The star of the package. Puts embedded subheaders into their own variable. 
 
 ``` r
 data(primates2017)
@@ -66,9 +66,9 @@ In this example, values for an implicit 'geographic region' variable and an impl
 |Nomascus concolor            |Western Black Crested Gibbon |CR              |    7.71|
 |LORISIDAE                    |NA                           |NA              |      NA|
 
-For a tidier structure, these extraneous 'header' rows in the _scientific\_name_ column need to be plucked out and placed in their own variable. This is the main objective of _unheadr_ and _untangle2_ was made for.
+For a tidier structure, these subheaders embedded in the _scientific\_name_ column need to be plucked out and placed in their own variable. This is the main objective of _unheadr_ and what _untangle2_ was made for.
 
-If these non-data rows can be matched in bulk with a regular expression because they share a prefix, suffix, or anyting in common, we can save a lot of time. Otherwise, they can be matched by name. 
+If these subheaders can be matched in bulk with a regular expression because they share a prefix, suffix, or anyting in common, we can save a lot of time. Otherwise, they can be matched by name. 
 
 Sorting out the jumbled mess in the example data:
 

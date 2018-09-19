@@ -6,8 +6,8 @@
 \title{Comparative data for 54 species of primates}
 \format{A data frame with 69 rows and 4 variables:
 \describe{
-    \item{scientific_name}{scientific names, with extraneous header
-        rows for geographic region and taxonomic family}
+    \item{scientific_name}{scientific names, with geographic region and
+    taxonomic family embedded as subheaders.}
     \item{common_name}{vernacular name, as listed in Estada et al.
         (2017)}
     \item{red_list_status}{IUCN Red List Status in January 2017}
@@ -20,8 +20,7 @@ Data originates from the appendix in the following publication:
 data(primates2017)
 }
 \description{
-A dataset with non-data rows (extraneous headers) embedded in the data
-    rectangle.
+A dataset with embedded subheaders.
 }
 \references{
 Estrada, Alejandro, et al. "Impending extinction crisis of the

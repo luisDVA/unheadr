@@ -7,7 +7,7 @@
 #' @param ogcol Variable to unbreak.
 #' @param newcol Name of the new variable with the unified values.
 #' @param .slice_groups When `.slice_groups = FALSE`, the default, the extra
-#'   rows will and the variable with broken values will not be dropped.  If the
+#'   rows and the variable with broken values will not be dropped.  If the
 #'   only NA or missing values are in the variable to unbreak, use  `.slice_groups = TRUE`.
 #' @return A tibble with unbroken values. The variable that originally
 #' contained the broken values gets dropped, and the new variable with the

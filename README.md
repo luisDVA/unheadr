@@ -17,6 +17,15 @@ You can install the development version from
 devtools::install_github("luisDVA/unheadr")
 ```
 
+Some of the possible uses of *unheadr* are now described in this
+publication:
+
+Verde Arregoitia, L. D., Cooper, N., D’Elía, G. (2018). Good practices
+for sharing analysis-ready data in mammalogy and biodiversity research.
+*Hystrix, the Italian Journal of Mammalogy*, 29(2), 155-161. [Open
+Access,
+DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
+
 ## Usage
 
 **unheadr() function**

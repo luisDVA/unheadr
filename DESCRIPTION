@@ -3,7 +3,7 @@ Type: Package
 Title: Handle Data With Embedded Subheaders
 Version: 0.1.0
 Authors@R: person("Luis D.", "Verde Arregoitia", email = "luis@liomys.mx",
-    role=c("aut","cre"))
+    role=c("aut","cre"),comment = c(ORCID = "0000-0001-9520-6543"))
 Description: Three verb-like functions that use tidy evaluation in dplyr and 
     tidyr to work with messy data, usually derived from spreadsheets or PDF 
     tables. Also includes functions for unwrapping values broken up across two 

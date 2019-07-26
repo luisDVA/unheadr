@@ -17,9 +17,8 @@ values.}
 
 \item{newcol}{Name of the new variable with the unified values.}
 
-\item{.slice_groups}{When `.slice_groups = FALSE`, the default, the extra
-rows will and the variable with broken values will not be dropped.  If the
-only NA or missing values are in the variable to unbreak, use  `.slice_groups = TRUE`.}
+\item{.slice_groups}{When `.slice_groups = FALSE`  (the default), the extra
+rows and the variable with broken values will not be dropped.}
 }
 \value{
 A tibble with unbroken values. The variable that originally

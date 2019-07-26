@@ -20,7 +20,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Luis D. Verde Arregoitia \email{luis@liomys.mx}
+\strong{Maintainer}: Luis D. Verde Arregoitia \email{luis@liomys.mx} (0000-0001-9520-6543)
 
 }
 \keyword{internal}

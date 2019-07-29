@@ -4,7 +4,8 @@
 \alias{unbreak_vals}
 \title{Unbreak values using regex to match the broken half of the value.}
 \usage{
-unbreak_vals(df, reg_ex, ogcol, newcol, .slice_groups = FALSE)
+unbreak_vals(df, reg_ex, ogcol, newcol, sep = " ",
+  .slice_groups = FALSE)
 }
 \arguments{
 \item{df}{A data frame with one or more values within a variable broken up
@@ -16,6 +17,8 @@ values.}
 \item{ogcol}{Variable to unbreak.}
 
 \item{newcol}{Name of the new variable with the unified values.}
+
+\item{sep}{Character string to separate the unified values (default is space).}
 
 \item{.slice_groups}{When `.slice_groups = FALSE`  (the default), the extra
 rows and the variable with broken values will not be dropped.}
@@ -37,7 +40,6 @@ This function is limited to quite specific cases, but useful when
 }
 \examples{
 data(primates2017_broken)
-#regex matches strings starting in lowercase (broken species epithets)
-unbreak_vals(primates2017_broken,"^[a-z]",scientific_name,sciname_new)
-
+# regex matches strings starting in lowercase (broken species epithets)
+unbreak_vals(primates2017_broken, "^[a-z]", scientific_name, sciname_new)
 }

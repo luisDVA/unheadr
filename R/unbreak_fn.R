@@ -6,6 +6,7 @@
 #'   values.
 #' @param ogcol Variable to unbreak.
 #' @param newcol Name of the new variable with the unified values.
+#' @param sep Character string to separate the unified values (default is space).
 #' @param .slice_groups When `.slice_groups = FALSE`  (the default), the extra
 #'   rows and the variable with broken values will not be dropped.
 #' @return A tibble with unbroken values. The variable that originally
@@ -20,18 +21,17 @@
 #'
 #' @examples
 #' data(primates2017_broken)
-#' #regex matches strings starting in lowercase (broken species epithets)
-#' unbreak_vals(primates2017_broken,"^[a-z]",scientific_name,sciname_new)
-#'
+#' # regex matches strings starting in lowercase (broken species epithets)
+#' unbreak_vals(primates2017_broken, "^[a-z]", scientific_name, sciname_new)
 #' @export
-unbreak_vals <- function(df, reg_ex, ogcol, newcol, .slice_groups = FALSE) {
+unbreak_vals <- function(df, reg_ex, ogcol, newcol, sep = " ", .slice_groups = FALSE) {
   ogcol <- dplyr::enquo(ogcol)
   newcol <- dplyr::ensym(newcol)
 
   dfind <- dplyr::mutate(
     df,
     !!newcol := ifelse(stringr::str_detect(!!ogcol, stringr::regex(reg_ex)),
-      yes = paste(dplyr::lag(!!ogcol), !!ogcol),
+      yes = paste(dplyr::lag(!!ogcol), !!ogcol, sep = sep),
       no = !!ogcol
     )
   )

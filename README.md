@@ -3,9 +3,8 @@
 
 # unheadr <img src="man/figures/logosmall.png" align="right" />
 
-The goal of unheadr is to help wrangle data (often other people’s) when
-it has embedded subheaders, or when values are wrapped across several
-rows.
+The goal of unheadr is to help wrangle data when it has embedded
+subheaders, or when values are wrapped across several rows.
 
 ## Installation
 
@@ -17,7 +16,7 @@ You can install the development version from
 devtools::install_github("luisDVA/unheadr")
 ```
 
-Some of the possible uses of *unheadr* are now described in this
+Some of the possible uses of `unheadr` are now described in this
 publication:
 
 Verde Arregoitia, L. D., Cooper, N., D’Elía, G. (2018). Good practices
@@ -38,19 +37,18 @@ data(primates2017)
 # head(primates2017,n=20)
 ```
 
-The first half of the dataset looks like the table below:
-
-Notice some rows that actually correspond to values in grouping
-variables which should be in their own colum. Instead, they are embedded
-within the data rectangle. To be fair, this is a pretty common practice.
-In formatted tables and spreadsheets, this information is often centered
-and merged and shown with nice little colors and font formatting. This
-looks nice and is easy to read, but hard to work with (for example:
-counting elements or calculating group-wise summaries).
+The first half of the dataset looks like the table below. Note that
+there are rows that correspond to values in grouping variables, which
+should be in their own column. Instead, they are embedded within the
+data rectangle. This is a pretty common practice. In formatted tables
+and spreadsheets, this information is often centered and merged and
+shown with highlighting or and font formatting. This looks nice and is
+easy to read, but hard to work with (for example: counting elements or
+calculating group-wise summaries).
 
 In this example, values for an implicit ‘geographic region’ variable and
-an implicit ‘taxonomic family’ are embedded in the column that contains
-our observational units (the scientific names of various
+an implicit ‘taxonomic family’ variabble are embedded in the column that
+contains our observational units (the scientific names of various
 primates).
 
 | scientific\_name             | common\_name                 | red\_list\_status | mass\_kg |
@@ -78,28 +76,29 @@ primates).
 
 For a tidier structure, these subheaders embedded in the
 *scientific\_name* column need to be plucked out and placed in their own
-variable. This is the main objective of *unheadr* and what *untangle2*
+variable. This is the main objective of `unheadr` and what `untangle2()`
 was made for.
 
 If these subheaders can be matched in bulk with a regular expression
 because they share a prefix, suffix, or anyting in common, we can save a
 lot of time. Otherwise, they can be matched by name.
 
-Sorting out the jumbled mess in the example data:
+Sorting out the mess in the example data:
 
 ``` r
 # put taxonomic family in its own variable (matches the suffix "DAE")
-untangle2(primates2017,"DAE$",scientific_name,family)
+untangle2(primates2017, "DAE$", scientific_name, family)
 # put geographic regions in their own variable (matching them all by name)
-untangle2(primates2017,"Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,region)
+untangle2(primates2017, "Asia|Madagascar|Mainland Africa|Neotropics", scientific_name, region)
 ```
 
-The function can be used with *magrittr* pipes as a dplyr-type verb.
+The function can be used with `magrittr` pipes as a dplyr-type verb.
 
 ``` r
 primates2017 %>%
-    untangle2("DAE$",scientific_name,family) %>%
-    untangle2("Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,region) %>% head(n=20)
+  untangle2("DAE$", scientific_name, family) %>%
+  untangle2("Asia|Madagascar|Mainland Africa|Neotropics", scientific_name, region) %>%
+  head(n = 20)
 ```
 
 | scientific\_name             | common\_name                 | red\_list\_status | mass\_kg | family          | region     |
@@ -134,9 +133,9 @@ functions.
 
 **unbreak\_vals() function**
 
-This is a niche function for very specific usecases. It uses regex to
-fix values that are broken up across two rows. This usually happens when
-we are formatting a table and we need to fit it on a page.
+This is a niche function for very specific uses. It uses regex to fix
+values that are broken across two rows. This usually happens when we are
+formatting a table and we need to fit it on a page.
 
 ``` r
 dogsDesc <- tibble::tibble(
@@ -158,7 +157,7 @@ unbreak_vals(dogsDesc,"^\\(",dogs, dogs_unbroken)
 
 Use this function to unwrap and glue values that have been wrapped
 across multiple rows for presentation purposes, with an inconsistent
-number of empty or NA values padding out the columns.
+number of empty or `NA` values padding out the columns.
 
 ``` r
 # set up the data

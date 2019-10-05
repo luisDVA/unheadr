@@ -1,4 +1,4 @@
-#' Unwrap values and clean up NAs or empty values used as padding.
+#' Unwrap values and clean up NAs used as padding.
 #'
 #' @param df A data frame with wrapped values and an inconsistent number of NA
 #'   values used to as within-group padding.
@@ -31,6 +31,3 @@ unwrap_cols <- function(df, groupingVar, separator) {
   dfsummarised <- dplyr::summarise_all(dffilled_grpd, ~ paste(na.omit(.), collapse = separator))
   dplyr::mutate(dfsummarised, !!groupVarFctName := as.character(forcats::fct_inorder(!!groupingVar)))
 }
-
-
-

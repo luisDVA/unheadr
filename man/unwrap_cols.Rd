@@ -2,7 +2,7 @@
 % Please edit documentation in R/unwrap_fn.R
 \name{unwrap_cols}
 \alias{unwrap_cols}
-\title{Unwrap values and clean up NAs or empty values used as padding.}
+\title{Unwrap values and clean up NAs used as padding.}
 \usage{
 unwrap_cols(df, groupingVar, separator)
 }
@@ -19,7 +19,7 @@ the elements of the unrwapped value.}
 A summarized tibble. Order is preserved in the grouping variable by making it a factor.
 }
 \description{
-Unwrap values and clean up NAs or empty values used as padding.
+Unwrap values and clean up NAs used as padding.
 }
 \details{
 For more examples and background, see

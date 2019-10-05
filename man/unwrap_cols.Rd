@@ -2,7 +2,7 @@
 % Please edit documentation in R/unwrap_fn.R
 \name{unwrap_cols}
 \alias{unwrap_cols}
-\title{Unwrap values and clean up NAs used as padding within observational units.}
+\title{Unwrap values and clean up NAs or empty values used as padding.}
 \usage{
 unwrap_cols(df, groupingVar, separator)
 }
@@ -19,7 +19,7 @@ the elements of the unrwapped value.}
 A summarized tibble. Order is preserved in the grouping variable by making it a factor.
 }
 \description{
-Unwrap values and clean up NAs used as padding within observational units.
+Unwrap values and clean up NAs or empty values used as padding.
 }
 \details{
 For more examples and background, see
@@ -27,6 +27,12 @@ For more examples and background, see
 }
 \examples{
 data(primates2017_wrapped)
-#using commas to separate elements
+# using commas to separate elements
 unwrap_cols(primates2017_wrapped,scientific_name,", ")
+
+# separating with semicolons
+df <- data.frame(ounits=c("A",NA,"B","C","D",NA),
+    vals=c(1,2,2,3,1,3))
+unwrap_cols(df,ounits,";")
+
 }

@@ -26,7 +26,7 @@
 #' @export
 unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", .slice_groups = FALSE) {
   ogcol <- dplyr::enquo(ogcol)
-  newcol <- dplyr::ensym(newcol)
+  newcol <- dplyr::enquo(newcol)
 
   dfind <- dplyr::mutate(
     df,

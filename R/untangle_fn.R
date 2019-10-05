@@ -26,8 +26,20 @@
 #' @export
 untangle2 <- function(df, regex, orig, new) {
   orig <- dplyr::enquo(orig)
-  new  <- dplyr::ensym(new)
-
+  new <- dplyr::enquo(new)
+  countmatches <- function(df, regex, orig) {
+    xtxt <- dplyr::pull(df, !!orig)
+    sum(lengths(regmatches(xtxt, gregexpr(pattern = regex, text = xtxt))))
+  }
+  nmatches <- countmatches(df, regex, orig)
+  if (nmatches == 0) {
+    message("no matches")
+  } else if (nmatches == 1) {
+    message(paste(nmatches, "match"))
+  }
+  else {
+    message(paste(nmatches, "matches"))
+  }
   to_fill <- dplyr::mutate(
     df,
     !!new := dplyr::if_else(grepl(regex, !!orig), !!orig, NA_character_)

@@ -1,4 +1,4 @@
-#' Unwrap values and clean up NAs used as padding.
+#' Unwrap values and clean up NAs used as padding
 #'
 #' @param df A data frame with wrapped values and an inconsistent number of NA
 #'   values used to as within-group padding.

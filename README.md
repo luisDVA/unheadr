@@ -3,7 +3,7 @@
 
 # unheadr <img src="man/figures/logosmall.png" align="right" />
 
-The goal of unheadr is to help wrangle data when it has embedded
+The goal of `unheadr` is to help wrangle data when it has embedded
 subheaders, or when values are wrapped across several rows.
 
 ## Installation
@@ -27,10 +27,10 @@ DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
 
 ## Usage
 
-**unheadr() function**
+**untangle2() function**
 
 The star of the package. Puts embedded subheaders into their own
-variable.
+variable, using regular expressions to identify them.
 
 ``` r
 data(primates2017)
@@ -40,15 +40,13 @@ data(primates2017)
 The first half of the dataset looks like the table below. Note that
 there are rows that correspond to values in grouping variables, which
 should be in their own column. Instead, they are embedded within the
-data rectangle. This is a pretty common practice. In formatted tables
-and spreadsheets, this information is often centered and merged and
-shown with highlighting or and font formatting. This looks nice and is
-easy to read, but hard to work with (for example: counting elements or
-calculating group-wise summaries).
+data rectangle. This is a pretty common practice. This looks OK and is
+easy to read, but hard to work with (for example: calculating group-wise
+summaries).
 
 In this example, values for an implicit ‘geographic region’ variable and
-an implicit ‘taxonomic family’ variabble are embedded in the column that
-contains our observational units (the scientific names of various
+an implicit ‘taxonomic family’ variable are embedded in the column that
+contains the observational units (the scientific names of various
 primates).
 
 | scientific\_name             | common\_name                 | red\_list\_status | mass\_kg |
@@ -125,7 +123,7 @@ primates2017 %>%
 | Microcebus tavaratra         | Tavaratra Mouse Lemur        | VU                |     0.06 | CHEIROGALEIDAE  | Madagascar |
 
 Now we can easily perform grouping operations and summarize the data
-(e.g.: calculating average body mass by Family).
+(e.g. calculating average body mass by Family).
 
 At this point, refer to the links in the vignette and the function help
 for more information and examples on the use of the other helper
@@ -182,4 +180,19 @@ Paste the wrapped elements, separating with commas.
 
 ``` r
 unwrap_cols(nyk, groupingVar = player, separator = ", ")
+```
+
+**annotate\_mf() function**
+
+Sometimes embedded subheaders can’t be matched by content or context,
+but they share the same formatting in a spreadsheet file.
+
+The `annotate_mf()` function flattens four common approaches to confer
+meaningful formatting to cells and adds this as a character string to
+the target
+variable.
+
+``` r
+example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
+annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
 ```

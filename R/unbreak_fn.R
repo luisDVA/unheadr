@@ -1,4 +1,4 @@
-#' Unbreak values using regex to match the broken half of the value.
+#' Unbreak values using regex to match the broken half of the value
 #'
 #' @param df A data frame with one or more values within a variable broken up
 #'   across two rows.

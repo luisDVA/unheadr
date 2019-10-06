@@ -2,7 +2,7 @@
 % Please edit documentation in R/untangle_fn.R
 \name{untangle2}
 \alias{untangle2}
-\title{Rectangling embedded subheaders.}
+\title{Rectangling embedded subheaders}
 \usage{
 untangle2(df, regex, orig, new)
 }
@@ -20,7 +20,7 @@ A tibble without the matched subheaders and a new variable containing
   the grouping data.
 }
 \description{
-Rectangling embedded subheaders.
+Rectangling embedded subheaders
 }
 \details{
 For background and examples see

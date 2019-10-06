@@ -1,4 +1,4 @@
-#' Rectangling embedded subheaders.
+#' Rectangling embedded subheaders
 #'
 #' @param df A data frame with embedded subheaders.
 #' @param regex Regular expression to match the subheaders.

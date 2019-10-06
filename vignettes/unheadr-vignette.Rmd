@@ -26,11 +26,12 @@ The functions in this package can help us rework data shared by other people fro
 
 ## Further reading
 
-This vignette is a work in progress, for examples and uses for each function: see the function documentation and the following three blog posts:
+For examples and uses for each function: see the function documentation and the following three blog posts:
 
 -[untangle2 function](https://luisdva.github.io/rstats/tidyeval/)
 -[unbreak_vals function](https://luisdva.github.io/rstats/Tidyeval-pdf-hell/)
 -[unwrap_cols function](https://luisdva.github.io/rstats/unbreaking-vals/)
 
-A preprint or publication about data sharing principles and how these functions relate to them is also in preparaion.
+Some of the possible uses of `unheadr` are now described in this publication:
 
+Verde Arregoitia, L. D., Cooper, N., D'Elía, G. (2018). Good practices for sharing analysis-ready data in mammalogy and biodiversity research. _Hystrix, the Italian Journal of Mammalogy_, 29(2), 155-161. [Open Access, DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)

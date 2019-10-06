@@ -2,7 +2,7 @@
 % Please edit documentation in R/unbreak_fn.R
 \name{unbreak_vals}
 \alias{unbreak_vals}
-\title{Unbreak values using regex to match the broken half of the value.}
+\title{Unbreak values using regex to match the broken half of the value}
 \usage{
 unbreak_vals(df, regex, ogcol, newcol, sep = " ",
   .slice_groups = FALSE)
@@ -29,7 +29,7 @@ contained the broken values gets dropped, and the new variable with the
 unified values is placed as the first column.
 }
 \description{
-Unbreak values using regex to match the broken half of the value.
+Unbreak values using regex to match the broken half of the value
 }
 \details{
 This function is limited to quite specific cases, but useful when

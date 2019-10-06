@@ -1,0 +1,63 @@
+#' Annotate meaningful formatting
+#'
+#' @param xlfilepath Path to spreadsheet file (xls or xlsx).
+#' @param orig Variable to annotate formatting in.
+#' @param new Name of new variable with cell formatting pasted as a string.
+#'
+#' @return A tibble with a new column with meaningful formatting embedded as
+#'   text.
+#' @details At this point, only four popular approaches for meaningful formatting
+#'   (bold, italic, underline, cell highlighting) are hardcoded in the function.
+#' @examples
+#' example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
+#' annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
+#'
+#' @export
+annotate_mf <- function(xlfilepath, orig, new) {
+  orig <- dplyr::enquo(orig) # tidyeval
+  new <- dplyr::enquo(new) # tidyeval
+
+  spsheet <- readxl::read_excel(xlfilepath)
+  m_formatting <- tidyxl::xlsx_cells(xlfilepath)
+  format_defs <- tidyxl::xlsx_formats(xlfilepath)
+
+  # meaningful formatting
+  bolded <- format_defs$local$font$bold
+  italic <- format_defs$local$font$italic
+  underlined <- format_defs$local$font$underline
+  highlighted <- format_defs$local$fill$patternFill$patternType
+  format_opts <- tibble::lst(bolded, italic, highlighted, underlined)
+  formatting_indicators <- dplyr::bind_cols(lapply(format_opts, function(x) x[m_formatting$local_format_id]))
+  format_joined <- dplyr::bind_cols(m_formatting, formatting_indicators)
+  col_orig <- format_joined$col[match(paste0(rlang::as_name(orig)), format_joined$character)]
+
+  # target variable
+  orig_format <- dplyr::filter(format_joined, row >= 2 & col == col_orig)
+  orig_format <- dplyr::select(orig_format, bolded:underlined)
+  formatted <- dplyr::bind_cols(spsheet, orig_format)
+  formatted <- dplyr::mutate_at(
+    formatted, dplyr::vars(bolded:underlined),
+    ~ replace(., is.na(.), FALSE)
+  )
+  formatted$highlighted <- gsub(pattern = "[^FALSE].*", replacement = "TRUE", formatted$highlighted)
+  formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), as.logical)
+  # swap na with variable names
+  indx <- which(formatted == TRUE, arr.ind = TRUE)
+  formatted[indx] <- names(formatted)[indx[, 2]]
+  formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), ~ replace(., . == "FALSE", ""))
+  # build annotation strings
+  formatted <- dplyr::mutate(formatted, newvar = paste(bolded, italic, highlighted, underlined))
+  formatted$newvar <- stringr::str_squish(formatted$newvar)
+  formatted$newvar <- gsub(" ", ", ", formatted$newvar)
+  formatted <- dplyr::select(formatted, -c(bolded:underlined))
+  formatted <- dplyr::mutate(
+    formatted,
+    !!new := ifelse(test = newvar != "",
+      yes = paste0("(", newvar, ") ", !!orig),
+      no = !!orig
+    )
+  )
+  formatted$newvar <- NULL
+  formatted <- dplyr::select(formatted, !!orig, !!new, dplyr::everything())
+  formatted
+}

@@ -17,7 +17,9 @@ Imports:
     forcats,
     stringr,
     tidyr,
-    magrittr
+    magrittr,
+    tidyxl,
+    readxl
 RoxygenNote: 6.1.1
 Suggests: 
     knitr,

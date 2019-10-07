@@ -3,3 +3,4 @@
 ^LICENSE\.md$
 ^R/pkgsetup\.R$
 ^README\.Rmd$
+^\.travis\.yml$

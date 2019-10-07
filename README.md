@@ -3,6 +3,13 @@
 
 # unheadr <img src="man/figures/logosmall.png" align="right" />
 
+<!-- badges: start -->
+
+[![](https://img.shields.io/badge/doi-10.4404/hystrix--00133--2018-red.svg)](https://doi.org/10.4404/hystrix-00133-2018)
+[![Travis build
+status](https://travis-ci.org/luisDVA/unheadr.svg?branch=master)](https://travis-ci.org/luisDVA/unheadr)
+<!-- badges: end -->
+
 The goal of `unheadr` is to help wrangle data when it has embedded
 subheaders, or when values are wrapped across several rows.
 

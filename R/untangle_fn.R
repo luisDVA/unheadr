@@ -23,6 +23,7 @@
 #'     untangle2("DAE$",scientific_name,family) %>%
 #'     untangle2("Asia|Madagascar|Mainland Africa|Neotropics",scientific_name,region)
 #'
+#' @importFrom rlang :=
 #' @export
 untangle2 <- function(df, regex, orig, new) {
   orig <- dplyr::enquo(orig)

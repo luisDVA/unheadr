@@ -12,6 +12,8 @@
 #' example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
 #' annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
 #'
+#' @importFrom rlang :=
+#' @importFrom rlang .data
 #' @export
 annotate_mf <- function(xlfilepath, orig, new) {
   orig <- dplyr::enquo(orig) # tidyeval
@@ -40,20 +42,22 @@ annotate_mf <- function(xlfilepath, orig, new) {
     ~ replace(., is.na(.), FALSE)
   )
   formatted$highlighted <- gsub(pattern = "[^FALSE].*", replacement = "TRUE", formatted$highlighted)
-  formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), as.logical)
+  formatted$underlined <- gsub(pattern = "[^FALSE].*", replacement = "TRUE", formatted$underlined)
+    formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), as.logical)
   # swap na with variable names
   indx <- which(formatted == TRUE, arr.ind = TRUE)
   formatted[indx] <- names(formatted)[indx[, 2]]
   formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), ~ replace(., . == "FALSE", ""))
   # build annotation strings
-  formatted <- dplyr::mutate(formatted, newvar = paste(bolded, italic, highlighted, underlined))
+  formatted$newvar <- paste(formatted$bolded, formatted$italic, formatted$highlighted, formatted$underlined)
+  # formatted <- dplyr::mutate(formatted, newvar = paste(bolded, italic, highlighted, underlined))
   formatted$newvar <- stringr::str_squish(formatted$newvar)
   formatted$newvar <- gsub(" ", ", ", formatted$newvar)
   formatted <- dplyr::select(formatted, -c(bolded:underlined))
   formatted <- dplyr::mutate(
     formatted,
-    !!new := ifelse(test = newvar != "",
-      yes = paste0("(", newvar, ") ", !!orig),
+    !!new := ifelse(test = .data$newvar != "",
+      yes = paste0("(", .data$newvar, ") ", !!orig),
       no = !!orig
     )
   )

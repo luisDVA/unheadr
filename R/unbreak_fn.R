@@ -23,6 +23,7 @@
 #' data(primates2017_broken)
 #' # regex matches strings starting in lowercase (broken species epithets)
 #' unbreak_vals(primates2017_broken, "^[a-z]", scientific_name, sciname_new)
+#' @importFrom rlang :=
 #' @export
 unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", .slice_groups = FALSE) {
   ogcol <- dplyr::enquo(ogcol)

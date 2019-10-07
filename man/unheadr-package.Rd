@@ -6,10 +6,9 @@
 \alias{unheadr-package}
 \title{unheadr: Handle Data With Embedded Subheaders}
 \description{
-Three verb-like functions that use tidy evaluation in dplyr and 
-    tidyr to work with messy data, usually derived from spreadsheets or PDF 
-    tables. Also includes functions for unwrapping values broken up across two 
-    or more rows.
+Verb-like functions that use tidy to work with messy data, usually derived from spreadsheets or PDF 
+    tables. Includes functions for unwrapping values broken up across two 
+    or more rows, and to annotate meaningful formatting in spreadsheet files.
 }
 \seealso{
 Useful links:

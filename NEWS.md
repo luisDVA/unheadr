@@ -5,4 +5,5 @@
 
 * Reworded all the documentation with more adequate terms (i.e. embedded subheaders).
 
-* Added spreadsheet-related functions.
+# unheadr 0.1.1
+* Added more tests, spreadsheet-related functions, and better documentation.

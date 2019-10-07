@@ -21,6 +21,7 @@
 #'     vals=c(1,2,2,3,1,3))
 #' unwrap_cols(df,ounits,";")
 #'
+#' @importFrom rlang :=
 #' @export
 unwrap_cols <- function(df, groupingVar, separator) {
   groupingVar <- dplyr::enquo(groupingVar)

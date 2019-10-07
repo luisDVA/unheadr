@@ -1,13 +1,13 @@
 Package: unheadr
 Type: Package
 Title: Handle Data With Embedded Subheaders
-Version: 0.1.0
+Version: 0.1.1
+Depends: R (>= 2.10)
 Authors@R: person("Luis D.", "Verde Arregoitia", email = "luis@liomys.mx",
     role=c("aut","cre"),comment = c(ORCID = "0000-0001-9520-6543"))
-Description: Three verb-like functions that use tidy evaluation in dplyr and 
-    tidyr to work with messy data, usually derived from spreadsheets or PDF 
-    tables. Also includes functions for unwrapping values broken up across two 
-    or more rows.
+Description: Verb-like functions that use tidy to work with messy data, usually derived from spreadsheets or PDF 
+    tables. Includes functions for unwrapping values broken up across two 
+    or more rows, and to annotate meaningful formatting in spreadsheet files.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -19,7 +19,8 @@ Imports:
     tidyr,
     magrittr,
     tidyxl,
-    readxl
+    readxl,
+    tibble
 RoxygenNote: 6.1.1
 Suggests: 
     knitr,

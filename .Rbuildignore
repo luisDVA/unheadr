@@ -4,3 +4,4 @@
 ^R/pkgsetup\.R$
 ^README\.Rmd$
 ^\.travis\.yml$
+^codecov\.yml$

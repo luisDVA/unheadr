@@ -5,7 +5,7 @@ Version: 0.1.1
 Depends: R (>= 2.10)
 Authors@R: person("Luis D.", "Verde Arregoitia", email = "luis@liomys.mx",
     role=c("aut","cre"),comment = c(ORCID = "0000-0001-9520-6543"))
-Description: Verb-like functions that use tidy to work with messy data, usually derived from spreadsheets or PDF 
+Description: Verb-like functions to work with messy data, usually derived from spreadsheets or PDF 
     tables. Includes functions for unwrapping values broken up across two 
     or more rows, and to annotate meaningful formatting in spreadsheet files.
 License: MIT + file LICENSE

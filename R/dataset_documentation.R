@@ -64,5 +64,19 @@
 #' #' @usage
 #' data(primates2017_wrapped)
 "primates2017_wrapped"
-
+#' dog_test.xlsx spreadsheet
+#'
+#' Open XML Format Spreadsheet with 1 sheet, 2 columns, and 12 rows. Items
+#' describe various taks or behaviors that dogs can be evaluated on, assigned
+#' into three categories which appear along with their average scores as
+#' embedded subheaders with meaningful formatting.
+#'
+#' @name dog_test
+#'
+#' @section dog_test.xlsx:
+#' This data is used in the example for `annotate_mf()`.
+#'
+#' @source Items are modified from the checklist written by Junior Watson.
+#' @references http://www.dogtrainingbasics.com/checklist-well-behaved-dog/
+NULL
 

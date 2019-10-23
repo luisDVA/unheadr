@@ -20,6 +20,9 @@ annotate_mf <- function(xlfilepath, orig, new) {
   new <- dplyr::enquo(new) # tidyeval
 
   spsheet <- readxl::read_excel(xlfilepath)
+  if (any(grepl("^\\.\\.\\.",names(spsheet)))) {
+    stop("Check the spreadsheet for empty values in the header row")
+  }
   m_formatting <- tidyxl::xlsx_cells(xlfilepath)
   format_defs <- tidyxl::xlsx_formats(xlfilepath)
 

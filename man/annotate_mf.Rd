@@ -21,8 +21,10 @@ A tibble with a new column with meaningful formatting embedded as
 Annotate meaningful formatting
 }
 \details{
-At this point, only four popular approaches for meaningful formatting
-  (bold, italic, underline, cell highlighting) are hardcoded in the function.
+At this point, only four popular approaches for meaningful
+  formatting (bold, italic, underline, cell highlighting) are hardcoded in
+  the function. The HTML code of the fill color used for cell highlighting is
+  also appended in the output.
 }
 \examples{
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")

@@ -2,6 +2,7 @@
 
 export("%>%")
 export(annotate_mf)
+export(unbreak_rows)
 export(unbreak_vals)
 export(untangle2)
 export(unwrap_cols)

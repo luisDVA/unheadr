@@ -191,6 +191,58 @@ Paste the wrapped elements, separating with commas.
 unwrap_cols(nyk, groupingVar = player, separator = ", ")
 ```
 
+**unbreak\_rows() function**
+
+This function merges sets of two contiguous rows ‘upwards’ by pasting
+the values of the lagging row to the values of the leading row
+(identified using regular expressions).
+
+The following table of basketball records has two sets of header rows
+with values broken across two contiguous rows.
+
+| v1              | v2           | v3            |
+| :-------------- | :----------- | :------------ |
+| Player          | Most points  | Season        |
+| NA              | in a game    | (year ending) |
+| Sleve McDichael | 55           | 2001          |
+| Dean Wesrey     | 43           | 2000          |
+| Karl Dandleton  | 41           | 2010          |
+| Player          | Most varsity | Season        |
+| NA              | games played | (year ending) |
+| Mike Sernandez  | 111          | 2005          |
+| Glenallen Mixon | 109          | 2004          |
+| Rey McSriff     | 104          | 2002          |
+
+`unbreak_rows()` merges these rows if we can match them with a common
+pattern.
+
+``` r
+bball <- data.frame(
+  stringsAsFactors = FALSE,
+  v1 = c(
+    "Player", NA, "Sleve McDichael", "Dean Wesrey",
+    "Karl Dandleton", "Player",
+    NA,
+    "Mike Sernandez",
+    "Glenallen Mixon",
+    "Rey McSriff"
+  ),
+  v2 = c(
+    "Most points", "in a game", "55", "43", "41", "Most varsity",
+    "games played", "111", "109",
+    "104"
+  ),
+  v3 = c(
+    "Season", "(year ending)", "2001", "2000", "2010", "Season",
+    "(year ending)", "2005",
+    "2004", "2002"
+  )
+)
+
+# Match with regex on variable v2
+unbreak_rows(bb3,"^Most",v2)
+```
+
 **annotate\_mf() function**
 
 Sometimes embedded subheaders can’t be matched by content or context,

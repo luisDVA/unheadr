@@ -243,6 +243,19 @@ bball <- data.frame(
 unbreak_rows(bb3,"^Most",v2)
 ```
 
+The resulting table:
+
+| v1              | v2                        | v3                   |
+| :-------------- | :------------------------ | :------------------- |
+| Player          | Most points in a game     | Season (year ending) |
+| Sleve McDichael | 55                        | 2001                 |
+| Dean Wesrey     | 43                        | 2000                 |
+| Karl Dandleton  | 41                        | 2010                 |
+| Player          | Most varsity games played | Season (year ending) |
+| Mike Sernandez  | 111                       | 2005                 |
+| Glenallen Mixon | 109                       | 2004                 |
+| Rey McSriff     | 104                       | 2002                 |
+
 **annotate\_mf() function**
 
 Sometimes embedded subheaders can’t be matched by content or context,

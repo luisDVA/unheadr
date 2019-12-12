@@ -26,12 +26,14 @@ Merge rows up
 }
 \examples{
 bball <-
-data.frame(stringsAsFactors=FALSE,
-           v1 = c("Player", NA, "Sleve McDichael", "Dean Wesrey",
-                  "Karl Dandleton"),
-           v2 = c("Most points", "in a game", "55", "43", "41"),
-           v3 = c("Season", "(year ending)", "2001", "2000", "2010")
-)
-unbreak_rows(bball,"Most",v2)
-
+  data.frame(
+    stringsAsFactors = FALSE,
+    v1 = c(
+      "Player", NA, "Sleve McDichael", "Dean Wesrey",
+      "Karl Dandleton"
+    ),
+    v2 = c("Most points", "in a game", "55", "43", "41"),
+    v3 = c("Season", "(year ending)", "2001", "2000", "2010")
+  )
+unbreak_rows(bball, "Most", v2)
 }

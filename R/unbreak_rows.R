@@ -7,8 +7,8 @@
 #' @param sep Character string to separate the unified values (default is space).
 #'
 #' @return  A tibble or data frame with merged rows values. Values of the
-#'   lagging rows are pasted to the values in the leading row, squished, and the
-#'   lagging row is dropped.
+#'   lagging rows are pasted onto the values in the leading row, whitespace is
+#'   squished, and the lagging row is dropped.
 #'
 #' @examples
 #' bball <-

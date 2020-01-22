@@ -4,7 +4,7 @@
 \name{unheadr-package}
 \alias{unheadr}
 \alias{unheadr-package}
-\title{unheadr: Handle Data With Embedded Subheaders}
+\title{unheadr: Handle Data with Embedded Subheaders}
 \description{
 Verb-like functions to work with messy data, usually derived from spreadsheets or PDF 
     tables. Includes functions for unwrapping values broken up across two 

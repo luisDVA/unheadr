@@ -20,9 +20,9 @@ Data originates from the appendix in the following publication:
 primates2017_broken
 }
 \description{
-A dataset with embedded subheaders and some values (T. obscurus,
-    T. leucocephalus and N. bengalensis) in the scientific_names variable broken up
-    across two rows (typically done to fit the content in a table).
+A dataset with embedded subheaders and some values (T. obscurus, T.
+leucocephalus and N. bengalensis) in the scientific_names variable broken up
+across two rows (typically done to fit the content in a table).
 }
 \references{
 Estrada, Alejandro, et al. "Impending extinction crisis of the

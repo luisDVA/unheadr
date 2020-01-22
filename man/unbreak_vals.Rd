@@ -4,8 +4,7 @@
 \alias{unbreak_vals}
 \title{Unbreak values using regex to match the broken half of the value}
 \usage{
-unbreak_vals(df, regex, ogcol, newcol, sep = " ",
-  .slice_groups = FALSE)
+unbreak_vals(df, regex, ogcol, newcol, sep = " ", .slice_groups = FALSE)
 }
 \arguments{
 \item{df}{A data frame with one or more values within a variable broken up
@@ -34,9 +33,7 @@ Unbreak values using regex to match the broken half of the value
 \details{
 This function is limited to quite specific cases, but useful when
   dealing with tables that contain scientific names broken across two rows.
-  For background and examples, see
-  \url{https://luisdva.github.io/rstats/Tidyeval-pdf-hell/}; for unwrapping
-  values, see \code{\link{unwrap_cols}}.
+  For unwrapping values, see \code{\link{unwrap_cols}}.
 }
 \examples{
 data(primates2017_broken)

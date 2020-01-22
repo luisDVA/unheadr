@@ -8,9 +8,8 @@
 #' @return A tibble without the matched subheaders and a new variable containing
 #'   the grouping data.
 #'
-#' @details For background and examples see
-#' \url{https://luisdva.github.io/rstats/tidyeval/}. Special thanks to Jenny
-#' Bryan for fixing the initial tidyeval code and overall function structure.
+#' @details Special thanks to Jenny Bryan for fixing the initial tidyeval code
+#'   and overall function structure.
 #'
 #' @examples
 #' data(primates2017)

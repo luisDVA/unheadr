@@ -17,7 +17,7 @@ meant for the leading of the two contiguous rows.}
 \item{sep}{Character string to separate the unified values (default is space).}
 }
 \value{
-A tibble or data frame with merged rows values. Values of the
+A tibble or data frame with merged rows. Values of the
   lagging rows are pasted onto the values in the leading row, whitespace is
   squished, and the lagging row is dropped.
 }

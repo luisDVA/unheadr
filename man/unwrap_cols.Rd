@@ -22,8 +22,7 @@ A summarized tibble. Order is preserved in the grouping variable by making it a 
 Unwrap values and clean up NAs used as padding
 }
 \details{
-For more examples and background, see
-\url{https://luisdva.github.io/rstats/unbreaking-vals/}.
+This is rougly the opposite of `tidyr::separate_rows()`.
 }
 \examples{
 data(primates2017_wrapped)

@@ -6,7 +6,7 @@
 #' @param ogcol Variable with the text strings to match.
 #' @param sep Character string to separate the unified values (default is space).
 #'
-#' @return  A tibble or data frame with merged rows values. Values of the
+#' @return  A tibble or data frame with merged rows. Values of the
 #'   lagging rows are pasted onto the values in the leading row, whitespace is
 #'   squished, and the lagging row is dropped.
 #'

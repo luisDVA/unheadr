@@ -8,8 +8,7 @@
 #'
 #' @return A summarized tibble. Order is preserved in the grouping variable by making it a factor.
 #'
-#' @details For more examples and background, see
-#' \url{https://luisdva.github.io/rstats/unbreaking-vals/}.
+#' @details This is rougly the opposite of `tidyr::separate_rows()`.
 #'
 #' @examples
 #' data(primates2017_wrapped)

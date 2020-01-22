@@ -1,6 +1,6 @@
 Package: unheadr
 Type: Package
-Title: Handle Data With Embedded Subheaders
+Title: Handle Data with Embedded Subheaders
 Version: 0.1.1
 Depends: R (>= 2.10)
 Authors@R: person("Luis D.", "Verde Arregoitia", email = "luis@liomys.mx",

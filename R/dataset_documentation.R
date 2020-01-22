@@ -21,9 +21,9 @@
 "primates2017"
 #' Comparative data for 16 species of primates with some broken values
 #'
-#' A dataset with embedded subheaders and some values (T. obscurus,
-#'     T. leucocephalus and N. bengalensis) in the scientific_names variable broken up
-#'     across two rows (typically done to fit the content in a table).
+#' A dataset with embedded subheaders and some values (T. obscurus, T.
+#' leucocephalus and N. bengalensis) in the scientific_names variable broken up
+#' across two rows (typically done to fit the content in a table).
 #'
 #' @format A data frame with 19 rows and 4 variables:
 #' \describe{

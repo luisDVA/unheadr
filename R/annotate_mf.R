@@ -35,7 +35,10 @@ annotate_mf <- function(xlfilepath, orig, new) {
   highlighted <- format_defs$local$fill$patternFill$patternType
   hl_color <- format_defs$local$fill$patternFill$fgColor$rgb
   format_opts <- tibble::lst(bolded, italic, highlighted, underlined, hl_color)
-  formatting_indicators <- dplyr::bind_cols(lapply(format_opts, function(x) x[m_formatting$local_format_id]))
+  formatting_indicators <- dplyr::bind_cols(lapply(
+    format_opts,
+    function(x) x[m_formatting$local_format_id]
+  ))
   format_joined <- dplyr::bind_cols(m_formatting, formatting_indicators)
   col_orig <- format_joined$col[match(paste0(rlang::as_name(orig)), format_joined$character)]
 
@@ -54,12 +57,16 @@ annotate_mf <- function(xlfilepath, orig, new) {
   # swap na with variable names
   indx <- which(formatted == TRUE, arr.ind = TRUE)
   formatted[indx] <- names(formatted)[indx[, 2]]
-  formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), ~ replace(., . == "FALSE", ""))
+  formatted <- dplyr::mutate_at(formatted,
+                                dplyr::vars(bolded:underlined), ~ replace(., . == "FALSE", ""))
   # build annotation strings
-  formatted$highlighted <- ifelse(formatted$highlighted != "", paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted)
+  formatted$highlighted <- ifelse(formatted$highlighted != "",
+                                  paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
+  )
   formatted$hl_color <- NULL
   formatted$newvar <-
-    paste(formatted$bolded, formatted$italic, formatted$highlighted, formatted$underlined)
+    paste(formatted$bolded, formatted$italic,
+          formatted$highlighted, formatted$underlined)
   formatted$newvar <- stringr::str_squish(formatted$newvar)
   formatted$newvar <- gsub(" ", ", ", formatted$newvar)
   formatted <- dplyr::select(formatted, -c(bolded:underlined))

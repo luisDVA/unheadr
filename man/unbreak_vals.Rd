@@ -4,7 +4,8 @@
 \alias{unbreak_vals}
 \title{Unbreak values using regex to match the broken half of the value}
 \usage{
-unbreak_vals(df, regex, ogcol, newcol, sep = " ", .slice_groups = FALSE)
+unbreak_vals(df, regex, ogcol, newcol, sep = " ",
+  .slice_groups = FALSE)
 }
 \arguments{
 \item{df}{A data frame with one or more values within a variable broken up

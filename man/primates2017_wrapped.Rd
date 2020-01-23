@@ -17,7 +17,7 @@
 }}
 \source{
 Data originates from the appendix in the following publication and
-    from IUCN Red List assessments \url{https://www.iucnredlist.org}.
+    from IUCN Red List assessments.
 }
 \usage{
 primates2017_wrapped

@@ -14,7 +14,8 @@ meant for the leading of the two contiguous rows.}
 
 \item{ogcol}{Variable with the text strings to match.}
 
-\item{sep}{Character string to separate the unified values (default is space).}
+\item{sep}{Character string to separate the unified values (default is
+space).}
 }
 \value{
 A tibble or data frame with merged rows. Values of the

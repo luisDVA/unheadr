@@ -39,7 +39,8 @@ annotate_mf <- function(xlfilepath, orig, new) {
     function(x) x[m_formatting$local_format_id]
   ))
   format_joined <- dplyr::bind_cols(m_formatting, formatting_indicators)
-  col_orig <- format_joined$col[match(paste0(rlang::as_name(orig)), format_joined$character)]
+  col_orig <- format_joined$col[match(paste0(rlang::as_name(orig)),
+                                      format_joined$character)]
 
   # target variable
   orig_format <- dplyr::filter(format_joined, row >= 2 & col == col_orig)
@@ -49,10 +50,14 @@ annotate_mf <- function(xlfilepath, orig, new) {
     formatted, dplyr::vars(bolded:hl_color),
     ~ replace(., is.na(.), FALSE)
   )
-  formatted$highlighted <- gsub(pattern = "[^FALSE].*", replacement = "TRUE", formatted$highlighted)
-  formatted$underlined <- gsub(pattern = "[^FALSE].*", replacement = "TRUE", formatted$underlined)
-  formatted$hl_color <- gsub(pattern = "FALSE", replacement = "", formatted$hl_color)
-  formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined), as.logical)
+  formatted$highlighted <- gsub(pattern = "[^FALSE].*", replacement = "TRUE",
+                                formatted$highlighted)
+  formatted$underlined <- gsub(pattern = "[^FALSE].*", replacement = "TRUE",
+                               formatted$underlined)
+  formatted$hl_color <- gsub(pattern = "FALSE", replacement = "",
+                             formatted$hl_color)
+  formatted <- dplyr::mutate_at(formatted, dplyr::vars(bolded:underlined),
+                                as.logical)
   # swap na with variable names
   indx <- which(formatted == TRUE, arr.ind = TRUE)
   formatted[indx] <- names(formatted)[indx[, 2]]

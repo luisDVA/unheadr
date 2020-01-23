@@ -4,7 +4,8 @@
 #' @param regex A regular expression to identify sets of rows to be merged,
 #'   meant for the leading of the two contiguous rows.
 #' @param ogcol Variable with the text strings to match.
-#' @param sep Character string to separate the unified values (default is space).
+#' @param sep Character string to separate the unified values (default is
+#'   space).
 #'
 #' @return  A tibble or data frame with merged rows. Values of the
 #'   lagging rows are pasted onto the values in the leading row, whitespace is

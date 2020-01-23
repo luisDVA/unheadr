@@ -148,4 +148,4 @@ annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
 
 The underlying reasoning, background, and possible uses of `unheadr` are now described in this publication:
 
-Verde Arregoitia, L. D., Cooper, N., D'Elía, G. (2018). Good practices for sharing analysis-ready data in mammalogy and biodiversity research. _Hystrix, the Italian Journal of Mammalogy_, 29(2), 155-161. [Open Access, DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
+Verde Arregoitia, L. D., Cooper, N., D'El&#237;a, G. (2018). Good practices for sharing analysis-ready data in mammalogy and biodiversity research. _Hystrix, the Italian Journal of Mammalogy_, 29(2), 155-161. [Open Access, DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)

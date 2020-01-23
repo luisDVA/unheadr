@@ -38,8 +38,8 @@ DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
 
 **untangle2() function**
 
-The star of the package. `untangle2()` puts embedded subheaders into
-their own variable, using regular expressions to identify them.
+`untangle2()` puts embedded subheaders into their own variable, using
+regular expressions to identify them.
 
 ``` r
 data(primates2017)

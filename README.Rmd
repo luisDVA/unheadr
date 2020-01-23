@@ -40,7 +40,7 @@ Verde Arregoitia, L. D., Cooper, N., D'El&#237;a, G. (2018). Good practices for 
 
 **untangle2() function**  
 
-The star of the package. Puts embedded subheaders into their own variable, using regular expressions to identify them. 
+`untangle2()` puts embedded subheaders into their own variable, using regular expressions to identify them. 
 
 ``` r
 data(primates2017)

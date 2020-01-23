@@ -50,7 +50,7 @@ dat
 The beverage type is embedded in the 'drinks' variable. If we can match them with regular expressions, we can move the grouping values into their own variable using `untangle2()`
 
 ```{r}
-untangle2(dat,"Drinks$",drink,"beverage_type")
+untangle2(dat, "Drinks$", drink, "beverage_type")
 ```
 
 
@@ -70,8 +70,8 @@ OGames
 In this case, we can use `unbreak_vals()` to 'unbreak' the lines in the 'Games' variable, matching the strings that start with numbers.
 
 ```{r}
-OGames %>% 
-unbreak_vals("^[0-9]", Games, Games_unbroken,.slice_groups = TRUE) %>%
+OGames %>%
+  unbreak_vals("^[0-9]", Games, Games_unbroken, .slice_groups = TRUE) %>%
   select(Games_unbroken, everything())
 ```
 
@@ -82,7 +82,7 @@ unbreak_vals("^[0-9]", Games, Games_unbroken,.slice_groups = TRUE) %>%
 knicks <- data.frame(
   stringsAsFactors = FALSE,
   player = c("Allan Houston", NA, "Latrell Sprewell", NA, NA),
-  teams= c(
+  teams = c(
     "Pistons", "Knicks", "Warriors", "Knicks",
     "Timberwolves"
   ),
@@ -140,7 +140,7 @@ Font formatting and cell highlighting is being used to label an embedded groupin
 
 ```{r}
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
-annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
+annotate_mf(example_spreadsheet, orig = Task, new = Task_annotated)
 ```
 
 

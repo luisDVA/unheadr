@@ -27,11 +27,12 @@ This is rougly the opposite of `tidyr::separate_rows()`.
 \examples{
 data(primates2017_wrapped)
 # using commas to separate elements
-unwrap_cols(primates2017_wrapped,scientific_name,", ")
+unwrap_cols(primates2017_wrapped, scientific_name, ", ")
 
 # separating with semicolons
-df <- data.frame(ounits=c("A",NA,"B","C","D",NA),
-    vals=c(1,2,2,3,1,3))
-unwrap_cols(df,ounits,";")
-
+df <- data.frame(
+  ounits = c("A", NA, "B", "C", "D", NA),
+  vals = c(1, 2, 2, 3, 1, 3)
+)
+unwrap_cols(df, ounits, ";")
 }

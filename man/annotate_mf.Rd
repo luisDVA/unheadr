@@ -28,6 +28,5 @@ At this point, only four popular approaches for meaningful
 }
 \examples{
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
-annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
-
+annotate_mf(example_spreadsheet, orig = Task, new = Task_annotated)
 }

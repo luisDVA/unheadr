@@ -10,7 +10,7 @@
 #'         (2017)}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
-#'}
+#' }
 #'
 #' @source Data originates from the appendix in the following publication:
 #' @references Estrada, Alejandro, et al. "Impending extinction crisis of the
@@ -33,7 +33,7 @@
 #'         (2017)}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
-#'}
+#' }
 #' @source Data originates from the appendix in the following publication:
 #' @references Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'     world's primates: Why primates matter." Science Advances 3.1 (2017):
@@ -54,7 +54,7 @@
 #'     \item{mass_kg}{mean body mass in kilograms}
 #'     \item{country}{Countries where the species is present, from IUCN Red
 #'         List assessments}
-#'}
+#' }
 #'
 #' @source Data originates from the appendix in the following publication and
 #'     from IUCN Red List assessments \url{https://www.iucnredlist.org}.
@@ -79,4 +79,3 @@
 #' @source Items are modified from the checklist written by Junior Watson.
 #' @references http://www.dogtrainingbasics.com/checklist-well-behaved-dog/
 NULL
-

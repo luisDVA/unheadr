@@ -12,8 +12,7 @@
 #'   also appended in the output.
 #' @examples
 #' example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
-#' annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
-#'
+#' annotate_mf(example_spreadsheet, orig = Task, new = Task_annotated)
 #' @importFrom rlang :=
 #' @importFrom rlang .data
 #' @export
@@ -57,24 +56,28 @@ annotate_mf <- function(xlfilepath, orig, new) {
   # swap na with variable names
   indx <- which(formatted == TRUE, arr.ind = TRUE)
   formatted[indx] <- names(formatted)[indx[, 2]]
-  formatted <- dplyr::mutate_at(formatted,
-                                dplyr::vars(bolded:underlined), ~ replace(., . == "FALSE", ""))
+  formatted <- dplyr::mutate_at(
+    formatted,
+    dplyr::vars(bolded:underlined), ~ replace(., . == "FALSE", "")
+  )
   # build annotation strings
   formatted$highlighted <- ifelse(formatted$highlighted != "",
-                                  paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
+    paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
   )
   formatted$hl_color <- NULL
   formatted$newvar <-
-    paste(formatted$bolded, formatted$italic,
-          formatted$highlighted, formatted$underlined)
+    paste(
+      formatted$bolded, formatted$italic,
+      formatted$highlighted, formatted$underlined
+    )
   formatted$newvar <- stringr::str_squish(formatted$newvar)
   formatted$newvar <- gsub(" ", ", ", formatted$newvar)
   formatted <- dplyr::select(formatted, -c(bolded:underlined))
   formatted <- dplyr::mutate(
     formatted,
     !!new := ifelse(test = .data$newvar != "",
-                    yes = paste0("(", .data$newvar, ") ", !!orig),
-                    no = !!orig
+      yes = paste0("(", .data$newvar, ") ", !!orig),
+      no = !!orig
     )
   )
   formatted$newvar <- NULL

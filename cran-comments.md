@@ -2,6 +2,10 @@
 
 ## R CMD check results
 
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Luis D. Verde Arregoitia <luis@liomys.mx>'
+
+New submission
   
   
 

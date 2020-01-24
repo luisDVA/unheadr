@@ -8,8 +8,8 @@
 \description{
 Verb-like functions to work with messy data, often derived from 
              spreadsheets or PDF tables. Includes functions for unwrapping 
-             values broken up across rows, embedded grouping values, and to 
-             annotate meaningful formatting in spreadsheet files.
+             values broken up across rows, relocating embedded grouping values, 
+             and to annotate meaningful formatting in spreadsheet files.
 }
 \seealso{
 Useful links:

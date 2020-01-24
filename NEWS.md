@@ -8,5 +8,5 @@
 # unheadr 0.1.1
 * Added more tests, spreadsheet-related functions, and better documentation.
 
-# unheadr 1.0.0
+# unheadr 0.2.0
 * Cleanup and preparation for release.

@@ -14,17 +14,14 @@
     \item{mass_kg}{mean body mass in kilograms}
 }}
 \source{
-Data originates from the appendix in the following publication:
+Estrada, Alejandro, et al. "Impending extinction crisis of the
+        world's primates: Why primates matter." Science Advances 3.1 (2017):
+        e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
 }
 \usage{
-data(primates2017)
+primates2017
 }
 \description{
 A dataset with embedded subheaders.
-}
-\references{
-Estrada, Alejandro, et al. "Impending extinction crisis of the
-    world's primates: Why primates matter." Science Advances 3.1 (2017):
-    e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
 }
 \keyword{datasets}

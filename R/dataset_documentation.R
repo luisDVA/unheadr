@@ -11,13 +11,9 @@
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
 #' }
-#'
-#' @source Data originates from the appendix in the following publication:
-#' @references Estrada, Alejandro, et al. "Impending extinction crisis of the
-#'     world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'     e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
-#' @usage
-#' data(primates2017)
+#' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
+#'         world's primates: Why primates matter." Science Advances 3.1 (2017):
+#'         e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
 "primates2017"
 #' Comparative data for 16 species of primates with some broken values
 #'
@@ -34,12 +30,9 @@
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
 #' }
-#' @source Data originates from the appendix in the following publication:
-#' @references Estrada, Alejandro, et al. "Impending extinction crisis of the
-#'     world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'     e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
-#' #' @usage
-#' data(primates2017_broken)
+#' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
+#'         world's primates: Why primates matter." Science Advances 3.1 (2017):
+#'         e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
 "primates2017_broken"
 #' Comparative data for two species of primates
 #'
@@ -55,14 +48,9 @@
 #'     \item{country}{Countries where the species is present, from IUCN Red
 #'         List assessments}
 #' }
-#'
-#' @source Data originates from the appendix in the following publication and
-#'     from IUCN Red List assessments.
-#' @references Estrada, Alejandro, et al. "Impending extinction crisis of the
-#'     world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'     e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
-#' #' @usage
-#' data(primates2017_wrapped)
+#' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
+#'         world's primates: Why primates matter." Science Advances 3.1 (2017):
+#'         e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
 "primates2017_wrapped"
 #' dog_test.xlsx spreadsheet
 #'

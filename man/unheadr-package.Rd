@@ -9,7 +9,7 @@
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
 Verb-like functions to work with messy data, often derived from 
-             spreadsheets or PDF tables. Includes functions for unwrapping 
+             spreadsheets or parsed PDF tables. Includes functions for unwrapping 
              values broken up across rows, relocating embedded grouping values, 
              and to annotate meaningful formatting in spreadsheet files.
 }

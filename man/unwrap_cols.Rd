@@ -13,7 +13,7 @@ values used to as within-group padding.}
 \item{groupingVar}{Name of the variable describing the observational units.}
 
 \item{separator}{Character string defining the separator that will delimit
-the elements of the unrwapped value.}
+the elements of the unwrapped value.}
 }
 \value{
 A summarized tibble. Order is preserved in the grouping variable by

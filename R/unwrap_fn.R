@@ -4,7 +4,7 @@
 #'   values used to as within-group padding.
 #' @param groupingVar Name of the variable describing the observational units.
 #' @param separator Character string defining the separator that will delimit
-#'   the elements of the unrwapped value.
+#'   the elements of the unwrapped value.
 #'
 #' @return A summarized tibble. Order is preserved in the grouping variable by
 #'   making it a factor.

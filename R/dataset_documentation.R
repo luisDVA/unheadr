@@ -6,7 +6,7 @@
 #' \describe{
 #'     \item{scientific_name}{scientific names, with geographic region and
 #'     taxonomic family embedded as subheaders.}
-#'     \item{common_name}{vernacular name, as listed in Estada et al.
+#'     \item{common_name}{vernacular name, as listed in Estrada et al.
 #'         (2017)}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
@@ -25,7 +25,7 @@
 #' \describe{
 #'     \item{scientific_name}{scientific names, with embedded subheaders
 #'         for geographic region and taxonomic family and broken values}
-#'     \item{common_name}{vernacular name, as listed in Estada et al.
+#'     \item{common_name}{vernacular name, as listed in Estrada et al.
 #'         (2017)}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
@@ -40,7 +40,7 @@
 #' @format A data frame with 9 rows and 6 variables:
 #' \describe{
 #'     \item{scientific_name}{scientific names, see reference}
-#'     \item{common_name}{vernacular name, as listed in Estada et al.
+#'     \item{common_name}{vernacular name, as listed in Estrada et al.
 #'         (2017)}
 #'     \item{habitat}{habitat types listed in the IUCN Red List assessments}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}

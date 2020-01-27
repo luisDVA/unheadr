@@ -87,8 +87,8 @@ variable. This is the main objective of `unheadr` and what `untangle2()`
 was made for.
 
 If these subheaders can be matched in bulk with a regular expression
-because they share a prefix, suffix, or anyting in common, we can save a
-lot of time. Otherwise, they can be matched by name.
+because they share a prefix, suffix, or anything in common, we can save
+a lot of time. Otherwise, they can be matched by name.
 
 Sorting out the mess in the example data:
 

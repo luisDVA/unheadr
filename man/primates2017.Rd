@@ -8,7 +8,7 @@
 \describe{
     \item{scientific_name}{scientific names, with geographic region and
     taxonomic family embedded as subheaders.}
-    \item{common_name}{vernacular name, as listed in Estada et al.
+    \item{common_name}{vernacular name, as listed in Estrada et al.
         (2017)}
     \item{red_list_status}{IUCN Red List Status in January 2017}
     \item{mass_kg}{mean body mass in kilograms}

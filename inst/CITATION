@@ -22,9 +22,9 @@ citEntry(entry = "Manual",
   author  = person(given="Luis Darcy", family="Verde Arregoitia"),
   year    = "2019",
   note    = "R package version 0.2.0",
-  url     = "https://luisdva.github.io/unheadr/",
+  url     = "https://github.com/luisDVA/unheadr/",
   textVersion =
   paste("Verde Arregoitia, Luis D. (2019)",
         "unheadr: Handle Data with Messy Header Rows and Broken Values. R package version 0.2.0.",
-        "https://luisdva.github.io/unheadr/")
+        "https://github.com/luisDVA/unheadr/")
 )

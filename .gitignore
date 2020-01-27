@@ -4,4 +4,5 @@ inst/doc
 .Rproj.user
 doc
 Meta
+docs/*
 docs/

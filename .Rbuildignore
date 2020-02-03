@@ -13,3 +13,4 @@
 ^pkgdown$
 ^CRAN-RELEASE$
 ^_pkgdown\.yml$
+^tic\.R$

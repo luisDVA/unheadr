@@ -9,8 +9,4 @@
 ^doc$
 ^Meta$
 ^cran-comments\.md$
-^docs$
-^pkgdown$
 ^CRAN-RELEASE$
-^_pkgdown\.yml$
-^tic\.R$

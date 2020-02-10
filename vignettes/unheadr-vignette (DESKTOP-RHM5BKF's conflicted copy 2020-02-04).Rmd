@@ -1,0 +1,37 @@
+---
+title: "unheadr"
+author: "Luis D. Verde Arregoitia"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{unheadr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+When we work with other people's data, we often have to struggle through multiple unexpected steps before we get to a flexible, usable structure.
+
+Popular ways of structuring and presenting data can inadvertently place important content beyond the reach of code-based routines to tackle repetitive tasks efficiently and automate data processing across multiple files or very large tables. This ultimately requires a substantial amount of time and effort invested in reshaping and organizing these data manually. Repetitive click-based approaches can introduce errors, accidentally drop or duplicate information, and they often need subjective interpretations of how the data were meant to be organized.
+
+## Package functions
+
+The functions in this package can help us rework data shared by other people from a human-readable structure to a tidier structure on which we can more easily perform filtering, grouping, transforming, sorting, aggregating, visualization, and modeling. 
+
+## Further reading
+
+For examples and uses for each function: see the function documentation and the following three blog posts:
+
+-[untangle2 function](https://luisdva.github.io/rstats/tidyeval/)
+-[unbreak_vals function](https://luisdva.github.io/rstats/Tidyeval-pdf-hell/)
+-[unwrap_cols function](https://luisdva.github.io/rstats/unbreaking-vals/)
+
+Some of the possible uses of `unheadr` are now described in this publication:
+
+Verde Arregoitia, L. D., Cooper, N., D'Elía, G. (2018). Good practices for sharing analysis-ready data in mammalogy and biodiversity research. _Hystrix, the Italian Journal of Mammalogy_, 29(2), 155-161. [Open Access, DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)

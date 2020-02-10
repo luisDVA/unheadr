@@ -17,10 +17,13 @@ subheaders, or when values are wrapped across several rows.
 
 ## Installation
 
-You can install the development version from
-[GitHub](https://github.com/) with:
+You can install the CRAN or development version with:
 
 ``` r
+# Install unheadr from CRAN:
+install.packages("unheadr")
+
+# Or install the development version from GitHub with:
 # install.packages("devtools")
 devtools::install_github("luisDVA/unheadr")
 ```

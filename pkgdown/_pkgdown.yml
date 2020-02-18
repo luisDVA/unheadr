@@ -1,0 +1,52 @@
+title: unheadr
+url: unheadr.liomys.mx
+template:
+  params:
+    bootswatch: spacelab
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - tutorials
+    - news
+    right: github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: Articles
+      menu:
+      - text: Introduction to unheadr
+        href: articles/unheadr-vignette.html
+    news:
+      text: Changelog
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/luisDVA/unheadr
+reference:
+- title: Data rectangling functions
+  desc:
+  contents:
+  - '`unbreak_rows`'
+  - '`unbreak_vals`'
+  - '`untangle2`'
+  - '`unwrap_cols`'
+- title: Spreadsheet annotation
+  desc:
+  contents:
+    - '`annotate_mf`'
+- title: Example data
+  desc:
+  contents:
+  - '`dog_test`'
+  - '`primates2017`'
+  - '`primates2017_broken`'
+  - '`primates2017_wrapped`'

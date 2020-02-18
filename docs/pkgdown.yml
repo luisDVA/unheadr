@@ -1,0 +1,9 @@
+pandoc: 2.3.1
+pkgdown: 1.4.1.9000
+pkgdown_sha: 134033d9d744c548c6fbe297bc0fbd1a2f498e83
+articles:
+  unheadr-vignette: unheadr-vignette.html
+urls:
+  reference: unheadr.liomys.mx/reference
+  article: unheadr.liomys.mx/articles
+

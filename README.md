@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![](https://img.shields.io/badge/doi-10.4404/hystrix--00133--2018-red.svg)](https://doi.org/10.4404/hystrix-00133-2018)
+[![](https://www.r-pkg.org/badges/version/unheadr?color=purple)](https://cran.r-project.org/package=unheadr)
+[![](http://cranlogs.r-pkg.org/badges/last-month/unheadr?color=green)](https://cran.r-project.org/package=unheadr)
 [![Travis build
 status](https://travis-ci.org/luisDVA/unheadr.svg?branch=master)](https://travis-ci.org/luisDVA/unheadr)
 [![Codecov test

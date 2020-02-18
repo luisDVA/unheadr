@@ -19,7 +19,7 @@ subheaders, or when values are wrapped across several rows.
 
 ## Installation
 
-You can install the CRAN or development version with:
+You can install the CRAN release or the development version with:
 
 ``` r
 # Install unheadr from CRAN:

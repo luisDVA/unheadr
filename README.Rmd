@@ -28,7 +28,6 @@ The goal of `unheadr` is to help wrangle data when it has embedded subheaders, o
 ## Installation
 
 
-
 You can install the CRAN or development version with:
 
 ``` r

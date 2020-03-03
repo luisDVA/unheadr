@@ -21,10 +21,10 @@ citEntry(entry = "Manual",
   title   = "unheadr: Handle Data with Messy Header Rows and Broken Values",
   author  = person(given="Luis Darcy", family="Verde Arregoitia"),
   year    = "2019",
-  note    = "R package version 0.2.0",
-  url     = "https://github.com/luisDVA/unheadr/",
+  note    = "R package version 0.2.1",
+  url     = "https://cran.r-project.org/package=unheadr",
   textVersion =
   paste("Verde Arregoitia, Luis D. (2019)",
-        "unheadr: Handle Data with Messy Header Rows and Broken Values. R package version 0.2.0.",
-        "https://github.com/luisDVA/unheadr/")
+        "unheadr: Handle Data with Messy Header Rows and Broken Values. R package version 0.2.1.",
+        "https://cran.r-project.org/package=unheadr")
 )

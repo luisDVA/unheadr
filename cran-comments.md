@@ -4,13 +4,10 @@
 - R-hub fedora-clang-devel (r-devel)
 
 ## R CMD check results
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Luis D. Verde Arregoitia <luis@liomys.mx>'
-
-New submission
+There were no ERRORs, WARNINGs, or NOTEs. 
   
 ## Good Practice Checks (goodpractice pckg)
-Found 10 lines > 80 characters wide, leaving as is since code is still readable even on small terminals.
+Found 13 lines > 80 characters wide, leaving as is since code is still readable.
 
 
-* This is a new release.
+* Minor patch to keep up with upcoming changes to `tibble`.

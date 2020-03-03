@@ -12,3 +12,6 @@
 
 # unheadr 0.2.0
 * Cleanup and preparation for release.
+
+# unheadr 0.2.1
+* Minor patch to address breaking changes planned for `tibble`. 

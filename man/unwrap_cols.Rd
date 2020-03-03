@@ -23,7 +23,7 @@ A summarized tibble. Order is preserved in the grouping variable by
 Unwrap values and clean up NAs used as padding
 }
 \details{
-This is rougly the opposite of `tidyr::separate_rows()`.
+This is roughly the opposite of `tidyr::separate_rows()`.
 }
 \examples{
 data(primates2017_wrapped)

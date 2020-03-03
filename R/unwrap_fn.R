@@ -9,7 +9,7 @@
 #' @return A summarized tibble. Order is preserved in the grouping variable by
 #'   making it a factor.
 #'
-#' @details This is rougly the opposite of `tidyr::separate_rows()`.
+#' @details This is roughly the opposite of `tidyr::separate_rows()`.
 #'
 #' @examples
 #' data(primates2017_wrapped)

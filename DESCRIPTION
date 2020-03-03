@@ -1,7 +1,7 @@
 Package: unheadr
 Type: Package
 Title: Handle Data with Messy Header Rows and Broken Values
-Version: 0.2.0.9000
+Version: 0.2.1
 Depends: R (>= 2.10)
 Authors@R: person("Luis D.", "Verde Arregoitia", email = "luis@liomys.mx",
         role=c("aut","cre"),comment = c(ORCID = "0000-0001-9520-6543"))

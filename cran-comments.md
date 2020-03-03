@@ -11,5 +11,6 @@ No ERRORs, WARNINGs, or NOTEs.
 ## Good Practice Checks (goodpractice pckg)
 Found 13 lines > 80 characters wide, leaving as is since code is still readable.
 
+* There are currently no downstream dependencies for this package.
 
 * This is a Minor Patch to keep up with upcoming changes to `tibble`.

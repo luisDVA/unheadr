@@ -29,5 +29,5 @@ Suggests:
     testthat (>= 2.1.0),
     covr
 VignetteBuilder: knitr
-URL: https://github.com/luisDVA/unheadr
+URL: https://github.com/luisDVA/unheadr, https://unheadr.liomys.mx/
 BugReports: https://github.com/luisDVA/unheadr/issues

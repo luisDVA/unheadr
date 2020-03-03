@@ -17,6 +17,7 @@ Verb-like functions to work with messy data, often derived from
 Useful links:
 \itemize{
   \item \url{https://github.com/luisDVA/unheadr}
+  \item \url{https://unheadr.liomys.mx/}
   \item Report bugs at \url{https://github.com/luisDVA/unheadr/issues}
 }
 

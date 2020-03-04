@@ -7,7 +7,10 @@
 
 [![](https://img.shields.io/badge/doi-10.4404/hystrix--00133--2018-red.svg)](https://doi.org/10.4404/hystrix-00133-2018)
 [![](https://www.r-pkg.org/badges/version/unheadr?color=purple)](https://cran.r-project.org/package=unheadr)
-[![](http://cranlogs.r-pkg.org/badges/last-month/unheadr?color=green)](https://cran.r-project.org/package=unheadr)
+[![](http://cranlogs.r-pkg.org/badges/last-month/unheadr?color=orange)](https://cran.r-project.org/package=unheadr)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/unheadr?color=blue)](https://cran.r-project.org/package=unheadr)
+[![CRAN
+checks](https://cranchecks.info/badges/summary/unheadr)](https://cran.r-project.org/web/checks/check_results_unheadr.html)
 [![Travis build
 status](https://travis-ci.org/luisDVA/unheadr.svg?branch=master)](https://travis-ci.org/luisDVA/unheadr)
 [![Codecov test

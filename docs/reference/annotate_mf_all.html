@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Merge rows up — unbreak_rows • unheadr</title>
+<title>Annotate meaningful formatting for all cells — annotate_mf_all • unheadr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Merge rows up — unbreak_rows" />
-<meta property="og:description" content="Merge rows up" />
+<meta property="og:title" content="Annotate meaningful formatting for all cells — annotate_mf_all" />
+<meta property="og:description" content="Annotate meaningful formatting for all cells" />
 <meta property="og:image" content="unheadr.liomys.mx/logo.png" />
 
 
@@ -131,62 +131,51 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Merge rows up</h1>
-    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/unbreak_rows.R'><code>R/unbreak_rows.R</code></a></small>
-    <div class="hidden name"><code>unbreak_rows.Rd</code></div>
+    <h1>Annotate meaningful formatting for all cells</h1>
+    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/annotate_mf_all.R'><code>R/annotate_mf_all.R</code></a></small>
+    <div class="hidden name"><code>annotate_mf_all.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Merge rows up</p>
+    <p>Annotate meaningful formatting for all cells</p>
     </div>
 
-    <pre class="usage"><span class='fu'>unbreak_rows</span>(<span class='no'>df</span>, <span class='no'>regex</span>, <span class='no'>ogcol</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" "</span>)</pre>
+    <pre class="usage"><span class='fu'>annotate_mf_all</span>(<span class='no'>xlfilepath</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>A data frame with at least two contiguous rows to be merged.</p></td>
-    </tr>
-    <tr>
-      <th>regex</th>
-      <td><p>A regular expression to identify sets of rows to be merged,
-meant for the leading of the two contiguous rows.</p></td>
-    </tr>
-    <tr>
-      <th>ogcol</th>
-      <td><p>Variable with the text strings to match.</p></td>
-    </tr>
-    <tr>
-      <th>sep</th>
-      <td><p>Character string to separate the unified values (default is
-space).</p></td>
+      <th>xlfilepath</th>
+      <td><p>Path to a single-sheet spreadsheet file (xls or xlsx).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble or data frame with merged rows. Values of the
-  lagging rows are pasted onto the values in the leading row, whitespace is
-  squished, and the lagging row is dropped.</p>
+    <p>A tibble with meaningful formatting embedded as text for all rows and
+  columns.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>At this point, only four popular approaches for meaningful
+  formatting (bold, italic, underline, cell highlighting) are hardcoded in
+  the function. `sheets`, `skip`, and `range` arguments for spreadsheet input
+  are not supported. The HTML code of the fill color used for cell
+  highlighting is also appended in the output. Ensure the data in the
+  spreadsheet are rectangular before running.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>bball</span> <span class='kw'>&lt;-</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-    <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-    <span class='kw'>v1</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
-      <span class='st'>"Player"</span>, <span class='fl'>NA</span>, <span class='st'>"Sleve McDichael"</span>, <span class='st'>"Dean Wesrey"</span>,
-      <span class='st'>"Karl Dandleton"</span>
-    ),
-    <span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Most points"</span>, <span class='st'>"in a game"</span>, <span class='st'>"55"</span>, <span class='st'>"43"</span>, <span class='st'>"41"</span>),
-    <span class='kw'>v3</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Season"</span>, <span class='st'>"(year ending)"</span>, <span class='st'>"2001"</span>, <span class='st'>"2000"</span>, <span class='st'>"2010"</span>)
-  )
-<span class='fu'>unbreak_rows</span>(<span class='no'>bball</span>, <span class='st'>"Most"</span>, <span class='no'>v2</span>)</div><div class='output co'>#&gt; <span class='message'>1 match</span></div><div class='output co'>#&gt;                v1                    v2                   v3
-#&gt; 1          Player Most points in a game Season (year ending)
-#&gt; 2 Sleve McDichael                    55                 2001
-#&gt; 3     Dean Wesrey                    43                 2000
-#&gt; 4  Karl Dandleton                    41                 2010</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>example_spreadsheet</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/boutiques.xlsx"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"unheadr"</span>)
+<span class='fu'>annotate_mf_all</span>(<span class='no'>example_spreadsheet</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 7 x 6</span><span>
+#&gt;   `Store Location`    Q1_2012     Q1_2013     Q1_2014     Q1_2015     Q1_2016   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> (highlighted-FFADC… (highlight… (bolded, h… (highlight… (highlight… (bolded, …
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> (highlighted-FFADC… (highlight… (highlight… (highlight… (bolded, h… (highligh…
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> (highlighted-FFF37… (bolded, h… (highlight… (highlight… (highlight… (highligh…
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> (highlighted-FFADC… (highlight… (bolded, h… (bolded, h… (bolded, h… (highligh…
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> (highlighted-FFADC… (highlight… (highlight… (highlight… (highlight… (highligh…
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> (highlighted-FFF37… (bolded, h… (highlight… (bolded, h… (highlight… (bolded, …
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> (italic, highlight… (highlight… (highlight… (highlight… (highlight… (highligh…</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

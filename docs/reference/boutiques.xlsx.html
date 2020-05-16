@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Merge rows up — unbreak_rows • unheadr</title>
+<title>boutiques.xlsx spreadsheet — boutiques.xlsx • unheadr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,12 @@
 
 
 
-<meta property="og:title" content="Merge rows up — unbreak_rows" />
-<meta property="og:description" content="Merge rows up" />
+<meta property="og:title" content="boutiques.xlsx spreadsheet — boutiques.xlsx" />
+<meta property="og:description" content="Open XML Format Spreadsheet with 1 sheet, 6 columns, and 8 rows. Toy dataset
+with Q1 profits for different store locations. Additional information
+is encoded as meaningful formatting. Bold indicates losses (negative values),
+colors indicate continent, and italic indicates a second location in the same
+city." />
 <meta property="og:image" content="unheadr.liomys.mx/logo.png" />
 
 
@@ -131,62 +135,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Merge rows up</h1>
-    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/unbreak_rows.R'><code>R/unbreak_rows.R</code></a></small>
-    <div class="hidden name"><code>unbreak_rows.Rd</code></div>
+    <h1>boutiques.xlsx spreadsheet</h1>
+    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/dataset_documentation.R'><code>R/dataset_documentation.R</code></a></small>
+    <div class="hidden name"><code>boutiques.xlsx.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Merge rows up</p>
+    <p>Open XML Format Spreadsheet with 1 sheet, 6 columns, and 8 rows. Toy dataset
+with Q1 profits for different store locations. Additional information
+is encoded as meaningful formatting. Bold indicates losses (negative values),
+colors indicate continent, and italic indicates a second location in the same
+city.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>unbreak_rows</span>(<span class='no'>df</span>, <span class='no'>regex</span>, <span class='no'>ogcol</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" "</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>df</th>
-      <td><p>A data frame with at least two contiguous rows to be merged.</p></td>
-    </tr>
-    <tr>
-      <th>regex</th>
-      <td><p>A regular expression to identify sets of rows to be merged,
-meant for the leading of the two contiguous rows.</p></td>
-    </tr>
-    <tr>
-      <th>ogcol</th>
-      <td><p>Variable with the text strings to match.</p></td>
-    </tr>
-    <tr>
-      <th>sep</th>
-      <td><p>Character string to separate the unified values (default is
-space).</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>A tibble or data frame with merged rows. Values of the
-  lagging rows are pasted onto the values in the leading row, whitespace is
-  squished, and the lagging row is dropped.</p>
+    <p>This data is used in the example for `annotate_mf_all()`.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>bball</span> <span class='kw'>&lt;-</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-    <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-    <span class='kw'>v1</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
-      <span class='st'>"Player"</span>, <span class='fl'>NA</span>, <span class='st'>"Sleve McDichael"</span>, <span class='st'>"Dean Wesrey"</span>,
-      <span class='st'>"Karl Dandleton"</span>
-    ),
-    <span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Most points"</span>, <span class='st'>"in a game"</span>, <span class='st'>"55"</span>, <span class='st'>"43"</span>, <span class='st'>"41"</span>),
-    <span class='kw'>v3</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Season"</span>, <span class='st'>"(year ending)"</span>, <span class='st'>"2001"</span>, <span class='st'>"2000"</span>, <span class='st'>"2010"</span>)
-  )
-<span class='fu'>unbreak_rows</span>(<span class='no'>bball</span>, <span class='st'>"Most"</span>, <span class='no'>v2</span>)</div><div class='output co'>#&gt; <span class='message'>1 match</span></div><div class='output co'>#&gt;                v1                    v2                   v3
-#&gt; 1          Player Most points in a game Season (year ending)
-#&gt; 2 Sleve McDichael                    55                 2001
-#&gt; 3     Dean Wesrey                    43                 2000
-#&gt; 4  Karl Dandleton                    41                 2010</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

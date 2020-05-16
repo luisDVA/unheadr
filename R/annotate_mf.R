@@ -1,6 +1,6 @@
 #' Annotate meaningful formatting
 #'
-#' @param xlfilepath Path to spreadsheet file (xls or xlsx).
+#' @param xlfilepath Path to a single-sheet spreadsheet file (xls or xlsx).
 #' @param orig Variable to annotate formatting in.
 #' @param new Name of new variable with cell formatting pasted as a string.
 #'
@@ -8,8 +8,10 @@
 #'   text.
 #' @details At this point, only four popular approaches for meaningful
 #'   formatting (bold, italic, underline, cell highlighting) are hardcoded in
-#'   the function. The HTML code of the fill color used for cell highlighting is
-#'   also appended in the output.
+#'   the function. `sheets`, `skip`, and `range` arguments for spreadsheet input
+#'   are not supported. The HTML code of the fill color used for cell
+#'   highlighting is also appended in the output. Ensure the data in the
+#'   spreadsheet are rectangular before running.
 #' @examples
 #' example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
 #' annotate_mf(example_spreadsheet, orig = Task, new = Task_annotated)
@@ -25,6 +27,10 @@ annotate_mf <- function(xlfilepath, orig, new) {
     stop("Check the spreadsheet for empty values in the header row")
   }
   m_formatting <- tidyxl::xlsx_cells(xlfilepath)
+  rowtally <- dplyr::count(m_formatting, row)
+  if (length(unique(rowtally$n)) != 1) {
+    stop("Data in spreadsheet does not appear to be rectangular (this includes multisheet files)")
+  }
   format_defs <- tidyxl::xlsx_formats(xlfilepath)
 
   # meaningful formatting
@@ -81,7 +87,7 @@ annotate_mf <- function(xlfilepath, orig, new) {
   )
   # build annotation strings
   formatted$highlighted <- ifelse(formatted$highlighted != "",
-    paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
+                                  paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
   )
   formatted$hl_color <- NULL
   formatted$newvar <-
@@ -95,8 +101,8 @@ annotate_mf <- function(xlfilepath, orig, new) {
   formatted <- dplyr::mutate(
     formatted,
     !!new := ifelse(test = .data$newvar != "",
-      yes = paste0("(", .data$newvar, ") ", !!orig),
-      no = !!orig
+                    yes = paste0("(", .data$newvar, ") ", !!orig),
+                    no = !!orig
     )
   )
   formatted$newvar <- NULL

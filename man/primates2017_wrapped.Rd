@@ -4,7 +4,8 @@
 \name{primates2017_wrapped}
 \alias{primates2017_wrapped}
 \title{Comparative data for two species of primates}
-\format{A data frame with 9 rows and 6 variables:
+\format{
+A data frame with 9 rows and 6 variables:
 \describe{
     \item{scientific_name}{scientific names, see reference}
     \item{common_name}{vernacular name, as listed in Estrada et al.
@@ -14,7 +15,8 @@
     \item{mass_kg}{mean body mass in kilograms}
     \item{country}{Countries where the species is present, from IUCN Red
         List assessments}
-}}
+}
+}
 \source{
 Estrada, Alejandro, et al. "Impending extinction crisis of the
         world's primates: Why primates matter." Science Advances 3.1 (2017):

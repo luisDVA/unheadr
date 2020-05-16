@@ -30,8 +30,8 @@ You can install the CRAN release or the development version with:
 install.packages("unheadr")
 
 # Or install the development version from GitHub with:
-# install.packages("devtools")
-devtools::install_github("luisDVA/unheadr")
+# install.packages("remotes")
+remotes::install_github("luisDVA/unheadr")
 ```
 
 Some of the possible uses of `unheadr` are now described in this
@@ -45,7 +45,7 @@ DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
 
 ## Usage
 
-**untangle2() function**
+**`untangle2()`**
 
 `untangle2()` puts embedded subheaders into their own variable, using
 regular expressions to identify them.
@@ -108,7 +108,7 @@ untangle2(primates2017, "DAE$", scientific_name, family)
 untangle2(primates2017, "Asia|Madagascar|Mainland Africa|Neotropics", scientific_name, region)
 ```
 
-The function can be used with `magrittr` pipes as a dplyr-type verb.
+The function can be used with `magrittr` pipes as a `dplyr`-type verb.
 
 ``` r
 primates2017 %>%
@@ -143,11 +143,7 @@ primates2017 %>%
 Now we can easily perform grouping operations and summarize the data
 (e.g. calculating average body mass by Family).
 
-At this point, refer to the links in the vignette and the function help
-for more information and examples on the use of the other helper
-functions.
-
-**unbreak\_vals() function**
+**`unbreak_vals()`**
 
 This is a niche function for very specific uses. It uses regex to fix
 values that are broken across two rows. This usually happens when we are
@@ -169,7 +165,7 @@ We can match the opening brackets with regex.
 unbreak_vals(dogsDesc,"^\\(",dogs, dogs_unbroken)
 ```
 
-**unwrap\_cols() function**
+**`unwrap_cols()`**
 
 Use this function to unwrap and glue values that have been wrapped
 across multiple rows for presentation purposes, with an inconsistent
@@ -200,7 +196,7 @@ Paste the wrapped elements, separating with commas.
 unwrap_cols(nyk, groupingVar = player, separator = ", ")
 ```
 
-**unbreak\_rows() function**
+**`unbreak_rows()`**
 
 This function merges sets of two contiguous rows ‘upwards’ by pasting
 the values of the lagging row to the values of the leading row
@@ -265,17 +261,24 @@ The resulting table:
 | Glenallen Mixon | 109                       | 2004                 |
 | Rey McSriff     | 104                       | 2002                 |
 
-**annotate\_mf() function**
+**`annotate_mf()` and `annotate_mf_all()`**
 
 Sometimes embedded subheaders can’t be matched by content or context,
 but they share the same formatting in a spreadsheet file.
 
-The `annotate_mf()` function flattens four common approaches to confer
-meaningful formatting to cells and adds this as a character string to
-the target
+`annotate_mf()` flattens four common approaches to confer meaningful
+formatting to cells and adds this as a character string to the target
 variable.
 
 ``` r
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
 annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
+```
+
+`annotate_mf_all()` applies the same approach to all values in the
+dataset.
+
+``` r
+example_spreadsheet_all <- system.file("extdata/boutiques.xlsx", package = "unheadr")
+annotate_mf(example_spreadsheet_all)
 ```

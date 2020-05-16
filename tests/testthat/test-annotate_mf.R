@@ -14,6 +14,12 @@ test_that("error when spreadsheet has empty or NA values in the header row", {
   )
 })
 
+test_that("error when spreadsheet has multiple sheets", {
+  expect_error(
+    annotate_mf("./dog_test_mult.xlsx", orig = emptyvar, new = Task_annotated)
+  )
+})
+
 test_that("error when path does not exist", {
   expect_error(annotate_mf("./wrongpath.xlsx",
                            orig = emptyvar, new = Task_annotated))

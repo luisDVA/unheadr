@@ -59,11 +59,23 @@
 #' into three categories which appear along with their average scores as
 #' embedded subheaders with meaningful formatting.
 #'
-#' @name dog_test
-#'
-#' @section dog_test.xlsx:
 #' This data is used in the example for `annotate_mf()`.
+#'
+#' @name dog_test.xlsx
 #'
 #' @source Items are modified from the checklist written by Junior Watson.
 #' @references http://www.dogtrainingbasics.com/checklist-well-behaved-dog/
+NULL
+#' boutiques.xlsx spreadsheet
+#'
+#' Open XML Format Spreadsheet with 1 sheet, 6 columns, and 8 rows. Toy dataset
+#' with Q1 profits for different store locations. Additional information
+#' is encoded as meaningful formatting. Bold indicates losses (negative values),
+#' colors indicate continent, and italic indicates a second location in the same
+#' city.
+#'
+#' This data is used in the example for `annotate_mf_all()`.
+#'
+#' @name boutiques.xlsx
+#'
 NULL

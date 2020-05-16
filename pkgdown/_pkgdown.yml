@@ -43,10 +43,12 @@ reference:
   desc:
   contents:
     - '`annotate_mf`'
+    - '`annotate_mf_all`'
 - title: Example data
   desc:
   contents:
-  - '`dog_test`'
+  - '`boutiques.xlsx`'
+  - '`dog_test.xlsx`'
   - '`primates2017`'
   - '`primates2017_broken`'
   - '`primates2017_wrapped`'

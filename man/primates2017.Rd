@@ -4,7 +4,8 @@
 \name{primates2017}
 \alias{primates2017}
 \title{Comparative data for 54 species of primates}
-\format{A data frame with 69 rows and 4 variables:
+\format{
+A data frame with 69 rows and 4 variables:
 \describe{
     \item{scientific_name}{scientific names, with geographic region and
     taxonomic family embedded as subheaders.}
@@ -12,7 +13,8 @@
         (2017)}
     \item{red_list_status}{IUCN Red List Status in January 2017}
     \item{mass_kg}{mean body mass in kilograms}
-}}
+}
+}
 \source{
 Estrada, Alejandro, et al. "Impending extinction crisis of the
         world's primates: Why primates matter." Science Advances 3.1 (2017):

@@ -4,7 +4,8 @@
 \name{primates2017_broken}
 \alias{primates2017_broken}
 \title{Comparative data for 16 species of primates with some broken values}
-\format{A data frame with 19 rows and 4 variables:
+\format{
+A data frame with 19 rows and 4 variables:
 \describe{
     \item{scientific_name}{scientific names, with embedded subheaders
         for geographic region and taxonomic family and broken values}
@@ -12,7 +13,8 @@
         (2017)}
     \item{red_list_status}{IUCN Red List Status in January 2017}
     \item{mass_kg}{mean body mass in kilograms}
-}}
+}
+}
 \source{
 Estrada, Alejandro, et al. "Impending extinction crisis of the
         world's primates: Why primates matter." Science Advances 3.1 (2017):

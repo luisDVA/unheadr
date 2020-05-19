@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Comparative data for 54 species of primates — primates2017 • unheadr</title>
+<title>Vertical character string alignment through regular expressions — regex_valign • unheadr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Comparative data for 54 species of primates — primates2017" />
-<meta property="og:description" content="A dataset with embedded subheaders." />
+<meta property="og:title" content="Vertical character string alignment through regular expressions — regex_valign" />
+<meta property="og:description" content="Aligning strings with regex." />
 <meta property="og:image" content="unheadr.liomys.mx/logo.png" />
 
 
@@ -131,36 +131,56 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Comparative data for 54 species of primates</h1>
-    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/dataset_documentation.R'><code>R/dataset_documentation.R</code></a></small>
-    <div class="hidden name"><code>primates2017.Rd</code></div>
+    <h1>Vertical character string alignment through regular expressions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/regex_valign.R'><code>R/regex_valign.R</code></a></small>
+    <div class="hidden name"><code>regex_valign.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset with embedded subheaders.</p>
+    <p>Aligning strings with regex.</p>
     </div>
 
-    <pre class="usage"><span class='no'>primates2017</span></pre>
+    <pre class="usage"><span class='fu'>regex_valign</span>(<span class='no'>stringvec</span>, <span class='no'>regex_ai</span>, <span class='kw'>sep_str</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>stringvec</th>
+      <td><p>A character vector with one element for each line.</p></td>
+    </tr>
+    <tr>
+      <th>regex_ai</th>
+      <td><p>A regular expression matching the position for alignment.</p></td>
+    </tr>
+    <tr>
+      <th>sep_str</th>
+      <td><p>Optional character vector that will be inserted at the
+positions matched by the regular expression.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame with 69 rows and 4 variables:</p><dl'>
-    <dt>scientific_name</dt><dd><p>scientific names, with geographic region and
-    taxonomic family embedded as subheaders.</p></dd>
-    <dt>common_name</dt><dd><p>vernacular name, as listed in Estrada et al.
-        (2017)</p></dd>
-    <dt>red_list_status</dt><dd><p>IUCN Red List Status in January 2017</p></dd>
-    <dt>mass_kg</dt><dd><p>mean body mass in kilograms</p></dd>
+    <p>A character vector with one element for each line, with padding
+  inserted at the matched postitions so that elements are vertically aligned
+  across lines.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-</dl>
+    <p>This function is based on `textutils::valign()`, and may be handy
+  for reading fixed width files, text, or tables parsed from PDFs.</p>
 
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>guests</span> <span class='kw'>&lt;-</span>
+<span class='kw pkg'>readr</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_lines.html'>read_lines</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"6       COAHUILA        20/03/2020
+7       COAHUILA             20/03/2020
+18 BAJA CALIFORNIA     16/03/2020
+109       CDMX      12/03/2020
+1230   QUERETARO       21/03/2020"</span>))
 
-    <p>Estrada, Alejandro, et al. "Impending extinction crisis of the
-        world's primates: Why primates matter." Science Advances 3.1 (2017):
-        e1600946. <a href='http://advances.sciencemag.org/content/3/1/e1600946.full'>http://advances.sciencemag.org/content/3/1/e1600946.full</a></p>
-
+<span class='co'># align at first uppercase word boundary , inserting a separator</span>
+<span class='fu'>regex_valign</span>(<span class='no'>guests_lines</span>, <span class='st'>"\\b(?=[A-Z])"</span>, <span class='st'>" - "</span>)</div><div class='output co'>#&gt; <span class='error'>Error in regex_valign(guests_lines, "\\b(?=[A-Z])", " - "): object 'guests_lines' not found</span></div><div class='input'><span class='co'># align dates at end of string</span>
+<span class='fu'>regex_valign</span>(<span class='no'>guests_lines</span>, <span class='st'>"\\b(?=[0-9]{2}[\\/]{1}[0-9]{2}[\\/]{1}[0-9]{4}$)"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in regex_valign(guests_lines, "\\b(?=[0-9]{2}[\\/]{1}[0-9]{2}[\\/]{1}[0-9]{4}$)"): object 'guests_lines' not found</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

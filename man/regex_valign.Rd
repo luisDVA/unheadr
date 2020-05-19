@@ -28,14 +28,14 @@ This function is based on `textutils::valign()`, and may be handy
 }
 \examples{
 guests <-
-readr::read_lines(c("6       COAHUILA        20/03/2020
+  unlist(strsplit(c("6       COAHUILA        20/03/2020
 7       COAHUILA             20/03/2020
 18 BAJA CALIFORNIA     16/03/2020
 109       CDMX      12/03/2020
-1230   QUERETARO       21/03/2020"))
+1230   QUERETARO       21/03/2020"), "\n"))
 
 # align at first uppercase word boundary , inserting a separator
-regex_valign(guests_lines, "\\\\b(?=[A-Z])", " - ")
+regex_valign(guests, "\\\\b(?=[A-Z])", " - ")
 # align dates at end of string
-regex_valign(guests_lines, "\\\\b(?=[0-9]{2}[\\\\/]{1}[0-9]{2}[\\\\/]{1}[0-9]{4}$)")
+regex_valign(guests, "\\\\b(?=[0-9]{2}[\\\\/]{1}[0-9]{2}[\\\\/]{1}[0-9]{4}$)")
 }

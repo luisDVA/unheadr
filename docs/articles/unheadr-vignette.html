@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">unheadr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2.9000</span>
       </span>
     </div>
 
@@ -275,6 +275,24 @@
 <span class="co">#&gt; 5 (highlighted-FFADC… (highlight… (highlight… (highlight… (highlight… (highligh…</span>
 <span class="co">#&gt; 6 (highlighted-FFF37… (bolded, h… (highlight… (bolded, h… (highlight… (bolded, …</span>
 <span class="co">#&gt; 7 (italic, highlight… (highlight… (highlight… (highlight… (highlight… (highligh…</span></pre></body></html></div>
+</div>
+<div id="character-vectors" class="section level3">
+<h3 class="hasAnchor">
+<a href="#character-vectors" class="anchor"></a>Character vectors</h3>
+<p>Tables from PDF or other similar sources can often be imported into R as character vectors with one element for each line. These can then be parsed as fixed width files or separated into colums. <code>unheadr</code> now includes the <code><a href="../reference/regex_valign.html">regex_valign()</a></code> function for aligning elements in these vectors vertically by inserting padding whitespace (and optional separators) at positions along each line matched by a regular expression.</p>
+<p>This example is based on how data on hotel guests (ID, State of Origin, and Date) in a PDF is parsed by <code><a href="https://docs.ropensci.org/pdftools/reference/pdftools.html">pdftools::pdf_text</a></code>.</p>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"6     COAHUILA        20/03/2020
+712        COAHUILA             20/03/2020"</span>),<span class="st">"\n"</span>))
+
+<span class="no">guests</span>
+<span class="co">#&gt; [1] "6     COAHUILA        20/03/2020"          </span>
+<span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></body></html></div>
+<p>There is inconsistent whitespace between the first and second data ‘columns’. With a regular expression that matches a word boundary and uppercase letters, we can adjust the whitespace so that the matched positions are the same across lines.</p>
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="../reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)
+<span class="co">#&gt; [1] "6          COAHUILA        20/03/2020"     </span>
+<span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></body></html></div>
+<p>This output is easier to parse with <code>readr</code> or other data-munging approaches.</p>
 </div>
 </div>
 <div id="further-reading" class="section level2">

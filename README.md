@@ -282,3 +282,19 @@ dataset.
 example_spreadsheet_all <- system.file("extdata/boutiques.xlsx", package = "unheadr")
 annotate_mf(example_spreadsheet_all)
 ```
+
+Lastly, `regex_valign()` can adjust the whitespace (padding) within a
+character vector with one element per line, for easier parsing with
+`readr`.
+
+``` r
+guests <- 
+  unlist(strsplit(c("6     COAHUILA        20/03/2020
+712        COAHUILA             20/03/2020"),"\n"))
+guests
+regex_valign(guests, "\\b(?=[A-Z])")
+```
+
+The inconsistent whitespace between the elements in each line can be
+adjusted after matching a position of interest through regular
+expressions.

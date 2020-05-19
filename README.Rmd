@@ -130,7 +130,6 @@ Now we can easily perform grouping operations and summarize the data (e.g. calcu
 
 
 
-
 **`unbreak_vals()`**
 
 This is a niche function for very specific uses. It uses regex to fix values that are broken across two rows. This usually happens when we are formatting a table and we need to fit it on a page.
@@ -258,18 +257,16 @@ example_spreadsheet_all <- system.file("extdata/boutiques.xlsx", package = "unhe
 annotate_mf(example_spreadsheet_all)
 ```
 
-Lastly, `regex_valign()` can adjust the whitespace and padding within a character vector with one element per line, for easier parsing with `readr`.
+Lastly, `regex_valign()` can adjust the whitespace (padding) within a character vector with one element per line, for easier parsing with `readr`.
 
-```{r}
+```r
 guests <- 
   unlist(strsplit(c("6     COAHUILA        20/03/2020
 712        COAHUILA             20/03/2020"),"\n"))
 guests
+regex_valign(guests, "\\b(?=[A-Z])")
 ```
 
 The inconsistent whitespace between the elements in each line can be adjusted after matching a position of interest through regular expressions.
 
-```{r}
-regex_valign(guests, "\\b(?=[A-Z])")
-```
 

@@ -611,6 +611,13 @@
 <p><code><a href="reference/annotate_mf_all.html">annotate_mf_all()</a></code> applies the same approach to all values in the dataset.</p>
 <div class="sourceCode" id="cb11"><pre class="r"><span class="no">example_spreadsheet_all</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/boutiques.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
 <span class="fu"><a href="reference/annotate_mf.html">annotate_mf</a></span>(<span class="no">example_spreadsheet_all</span>)</pre></div>
+<p>Lastly, <code><a href="reference/regex_valign.html">regex_valign()</a></code> can adjust the whitespace (padding) within a character vector with one element per line, for easier parsing with <code>readr</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"6     COAHUILA        20/03/2020
+712        COAHUILA             20/03/2020"</span>),<span class="st">"\n"</span>))
+<span class="no">guests</span>
+<span class="fu"><a href="reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)</pre></div>
+<p>The inconsistent whitespace between the elements in each line can be adjusted after matching a position of interest through regular expressions.</p>
 </div>
 </div>
   </div>

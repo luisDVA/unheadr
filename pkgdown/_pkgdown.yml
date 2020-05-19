@@ -39,6 +39,10 @@ reference:
   - '`unbreak_vals`'
   - '`untangle2`'
   - '`unwrap_cols`'
+- title: General data cleaning
+  desc:
+  contents:
+  - '`regex_valign`'
 - title: Spreadsheet annotation
   desc:
   contents:

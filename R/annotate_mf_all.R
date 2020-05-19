@@ -1,5 +1,7 @@
 #' Annotate meaningful formatting for all cells
 #'
+#' Turns cell formatting into annotations for all values across all variables.
+#'
 #' @param xlfilepath Path to a single-sheet spreadsheet file (xls or xlsx).
 #'
 #' @return A tibble with meaningful formatting embedded as text for all rows and
@@ -84,7 +86,7 @@ annotate_mf_all <- function(xlfilepath) {
     )
     # build annotation strings
     formatted$highlighted <- ifelse(formatted$highlighted != "",
-                                    paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
+      paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
     )
     formatted$hl_color <- NULL
     formatted$newvar <-
@@ -105,5 +107,5 @@ annotate_mf_all <- function(xlfilepath) {
   }
 
   spsheet
-  dplyr::mutate_all(spsheet,stringr::str_remove,"^\\(\\) ")
+  dplyr::mutate_all(spsheet, stringr::str_remove, "^\\(\\) ")
 }

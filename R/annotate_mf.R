@@ -1,5 +1,7 @@
 #' Annotate meaningful formatting
 #'
+#' Turns cell formatting into annotations for values in the target row.
+#'
 #' @param xlfilepath Path to a single-sheet spreadsheet file (xls or xlsx).
 #' @param orig Variable to annotate formatting in.
 #' @param new Name of new variable with cell formatting pasted as a string.
@@ -87,7 +89,7 @@ annotate_mf <- function(xlfilepath, orig, new) {
   )
   # build annotation strings
   formatted$highlighted <- ifelse(formatted$highlighted != "",
-                                  paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
+    paste0(formatted$highlighted, "-", formatted$hl_color), formatted$highlighted
   )
   formatted$hl_color <- NULL
   formatted$newvar <-
@@ -101,8 +103,8 @@ annotate_mf <- function(xlfilepath, orig, new) {
   formatted <- dplyr::mutate(
     formatted,
     !!new := ifelse(test = .data$newvar != "",
-                    yes = paste0("(", .data$newvar, ") ", !!orig),
-                    no = !!orig
+      yes = paste0("(", .data$newvar, ") ", !!orig),
+      no = !!orig
     )
   )
   formatted$newvar <- NULL

@@ -29,10 +29,16 @@ unwrap_cols <- function(df, groupingVar, separator) {
   groupVarFctName <- rlang::as_name(groupingVar)
 
   dffilled <- tidyr::fill(df, !!groupingVar)
-  dffilled_grpd <- dplyr::group_by(dffilled,
-                                   !!groupVarFctName := forcats::fct_inorder(!!groupingVar))
-  dfsummarised <- dplyr::summarise_all(dffilled_grpd,
-                                       ~ paste(na.omit(.), collapse = separator))
-  dplyr::mutate(dfsummarised,
-                !!groupVarFctName := as.character(forcats::fct_inorder(!!groupingVar)))
+  dffilled_grpd <- dplyr::group_by(
+    dffilled,
+    !!groupVarFctName := forcats::fct_inorder(!!groupingVar)
+  )
+  dfsummarised <- dplyr::summarise_all(
+    dffilled_grpd,
+    ~ paste(na.omit(.), collapse = separator)
+  )
+  dplyr::mutate(
+    dfsummarised,
+    !!groupVarFctName := as.character(forcats::fct_inorder(!!groupingVar))
+  )
 }

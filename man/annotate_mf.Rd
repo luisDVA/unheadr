@@ -18,7 +18,7 @@ A tibble with a new column with meaningful formatting embedded as
   text.
 }
 \description{
-Annotate meaningful formatting
+Turns cell formatting into annotations for values in the target row.
 }
 \details{
 At this point, only four popular approaches for meaningful

@@ -3,7 +3,7 @@ context("format parsing")
 test_that("no annotations when there is no formatting", {
   ogsprdsht <- readxl::read_excel("./dog_test_plain.xlsx")
   annot <- annotate_mf_all("./dog_test_plain.xlsx")
-  expect_identical(ogsprdsht[,1],annot[,1])
+  expect_identical(ogsprdsht[, 1], annot[, 1])
 })
 
 test_that("error when spreadsheet has empty or NA values in the header row", {

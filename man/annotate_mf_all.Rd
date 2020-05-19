@@ -14,7 +14,7 @@ A tibble with meaningful formatting embedded as text for all rows and
   columns.
 }
 \description{
-Annotate meaningful formatting for all cells
+Turns cell formatting into annotations for all values across all variables.
 }
 \details{
 At this point, only four popular approaches for meaningful

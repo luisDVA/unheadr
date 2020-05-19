@@ -1,4 +1,4 @@
-# unheadr (development version)
+# unheadr 0.2.2
 * Adds `annotate_mf_all()` to translate meaningful formatting for all cells in a spreadsheet.
 
 # unheadr 0.1.0

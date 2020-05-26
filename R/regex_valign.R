@@ -10,9 +10,10 @@
 #' @return A character vector with one element for each line, with padding
 #'   inserted at the matched postitions so that elements are vertically aligned
 #'   across lines.
-#' @details This function is based on `textutils::valign()`, and may be handy
-#'   for reading fixed width files, text, or tables parsed from PDFs.
-#'
+#' @details Written mainly for reading fixed width files, text, or tables parsed
+#'   from PDFs.
+#' @seealso This function is based loosely on
+#'   \code{\link[textutils:valign]{textutils::valign()}}.
 #' @examples
 #' guests <-
 #'   unlist(strsplit(c("6       COAHUILA        20/03/2020

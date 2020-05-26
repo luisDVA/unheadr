@@ -23,8 +23,8 @@ A character vector with one element for each line, with padding
 Aligning strings with regex.
 }
 \details{
-This function is based on `textutils::valign()`, and may be handy
-  for reading fixed width files, text, or tables parsed from PDFs.
+Written mainly for reading fixed width files, text, or tables parsed
+  from PDFs.
 }
 \examples{
 guests <-
@@ -38,4 +38,8 @@ guests <-
 regex_valign(guests, "\\\\b(?=[A-Z])", " - ")
 # align dates at end of string
 regex_valign(guests, "\\\\b(?=[0-9]{2}[\\\\/]{1}[0-9]{2}[\\\\/]{1}[0-9]{4}$)")
+}
+\seealso{
+This function is based loosely on
+  \code{\link[textutils:valign]{textutils::valign()}}.
 }

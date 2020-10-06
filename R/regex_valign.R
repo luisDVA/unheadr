@@ -8,7 +8,7 @@
 #'   positions matched by the regular expression.
 #'
 #' @return A character vector with one element for each line, with padding
-#'   inserted at the matched postitions so that elements are vertically aligned
+#'   inserted at the matched positions so that elements are vertically aligned
 #'   across lines.
 #' @details Written mainly for reading fixed width files, text, or tables parsed
 #'   from PDFs.

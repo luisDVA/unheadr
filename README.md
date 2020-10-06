@@ -62,7 +62,7 @@ data rectangle. This is a pretty common practice. This looks OK and is
 easy to read, but hard to work with (for example: calculating group-wise
 summaries).
 
-In this example, values for an implicit ‘geographic region’ variable and
+In this example, values for an implicit “geographic region” variable and
 an implicit ‘taxonomic family’ variable are embedded in the column that
 contains the observational units (the scientific names of various
 primates).
@@ -198,9 +198,9 @@ unwrap_cols(nyk, groupingVar = player, separator = ", ")
 
 **`unbreak_rows()`**
 
-This function merges sets of two contiguous rows ‘upwards’ by pasting
-the values of the lagging row to the values of the leading row
-(identified using regular expressions).
+This function merges sets of two contiguous rows upwards by pasting the
+values of the lagging row to the values of the leading row (identified
+using regular expressions).
 
 The following table of basketball records has two sets of header rows
 with values broken across two contiguous rows.

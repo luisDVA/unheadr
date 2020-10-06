@@ -20,7 +20,7 @@ A data frame with 9 rows and 6 variables:
 \source{
 Estrada, Alejandro, et al. "Impending extinction crisis of the
         world's primates: Why primates matter." Science Advances 3.1 (2017):
-        e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
+        e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
 }
 \usage{
 primates2017_wrapped

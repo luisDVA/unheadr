@@ -16,7 +16,7 @@ positions matched by the regular expression.}
 }
 \value{
 A character vector with one element for each line, with padding
-  inserted at the matched postitions so that elements are vertically aligned
+  inserted at the matched positions so that elements are vertically aligned
   across lines.
 }
 \description{

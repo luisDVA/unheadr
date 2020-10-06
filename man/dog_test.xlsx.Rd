@@ -8,7 +8,7 @@ Items are modified from the checklist written by Junior Watson.
 }
 \description{
 Open XML Format Spreadsheet with 1 sheet, 2 columns, and 12 rows. Items
-describe various taks or behaviors that dogs can be evaluated on, assigned
+describe various tasks or behaviors that dogs can be evaluated on, assigned
 into three categories which appear along with their average scores as
 embedded subheaders with meaningful formatting.
 }

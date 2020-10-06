@@ -21,8 +21,9 @@ Imports:
     magrittr,
     tidyxl,
     readxl,
-    tibble
-RoxygenNote: 7.1.0
+    tibble,
+    textutils
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,

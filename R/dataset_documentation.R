@@ -13,7 +13,7 @@
 #' }
 #' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'         world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'         e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
+#'         e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
 "primates2017"
 #' Comparative data for 16 species of primates with some broken values
 #'
@@ -32,7 +32,7 @@
 #' }
 #' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'         world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'         e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
+#'         e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
 "primates2017_broken"
 #' Comparative data for two species of primates
 #'
@@ -50,12 +50,12 @@
 #' }
 #' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'         world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'         e1600946. \url{http://advances.sciencemag.org/content/3/1/e1600946.full}
+#'         e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
 "primates2017_wrapped"
 #' dog_test.xlsx spreadsheet
 #'
 #' Open XML Format Spreadsheet with 1 sheet, 2 columns, and 12 rows. Items
-#' describe various taks or behaviors that dogs can be evaluated on, assigned
+#' describe various tasks or behaviors that dogs can be evaluated on, assigned
 #' into three categories which appear along with their average scores as
 #' embedded subheaders with meaningful formatting.
 #'

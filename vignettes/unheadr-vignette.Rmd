@@ -71,7 +71,7 @@ In this case, we can use `unbreak_vals()` to 'unbreak' the lines in the 'Games' 
 
 ```{r}
 OGames %>%
-  unbreak_vals("^[0-9]", Games, Games_unbroken, .slice_groups = TRUE) %>%
+  unbreak_vals("^[0-9]", Games, Games_unbroken, slice_groups = TRUE) %>%
   select(Games_unbroken, everything())
 ```
 
@@ -136,7 +136,7 @@ One of the example files bundled with `unheadr` looks like this:
 
 <img src="dogtest.png" width="300" />
 
-Font formatting and cell highlighting is being used to label an embedded grouping variable (meaningful formatting). The `annotate_mf()` function flattens the formatting into a character string describing the formatting. The HTML code of the colors used for cell highlighting is also included.
+Font formatting and cell highlighting is being used to label an embedded grouping variable (meaningful formatting). The `annotate_mf()` function flattens the formatting into a character string describing the formatting. The hex8 code of the colors used for cell or text highlighting is also included.
 
 ```{r}
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")

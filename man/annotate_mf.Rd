@@ -21,10 +21,10 @@ A tibble with a new column with meaningful formatting embedded as
 Turns cell formatting into annotations for values in the target row.
 }
 \details{
-At this point, only four popular approaches for meaningful
-  formatting (bold, italic, underline, cell highlighting) are hardcoded in
+At this point, seven popular approaches for meaningful
+  formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
   the function. `sheets`, `skip`, and `range` arguments for spreadsheet input
-  are not supported. The HTML code of the fill color used for cell
+  are not supported. The hex8 code of the fill color used for text color and cell
   highlighting is also appended in the output. Ensure the data in the
   spreadsheet are rectangular before running.
 }

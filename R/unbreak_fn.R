@@ -7,7 +7,7 @@
 #' @param ogcol Variable to unbreak.
 #' @param newcol Name of the new variable with the unified values.
 #' @param sep Character string to separate the unified values (default is space).
-#' @param .slice_groups When `.slice_groups = FALSE`  (the default), the extra
+#' @param slice_groups When `slice_groups = FALSE`  (the default), the extra
 #'   rows and the variable with broken values will not be dropped.
 #' @return A tibble with unbroken values. The variable that originally
 #' contained the broken values gets dropped, and the new variable with the
@@ -23,7 +23,7 @@
 #' unbreak_vals(primates2017_broken, "^[a-z]", scientific_name, sciname_new)
 #' @importFrom rlang :=
 #' @export
-unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", .slice_groups = FALSE) {
+unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", slice_groups = FALSE) {
   ogcol <- dplyr::enquo(ogcol)
   newcol <- dplyr::enquo(newcol)
 
@@ -35,7 +35,7 @@ unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", .slice_groups = FA
     )
   )
 
-  if (.slice_groups == FALSE) {
+  if (slice_groups == FALSE) {
     dffilled_groups <- tidyr::fill(dfind, !!newcol)
     return(dffilled_groups)
   } else {

@@ -19,4 +19,8 @@
 * Minor patch to address breaking changes planned for `tibble`. 
 
 # unheadr 0.2.2
-* Adds `annotate_mf_all()` to translate meaningful formatting for all cells in a spreadsheet, and `regex_valign()` for aligning character strings with one element for each line.
+* Adds `annotate_mf_all()` function to translate meaningful formatting for all cells in a spreadsheet.
+* Adds `regex_valign()` function for aligning character strings with one element for each line.
+* Adds `mash_colnames` to make many header rows into column names.
+* Drops leading dot notation from `unbreak_vals` _slice/__groups_ argument.
+

@@ -7,7 +7,7 @@
 #' @param ogcol Variable to unbreak.
 #' @param newcol Name of the new variable with the unified values.
 #' @param sep Character string to separate the unified values (default is space).
-#' @param slice_groups When `slice_groups = FALSE`  (the default), the extra
+#' @param slice_groups When \code{slice_groups = FALSE}  (the default), the extra
 #'   rows and the variable with broken values will not be dropped.
 #' @return A tibble with unbroken values. The variable that originally
 #' contained the broken values gets dropped, and the new variable with the

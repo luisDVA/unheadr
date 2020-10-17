@@ -19,7 +19,7 @@ values.}
 
 \item{sep}{Character string to separate the unified values (default is space).}
 
-\item{slice_groups}{When `slice_groups = FALSE`  (the default), the extra
+\item{slice_groups}{When \code{slice_groups = FALSE}  (the default), the extra
 rows and the variable with broken values will not be dropped.}
 }
 \value{

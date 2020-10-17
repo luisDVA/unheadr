@@ -23,4 +23,4 @@
 * Adds `regex_valign()` function for aligning character strings with one element for each line.
 * Adds `mash_colnames` to make many header rows into column names.
 * Drops leading dot notation from `unbreak_vals` _slice/__groups_ argument.
-
+* Two datasets added for teaching and demonstration purposes.

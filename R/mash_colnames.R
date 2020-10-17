@@ -79,6 +79,8 @@ mash_colnames <- function(df,
   # Get the top n rows of the data frame that contain the column names
   new_namesdf <- df[seq_len(n_name_rows), ]
   new_namesdf$ROW_ID <- 1:n_name_rows
+  # All variables as character
+  new_namesdf <- data.frame(lapply(new_namesdf, as.character), stringsAsFactors = FALSE)
   # Melt for easy manipulation
   # Assign a column position
   # Make "" into NA for easier replacement

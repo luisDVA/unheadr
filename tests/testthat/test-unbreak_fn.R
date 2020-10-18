@@ -29,6 +29,32 @@ test_that("nrows unchanged when slice_groups = FALSE", {
 })
 
 
+test_that("errors for missing argument specifications", {
+  df <- data.frame(
+    groupvar = c("Grp a", "Grp", "b", "Grp c", "Grp d"),
+    vals = c(2, 1, NA, 1, 1), stringsAsFactors = FALSE
+  )
+
+  expect_error(
+    unbreak_vals(df,
+      regex = "nothing", ogcol = groupvar,
+      slice_groups = FALSE
+    )
+  )
+  expect_error(
+    unbreak_vals(df,
+      regex = "nothing", newcol = unbrokencol,
+      slice_groups = FALSE
+    )
+  )
+  expect_error(
+    unbreak_vals(df,
+      ogcol = groupvar, newcol = unbroken,
+      slice_groups = FALSE
+    )
+  )
+})
+
 test_that("unbreak_rows stops if regex does not match anything", {
   bball <-
     data.frame(

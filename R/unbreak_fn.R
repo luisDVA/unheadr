@@ -24,8 +24,20 @@
 #' @importFrom rlang :=
 #' @export
 unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", slice_groups = FALSE) {
+  if (missing(regex)) {
+    stop("no regular expression provided")
+  }
+  if (missing(ogcol)) {
+    stop("must specify a name for 'ogcol'")
+  }
+  if (missing(newcol)) {
+    stop("must specify a name for 'newcol'")
+  }
+
   ogcol <- dplyr::enquo(ogcol)
   newcol <- dplyr::enquo(newcol)
+
+
 
   dfind <- dplyr::mutate(
     df,

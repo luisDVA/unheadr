@@ -9,7 +9,7 @@
 #' @param sep Character string to separate the unified values (default is space).
 #' @param slice_groups When \code{slice_groups = FALSE}  (the default), the extra
 #'   rows and the variable with broken values will not be dropped.
-#' @return A tibble with unbroken values. The variable that originally
+#' @return A tibble with 'unbroken' values. The variable that originally
 #' contained the broken values gets dropped, and the new variable with the
 #' unified values is placed as the first column.
 #'

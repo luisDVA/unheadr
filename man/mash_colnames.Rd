@@ -17,7 +17,7 @@ mash_colnames(
 across the top n rows.}
 
 \item{n_name_rows}{Number of rows at the top of the data to be used to create
-the new variable (column) names.}
+the new variable (column) names. Must be >= 1.}
 
 \item{keep_names}{If TRUE, existing names will be included in building the
 new variable names. Defaults to TRUE.}

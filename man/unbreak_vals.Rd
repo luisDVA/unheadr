@@ -23,7 +23,7 @@ values.}
 rows and the variable with broken values will not be dropped.}
 }
 \value{
-A tibble with unbroken values. The variable that originally
+A tibble with 'unbroken' values. The variable that originally
 contained the broken values gets dropped, and the new variable with the
 unified values is placed as the first column.
 }

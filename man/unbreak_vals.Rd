@@ -4,7 +4,7 @@
 \alias{unbreak_vals}
 \title{Unbreak values using regex to match the broken half of the value}
 \usage{
-unbreak_vals(df, regex, ogcol, newcol, sep = " ", slice_groups = FALSE)
+unbreak_vals(df, regex, ogcol, newcol, sep = " ", slice_rows)
 }
 \arguments{
 \item{df}{A data frame with one or more values within a variable broken up
@@ -17,15 +17,15 @@ values.}
 
 \item{newcol}{Name of the new variable with the unified values.}
 
-\item{sep}{Character string to separate the unified values (default is space).}
-
-\item{slice_groups}{When \code{slice_groups = FALSE}  (the default), the extra
-rows and the variable with broken values will not be dropped.}
+\item{sep}{Character string to separate the unified values (default is
+space).}
 }
 \value{
 A tibble with 'unbroken' values. The variable that originally
-contained the broken values gets dropped, and the new variable with the
-unified values is placed as the first column.
+  contained the broken values gets dropped, and the new variable with the
+  unified values is placed as the first column. The \code{slice_groups}
+  argument is now deprecated; the extra rows and the variable with broken
+  values will be dropped.
 }
 \description{
 Unbreak values using regex to match the broken half of the value

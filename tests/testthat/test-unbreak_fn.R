@@ -7,27 +7,26 @@ test_that("0-row output when regex does not match", {
   )
   dfub <- unbreak_vals(df,
     regex = "nothing", ogcol = groupvar,
-    newcol = r_ub, slice_groups = TRUE
+    newcol = r_ub
   )
   expect_true(
     nrow(dfub) == 0
   )
 })
 
-test_that("nrows unchanged when slice_groups = FALSE", {
+test_that("warning when slice_groups has a value", {
   df <- data.frame(
     groupvar = c("Grp a", "Grp", "b", "Grp c", "Grp d"),
     vals = c(2, 1, NA, 1, 1), stringsAsFactors = FALSE
   )
-  dfub <- unbreak_vals(df,
-    regex = "nothing", ogcol = groupvar,
-    newcol = r_ub, slice_groups = FALSE
-  )
-  expect_true(
-    nrow(dfub) == nrow(df)
+
+  expect_warning(
+    unbreak_vals(df,
+      regex = "nothing", ogcol = groupvar,
+      newcol = r_ub, slice_groups = FALSE
+    )
   )
 })
-
 
 test_that("errors for missing argument specifications", {
   df <- data.frame(

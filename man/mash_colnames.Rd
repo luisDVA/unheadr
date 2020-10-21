@@ -22,8 +22,8 @@ the new variable (column) names. Must be >= 1.}
 \item{keep_names}{If TRUE, existing names will be included in building the
 new variable names. Defaults to TRUE.}
 
-\item{sliding_headers}{If TRUE, empty values in the header row be filled
-column-wise. Defaults to FALSE. See details.}
+\item{sliding_headers}{If TRUE, empty values in the first (topmost) header
+header row be filled column-wise. Defaults to FALSE. See details.}
 
 \item{sep}{Character string to separate the unified values (default is
 underscore).}
@@ -39,53 +39,56 @@ Make many header rows into column names
 Tables are often shared with the column names broken up across the
   first few rows. This function takes the number of rows at the top of a
   table that hold the broken up names and whether or not to include the
-  names, and mashes the values columnwise into a single string for each column.
-  The \code{keep_names} argument can be helpful for tables we imported using a
-  `skip` argument. If \code{keep_names} is set to `FALSE`, adjust the value of
-  `n_name_rows` accordingly. This function will throw a warning when `NA`
-  values end up in the variable names. \code{sliding_headers} can be used for
-  tables with ragged names in which not every column has a value in the very
-  first row. In these cases attribution by adjacency is assumed, and when
-  \code{sliding_headers} is set to `TRUE` the names are filled rowwise. This can be
-  useful for tables reporting experimental designs in an untidy manner.
+  names, and mashes the values column-wise into a single string for each
+  column. The \code{keep_names} argument can be helpful for tables we
+  imported using a `skip` argument. If \code{keep_names} is set to `FALSE`,
+  adjust the value of `n_name_rows` accordingly. This function will throw a
+  warning when `NA` values end up in the variable names.
+  \code{sliding_headers} can be used for tables with ragged names in which
+  not every column has a value in the very first row. In these cases
+  attribution by adjacency is assumed, and when \code{sliding_headers} is set
+  to `TRUE` the names in the topmost row are filled row-wise. This can be
+  useful for tables reporting survey data or experimental designs in an
+  untidy manner.
 }
 \examples{
 babies <-
-data.frame(
-  stringsAsFactors = FALSE,
-  Baby = c(NA, NA, "Angie", "Yean", "Pierre"),
-  Age = c("in", "months", "11", "9", "7"),
-  Weight = c("kg", NA, "2", "3", "4"),
-  Ward = c(NA, NA, "A", "B", "C")
-)
+  data.frame(
+    stringsAsFactors = FALSE,
+    Baby = c(NA, NA, "Angie", "Yean", "Pierre"),
+    Age = c("in", "months", "11", "9", "7"),
+    Weight = c("kg", NA, "2", "3", "4"),
+    Ward = c(NA, NA, "A", "B", "C")
+  )
 # Including the object names
-mash_colnames(babies,n_name_rows = 2,keep_names = TRUE)
+mash_colnames(babies, n_name_rows = 2, keep_names = TRUE)
 
 babies_skip <-
- data.frame(
-   stringsAsFactors = FALSE,
-   X1 = c("Baby", NA, NA, "Jennie", "Yean", "Pierre"),
-   X2 = c("Age", "in", "months", "11", "9", "7"),
-   X3 = c("Hospital", NA, NA, "A", "B", "A")
-)
+  data.frame(
+    stringsAsFactors = FALSE,
+    X1 = c("Baby", NA, NA, "Jennie", "Yean", "Pierre"),
+    X2 = c("Age", "in", "months", "11", "9", "7"),
+    X3 = c("Hospital", NA, NA, "A", "B", "A")
+  )
 #' # Discarding the automatically-generated names (X1, X2, etc...)
-mash_colnames(babies_skip,n_name_rows = 3,keep_names = FALSE)
+mash_colnames(babies_skip, n_name_rows = 3, keep_names = FALSE)
 
 fish_experiment <-
- data.frame(
-   stringsAsFactors = FALSE,
-   X1 = c("Sample", NA, "Pacific", "Atlantic", "Freshwater"),
-   X2 = c("Larvae", "Control", "12", "11", "10"),
-   X3 = c(NA, "Low Dose", "11", "12", "8"),
-   X4 = c(NA, "High Dose", "8", "7", "9"),
-   X5 = c("Adult", "Control", "13", "13", "8"),
-   X6 = c(NA, "Low Dose", "13", "12", "7"),
-   X7 = c(NA, "High Dose", "10", "10", "9")
-)
+  data.frame(
+    stringsAsFactors = FALSE,
+    X1 = c("Sample", NA, "Pacific", "Atlantic", "Freshwater"),
+    X2 = c("Larvae", "Control", "12", "11", "10"),
+    X3 = c(NA, "Low Dose", "11", "12", "8"),
+    X4 = c(NA, "High Dose", "8", "7", "9"),
+    X5 = c("Adult", "Control", "13", "13", "8"),
+    X6 = c(NA, "Low Dose", "13", "12", "7"),
+    X7 = c(NA, "High Dose", "10", "10", "9")
+  )
 # Ragged names
-mash_colnames(fish_experiment, n_name_rows= 2,
-  keep_names = FALSE,sliding_headers = TRUE)
-
+mash_colnames(fish_experiment,
+  n_name_rows = 2,
+  keep_names = FALSE, sliding_headers = TRUE
+)
 }
 \author{
 This function was originally contributed by Jarrett Byrnes through a

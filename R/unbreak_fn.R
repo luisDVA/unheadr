@@ -8,6 +8,7 @@
 #' @param newcol Name of the new variable with the unified values.
 #' @param sep Character string to separate the unified values (default is
 #'   space).
+#' @param slice_groups Deprecated. See details and Package News.
 #' @return A tibble with 'unbroken' values. The variable that originally
 #'   contained the broken values gets dropped, and the new variable with the
 #'   unified values is placed as the first column. The \code{slice_groups}

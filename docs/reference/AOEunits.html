@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Unwrap values and clean up NAs used as padding — unwrap_cols • unheadr</title>
+<title>Statistics for game units in Age of Empires II: Definitive Edition — AOEunits • unheadr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,10 @@
 
 
 
-<meta property="og:title" content="Unwrap values and clean up NAs used as padding — unwrap_cols" />
-<meta property="og:description" content="Unwrap values and clean up NAs used as padding" />
+<meta property="og:title" content="Statistics for game units in Age of Empires II: Definitive Edition — AOEunits" />
+<meta property="og:description" content="A dataset with the numerical values that determine the behavior and
+performance of selected military units available in AoE2:DE (July 2020 Game
+Update)." />
 <meta property="og:image" content="unheadr.liomys.mx/logo.png" />
 
 
@@ -131,64 +133,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Unwrap values and clean up NAs used as padding</h1>
-    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/unwrap_fn.R'><code>R/unwrap_fn.R</code></a></small>
-    <div class="hidden name"><code>unwrap_cols.Rd</code></div>
+    <h1>Statistics for game units in Age of Empires II: Definitive Edition</h1>
+    <small class="dont-index">Source: <a href='https://github.com/luisDVA/unheadr/blob/master/R/dataset_documentation.R'><code>R/dataset_documentation.R</code></a></small>
+    <div class="hidden name"><code>AOEunits.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Unwrap values and clean up NAs used as padding</p>
+    <p>A dataset with the numerical values that determine the behavior and
+performance of selected military units available in AoE2:DE (July 2020 Game
+Update).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>unwrap_cols</span>(<span class='no'>df</span>, <span class='no'>groupingVar</span>, <span class='no'>separator</span>)</pre>
+    <pre class="usage"><span class='no'>AOEunits</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>df</th>
-      <td><p>A data frame with wrapped values and an inconsistent number of NA
-values used to as within-group padding.</p></td>
-    </tr>
-    <tr>
-      <th>groupingVar</th>
-      <td><p>Name of the variable describing the observational units.</p></td>
-    </tr>
-    <tr>
-      <th>separator</th>
-      <td><p>Character string defining the separator that will delimit
-the elements of the unwrapped value.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A summarized tibble. Order is preserved in the grouping variable by
-  making it a factor.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <p>A data frame with 128 observations of 19 variables:</p><dl'>
+    <dt>unit</dt><dd><p>Unit name</p></dd>
+    <dt>building</dt><dd><p>Building in which each unit is trained</p></dd>
+    <dt>type</dt><dd><p>Unit class</p></dd>
+    <dt>age</dt><dd><p>Age at which the unit becomes trainable</p></dd>
+    <dt>cost_wood</dt><dd><p>Unit cost in Wood</p></dd>
+    <dt>cost_food</dt><dd><p>Unit cost in Food</p></dd>
+    <dt>cost_gold</dt><dd><p>Unit cost in Gold</p></dd>
+    <dt>build_time</dt><dd><p>Training time in seconds</p></dd>
+    <dt>rate_of_fire</dt><dd><p>Attack speed</p></dd>
+    <dt>attack_delay</dt><dd><p>Retasking time</p></dd>
+    <dt>movement_speed</dt><dd><p>Travel speed on land</p></dd>
+    <dt>line_of_sight</dt><dd><p>Vision over the surrounding area</p></dd>
+    <dt>hit_points</dt><dd><p>Unit health</p></dd>
+    <dt>min_range</dt><dd><p>Minimum attacking range for ranged units</p></dd>
+    <dt>range</dt><dd><p>Maximum attacking range for ranged units</p></dd>
+    <dt>damage</dt><dd><p>Damage inflicted per attack</p></dd>
+    <dt>accuracy</dt><dd><p>Chance that an attack will be on target</p></dd>
+    <dt>melee_armor</dt><dd><p>Armor against melee attacks</p></dd>
+    <dt>pierce_armor</dt><dd><p>Armor against projectiles</p></dd>
 
-    <p>This is roughly the opposite of `tidyr::separate_rows()`.</p>
+</dl>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>primates2017_wrapped</span>)
-<span class='co'># using commas to separate elements</span>
-<span class='fu'>unwrap_cols</span>(<span class='no'>primates2017_wrapped</span>, <span class='no'>scientific_name</span>, <span class='st'>", "</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2 x 6</span><span>
-#&gt;   scientific_name  common_name   habitat     red_list_status mass_kg country    
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> Trachypithecus … Germain's La… evergreen … EN              8.83    Cambodia, …
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> Nycticebus mena… Philippine S… lowland fo… VU              0.28    Brunei Dar…</div><div class='input'>
-<span class='co'># separating with semicolons</span>
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-  <span class='kw'>ounits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='fl'>NA</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>, <span class='st'>"D"</span>, <span class='fl'>NA</span>),
-  <span class='kw'>vals</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>3</span>)
-)
-<span class='fu'>unwrap_cols</span>(<span class='no'>df</span>, <span class='no'>ounits</span>, <span class='st'>";"</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 4 x 2</span><span>
-#&gt;   ounits vals 
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> A      1;2  
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> B      2    
-#&gt; </span><span style='color: #BCBCBC;'>3</span><span> C      3    
-#&gt; </span><span style='color: #BCBCBC;'>4</span><span> D      1;3  </div></span></pre>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Age of Empires II © Microsoft Corporation. This dataset was created
+  under Microsoft's "Game Content Usage Rules"
+  <a href='https://www.xbox.com/en-us/developers/rules'>https://www.xbox.com/en-us/developers/rules</a> using assets from Age of
+  Empires II, and it is not endorsed by or affiliated with Microsoft. All
+  information shown is an interpretation of data collected in-game with no
+  guarantee on the accuracy of any of the data presented.</p>
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

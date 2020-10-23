@@ -165,29 +165,29 @@
   text.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>At this point, only four popular approaches for meaningful
-  formatting (bold, italic, underline, cell highlighting) are hardcoded in
+    <p>At this point, seven popular approaches for meaningful
+  formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
   the function. `sheets`, `skip`, and `range` arguments for spreadsheet input
-  are not supported. The HTML code of the fill color used for cell
+  are not supported. The hex8 code of the fill color used for text color and cell
   highlighting is also appended in the output. Ensure the data in the
   spreadsheet are rectangular before running.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>example_spreadsheet</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/dog_test.xlsx"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"unheadr"</span>)
 <span class='fu'>annotate_mf</span>(<span class='no'>example_spreadsheet</span>, <span class='kw'>orig</span> <span class='kw'>=</span> <span class='no'>Task</span>, <span class='kw'>new</span> <span class='kw'>=</span> <span class='no'>Task_annotated</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 11 x 3</span><span>
-#&gt;    Task                          Task_annotated                            Score
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                                     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Outdoor activities            (bolded, highlighted-FFFFF200) Outdoor a…  7.67
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Walks on a loose leash witho… Walks on a loose leash without pulling     7   
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Walks without chasing bicycl… Walks without chasing bicycles, animals,…  6   
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Greets friends and strangers… Greets friends and strangers without jum… 10   
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Home behavior                 (bolded, highlighted-FFFFF200) Home beha…  8.5 
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Moves location when directed… Moves location when directed without gro…  9   
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Does not rush through doorwa… Does not rush through doorways             8   
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> General social skills and ob… (bolded, highlighted-FFFFF200) General s…  7   
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Can play or interact appropr… Can play or interact appropriately with …  7   
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Can be groomed or handled wi… Can be groomed or handled without squirm…  8   
-#&gt; </span><span style='color: #BCBCBC;'>11</span><span> Stops barking on command      Stops barking on command                   6   </div></span></pre>
+#&gt;    Task                           Task_annotated                           Score
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                          </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                                    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Outdoor activities             (bold, highlight-FFFFF200) Outdoor acti…  7.67
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Walks on a loose leash withou… Walks on a loose leash without pulling    7   
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Walks without chasing bicycle… Walks without chasing bicycles, animals…  6   
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Greets friends and strangers … Greets friends and strangers without ju… 10   
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Home behavior                  (bold, highlight-FFFFF200) Home behavior  8.5 
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Moves location when directed … Moves location when directed without gr…  9   
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Does not rush through doorways Does not rush through doorways            8   
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> General social skills and obe… (bold, highlight-FFFFF200) General soci…  7   
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Can play or interact appropri… Can play or interact appropriately with…  7   
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Can be groomed or handled wit… Can be groomed or handled without squir…  8   
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> Stops barking on command       Stops barking on command                  6   </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

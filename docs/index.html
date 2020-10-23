@@ -91,9 +91,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="unheadr" class="section level1">
+<div id="unheadr-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#unheadr" class="anchor"></a>unheadr <img src="reference/figures/logosmall.png" align="right">
+<a href="#unheadr-" class="anchor"></a>unheadr <img src="reference/figures/logosmall.png" align="right">
 </h1></div>
 <!-- badges: start -->
 
@@ -108,18 +108,21 @@
 <span class="co"># Or install the development version from GitHub with:</span>
 <span class="co"># install.packages("remotes")</span>
 <span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"luisDVA/unheadr"</span>)</pre></div>
-<p>Some of the possible uses of <code>unheadr</code> are now described in this publication:</p>
+<p>The reasoning behind the package and some of the possible uses of <code>unheadr</code> are described in this publication:</p>
 <p>Verde Arregoitia, L. D., Cooper, N., D’Elía, G. (2018). Good practices for sharing analysis-ready data in mammalogy and biodiversity research. <em>Hystrix, the Italian Journal of Mammalogy</em>, 29(2), 155-161. <a href="https://doi.org/10.4404/hystrix-00133-2018">Open Access, DOI 10.4404/hystrix-00133-2018</a></p>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
+<p>Load the package first.</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">unheadr</span>)</pre></div>
+<div id="main-functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#main-functions" class="anchor"></a>Main functions</h3>
 <p><strong><code><a href="reference/untangle2.html">untangle2()</a></code></strong></p>
 <p><code><a href="reference/untangle2.html">untangle2()</a></code> puts embedded subheaders into their own variable, using regular expressions to identify them.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">primates2017</span>)
-<span class="co"># head(primates2017,n=20)</span></pre></div>
-<p>The first half of the dataset looks like the table below. Note that there are rows that correspond to values in grouping variables, which should be in their own column. Instead, they are embedded within the data rectangle. This is a pretty common practice. This looks OK and is easy to read, but hard to work with (for example: calculating group-wise summaries).</p>
-<p>In this example, values for an implicit ‘geographic region’ variable and an implicit ‘taxonomic family’ variable are embedded in the column that contains the observational units (the scientific names of various primates).</p>
+<p>In the data below (a subset of a bundled dataset which can be loaded with <code><a href="https://rdrr.io/r/utils/data.html">data(primates2017)</a></code>), there are rows that correspond to values in grouping variables. These should be in their own column. Instead, they are embedded within the data rectangle. This is a common practice in many disciplines. This data presentation looks OK and is easy to read, but hard to work with (for example: calculating group-wise summaries).</p>
+<p>In this example, values for an implicit “geographic region” variable and an implicit “taxonomic family” variable are embedded in the column that contains the observational units (the scientific names of various primates).</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left">scientific_name</th>
@@ -159,66 +162,6 @@
 <td align="right">NA</td>
 </tr>
 <tr class="even">
-<td align="left">Trachypithecus auratus</td>
-<td align="left">East Javan Langur</td>
-<td align="left">VU</td>
-<td align="right">6.25</td>
-</tr>
-<tr class="odd">
-<td align="left">Semnopithecus johnii</td>
-<td align="left">Nilgiri Langur</td>
-<td align="left">VU</td>
-<td align="right">11.45</td>
-</tr>
-<tr class="even">
-<td align="left">Trachypithecus delacouri</td>
-<td align="left">Delacour’s Langur</td>
-<td align="left">CR</td>
-<td align="right">NA</td>
-</tr>
-<tr class="odd">
-<td align="left">Trachypithecus leucocephalus</td>
-<td align="left">White-headed Langur</td>
-<td align="left">CR</td>
-<td align="right">8.00</td>
-</tr>
-<tr class="even">
-<td align="left">Presbytis comata</td>
-<td align="left">Javan Langur</td>
-<td align="left">EN</td>
-<td align="right">6.70</td>
-</tr>
-<tr class="odd">
-<td align="left">Macaca pagensis</td>
-<td align="left">Pagai Macaque</td>
-<td align="left">CR</td>
-<td align="right">4.50</td>
-</tr>
-<tr class="even">
-<td align="left">Trachypithecus germaini</td>
-<td align="left">Germain’s Langur</td>
-<td align="left">EN</td>
-<td align="right">8.83</td>
-</tr>
-<tr class="odd">
-<td align="left">Macaca munzala</td>
-<td align="left">Arunachal Macaque</td>
-<td align="left">EN</td>
-<td align="right">NA</td>
-</tr>
-<tr class="even">
-<td align="left">Macaca mulatta</td>
-<td align="left">Rhesus Macaque</td>
-<td align="left">LC</td>
-<td align="right">9.90</td>
-</tr>
-<tr class="odd">
-<td align="left">Semnopithecus hector</td>
-<td align="left">Terai Sacred Langur</td>
-<td align="left">NT</td>
-<td align="right">15.20</td>
-</tr>
-<tr class="even">
 <td align="left">HYLOBATIDAE</td>
 <td align="left">NA</td>
 <td align="left">NA</td>
@@ -242,26 +185,11 @@
 <td align="left">CR</td>
 <td align="right">7.71</td>
 </tr>
-<tr class="even">
-<td align="left">LORISIDAE</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="right">NA</td>
-</tr>
 </tbody>
 </table>
-<p>For a tidier structure, these subheaders embedded in the <em>scientific_name</em> column need to be plucked out and placed in their own variable. This is the main objective of <code>unheadr</code> and what <code><a href="reference/untangle2.html">untangle2()</a></code> was made for.</p>
-<p>If these subheaders can be matched in bulk with a regular expression because they share a prefix, suffix, or anything in common, we can save a lot of time. Otherwise, they can be matched by name.</p>
-<p>Sorting out the mess in the example data:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="co"># put taxonomic family in its own variable (matches the suffix "DAE")</span>
-<span class="fu"><a href="reference/untangle2.html">untangle2</a></span>(<span class="no">primates2017</span>, <span class="st">"DAE$"</span>, <span class="no">scientific_name</span>, <span class="no">family</span>)
-<span class="co"># put geographic regions in their own variable (matching them all by name)</span>
-<span class="fu"><a href="reference/untangle2.html">untangle2</a></span>(<span class="no">primates2017</span>, <span class="st">"Asia|Madagascar|Mainland Africa|Neotropics"</span>, <span class="no">scientific_name</span>, <span class="no">region</span>)</pre></div>
-<p>The function can be used with <code>magrittr</code> pipes as a <code>dplyr</code>-type verb.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">primates2017</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/untangle2.html">untangle2</a></span>(<span class="st">"DAE$"</span>, <span class="no">scientific_name</span>, <span class="no">family</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/untangle2.html">untangle2</a></span>(<span class="st">"Asia|Madagascar|Mainland Africa|Neotropics"</span>, <span class="no">scientific_name</span>, <span class="no">region</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">n</span> <span class="kw">=</span> <span class="fl">20</span>)</pre></div>
+<p>For a tidier structure, the subheaders embedded in the <em>scientific_name</em> column need to be plucked out and placed in their own variable. This was initially the main objective of <code>unheadr</code> and what <code><a href="reference/untangle2.html">untangle2()</a></code> was made for. The function can be used with <code>magrittr</code> pipes as a <code>dplyr</code>-type verb.</p>
+<p>If these subheaders can be matched in bulk with a regular expression because they share a prefix, suffix, or anything in common, we can save a lot of time. Otherwise, they can be matched by name. For more details, see the examples and vignette.</p>
+<p>The ‘untangled’ version of the data:</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left">scientific_name</th>
@@ -297,86 +225,6 @@
 <td align="left">Asia</td>
 </tr>
 <tr class="even">
-<td align="left">Trachypithecus auratus</td>
-<td align="left">East Javan Langur</td>
-<td align="left">VU</td>
-<td align="right">6.25</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="odd">
-<td align="left">Semnopithecus johnii</td>
-<td align="left">Nilgiri Langur</td>
-<td align="left">VU</td>
-<td align="right">11.45</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="even">
-<td align="left">Trachypithecus delacouri</td>
-<td align="left">Delacour’s Langur</td>
-<td align="left">CR</td>
-<td align="right">NA</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="odd">
-<td align="left">Trachypithecus leucocephalus</td>
-<td align="left">White-headed Langur</td>
-<td align="left">CR</td>
-<td align="right">8.00</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="even">
-<td align="left">Presbytis comata</td>
-<td align="left">Javan Langur</td>
-<td align="left">EN</td>
-<td align="right">6.70</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="odd">
-<td align="left">Macaca pagensis</td>
-<td align="left">Pagai Macaque</td>
-<td align="left">CR</td>
-<td align="right">4.50</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="even">
-<td align="left">Trachypithecus germaini</td>
-<td align="left">Germain’s Langur</td>
-<td align="left">EN</td>
-<td align="right">8.83</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="odd">
-<td align="left">Macaca munzala</td>
-<td align="left">Arunachal Macaque</td>
-<td align="left">EN</td>
-<td align="right">NA</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="even">
-<td align="left">Macaca mulatta</td>
-<td align="left">Rhesus Macaque</td>
-<td align="left">LC</td>
-<td align="right">9.90</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="odd">
-<td align="left">Semnopithecus hector</td>
-<td align="left">Terai Sacred Langur</td>
-<td align="left">NT</td>
-<td align="right">15.20</td>
-<td align="left">CERCOPITHECIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="even">
 <td align="left">Hylobates funereus</td>
 <td align="left">East Bornean Gray Gibbon</td>
 <td align="left">EN</td>
@@ -400,136 +248,90 @@
 <td align="left">HYLOBATIDAE</td>
 <td align="left">Asia</td>
 </tr>
-<tr class="odd">
-<td align="left">Nycticebus menagensis</td>
-<td align="left">Philippine Slow Loris</td>
-<td align="left">VU</td>
-<td align="right">0.28</td>
-<td align="left">LORISIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="even">
-<td align="left">Nycticebus bengalensis</td>
-<td align="left">Bengal Slow Loris</td>
-<td align="left">VU</td>
-<td align="right">1.21</td>
-<td align="left">LORISIDAE</td>
-<td align="left">Asia</td>
-</tr>
-<tr class="odd">
-<td align="left">Allocebus trichotis</td>
-<td align="left">Hairy-eared Dwarf Lemur</td>
-<td align="left">VU</td>
-<td align="right">0.09</td>
-<td align="left">CHEIROGALEIDAE</td>
-<td align="left">Madagascar</td>
-</tr>
-<tr class="even">
-<td align="left">Microcebus tavaratra</td>
-<td align="left">Tavaratra Mouse Lemur</td>
-<td align="left">VU</td>
-<td align="right">0.06</td>
-<td align="left">CHEIROGALEIDAE</td>
-<td align="left">Madagascar</td>
-</tr>
 </tbody>
 </table>
 <p>Now we can easily perform grouping operations and summarize the data (e.g. calculating average body mass by Family).</p>
 <p><strong><code><a href="reference/unbreak_vals.html">unbreak_vals()</a></code></strong></p>
-<p>This is a niche function for very specific uses. It uses regex to fix values that are broken across two rows. This usually happens when we are formatting a table and we need to fit it on a page.</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="no">dogsDesc</span> <span class="kw">&lt;-</span> <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(
-  <span class="kw">dogs</span> <span class="kw">=</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Retriever"</span>, <span class="st">"(Golden)"</span>, <span class="st">"Retriever"</span>, <span class="st">"(Labrador)"</span>, <span class="st">"Bulldog"</span>, <span class="st">"(French)"</span>),
-  <span class="kw">coat</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"long"</span>, <span class="fl">NA</span>, <span class="st">"short"</span>, <span class="fl">NA</span>, <span class="st">"short"</span>, <span class="fl">NA</span>)
-)
+<p>This function uses regex to fix values that are broken across two rows. This usually happens when we are formatting a table and we need to fit it on a page.</p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="co"># Set up a toy dataset</span>
+<span class="no">dogsDesc</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+    <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+    <span class="kw">dogs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+      <span class="st">"Retriever"</span>, <span class="st">"(Golden)"</span>,
+      <span class="st">"Retriever"</span>, <span class="st">"(Labrador)"</span>, <span class="st">"Bulldog"</span>, <span class="st">"(French)"</span>
+    ),
+    <span class="kw">coat</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"long"</span>, <span class="fl">NA</span>, <span class="st">"short"</span>, <span class="fl">NA</span>, <span class="st">"short"</span>, <span class="fl">NA</span>)
+  )
 
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dogsDesc</span>)</pre></div>
+<span class="no">dogsDesc</span>
+<span class="co">#&gt;         dogs  coat</span>
+<span class="co">#&gt; 1  Retriever  long</span>
+<span class="co">#&gt; 2   (Golden)  &lt;NA&gt;</span>
+<span class="co">#&gt; 3  Retriever short</span>
+<span class="co">#&gt; 4 (Labrador)  &lt;NA&gt;</span>
+<span class="co">#&gt; 5    Bulldog short</span>
+<span class="co">#&gt; 6   (French)  &lt;NA&gt;</span></pre></div>
 <p>We can match the opening brackets with regex.</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/unbreak_vals.html">unbreak_vals</a></span>(<span class="no">dogsDesc</span>,<span class="st">"^\\("</span>,<span class="no">dogs</span>, <span class="no">dogs_unbroken</span>)</pre></div>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/unbreak_vals.html">unbreak_vals</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dogsDesc</span>, <span class="kw">regex</span> <span class="kw">=</span> <span class="st">"^\\("</span>, <span class="kw">ogcol</span> <span class="kw">=</span> <span class="no">dogs</span>, <span class="kw">newcol</span> <span class="kw">=</span> <span class="no">dogs_unbroken</span>)
+<span class="co">#&gt;          dogs_unbroken  coat</span>
+<span class="co">#&gt; 1   Retriever (Golden)  long</span>
+<span class="co">#&gt; 2 Retriever (Labrador) short</span>
+<span class="co">#&gt; 3     Bulldog (French) short</span></pre></div>
 <p><strong><code><a href="reference/unwrap_cols.html">unwrap_cols()</a></code></strong></p>
 <p>Use this function to unwrap and glue values that have been wrapped across multiple rows for presentation purposes, with an inconsistent number of empty or <code>NA</code> values padding out the columns.</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="co"># set up the data</span>
-<span class="no">nyk</span> <span class="kw">&lt;-</span> <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span>(
-  ~<span class="no">player</span>, ~<span class="no">listed_height_m.</span>, ~<span class="no">teams_chronological</span>, ~<span class="no">position</span>,
-  <span class="st">"Marcus Camby"</span>, <span class="fl">2.11</span>, <span class="st">"Raptors"</span>, <span class="st">"Power forward"</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Knicks"</span>, <span class="st">"Center"</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Nuggets"</span>, <span class="fl">NA</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Clippers"</span>, <span class="fl">NA</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Trail Blazers"</span>, <span class="fl">NA</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Rockets"</span>, <span class="fl">NA</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Knicks"</span>, <span class="fl">NA</span>,
-  <span class="st">"Allan Houston"</span>, <span class="fl">1.98</span>, <span class="st">"Pistons"</span>, <span class="st">"Shooting guard"</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Knicks"</span>, <span class="fl">NA</span>,
-  <span class="st">"Latrell Sprewell"</span>, <span class="fl">1.96</span>, <span class="st">"Warriors"</span>, <span class="st">"Small forward"</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Knicks"</span>, <span class="fl">NA</span>,
-  <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Timberwolves"</span>, <span class="fl">NA</span>
-)</pre></div>
-<p>Paste the wrapped elements, separating with commas.</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/unwrap_cols.html">unwrap_cols</a></span>(<span class="no">nyk</span>, <span class="kw">groupingVar</span> <span class="kw">=</span> <span class="no">player</span>, <span class="kw">separator</span> <span class="kw">=</span> <span class="st">", "</span>)</pre></div>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="co"># Set up the data</span>
+<span class="no">nyk</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+    <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+    <span class="kw">player</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+      <span class="st">"Marcus Camby"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>,
+      <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Allan Houston"</span>, <span class="fl">NA</span>,
+      <span class="st">"Latrell Sprewell"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>
+    ),
+    <span class="kw">listed_height_m.</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+      <span class="fl">2.11</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>,
+      <span class="fl">NA</span>, <span class="fl">1.98</span>, <span class="fl">NA</span>, <span class="fl">1.96</span>, <span class="fl">NA</span>, <span class="fl">NA</span>
+    ),
+    <span class="kw">teams_chronological</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+      <span class="st">"Raptors"</span>, <span class="st">"Knicks"</span>,
+      <span class="st">"Nuggets"</span>, <span class="st">"Clippers"</span>, <span class="st">"Trail Blazers"</span>,
+      <span class="st">"Rockets"</span>, <span class="st">"Knicks"</span>, <span class="st">"Pistons"</span>,
+      <span class="st">"Knicks"</span>, <span class="st">"Warriors"</span>, <span class="st">"Knicks"</span>,
+      <span class="st">"Timberwolves"</span>
+    ),
+    <span class="kw">position</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+      <span class="st">"Power forward"</span>, <span class="st">"Center"</span>,
+      <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>,
+      <span class="st">"Shooting guard"</span>, <span class="fl">NA</span>, <span class="st">"Small forward"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>
+    )
+  )
+<span class="no">nyk</span>
+<span class="co">#&gt;              player listed_height_m. teams_chronological       position</span>
+<span class="co">#&gt; 1      Marcus Camby             2.11             Raptors  Power forward</span>
+<span class="co">#&gt; 2              &lt;NA&gt;               NA              Knicks         Center</span>
+<span class="co">#&gt; 3              &lt;NA&gt;               NA             Nuggets           &lt;NA&gt;</span>
+<span class="co">#&gt; 4              &lt;NA&gt;               NA            Clippers           &lt;NA&gt;</span>
+<span class="co">#&gt; 5              &lt;NA&gt;               NA       Trail Blazers           &lt;NA&gt;</span>
+<span class="co">#&gt; 6              &lt;NA&gt;               NA             Rockets           &lt;NA&gt;</span>
+<span class="co">#&gt; 7              &lt;NA&gt;               NA              Knicks           &lt;NA&gt;</span>
+<span class="co">#&gt; 8     Allan Houston             1.98             Pistons Shooting guard</span>
+<span class="co">#&gt; 9              &lt;NA&gt;               NA              Knicks           &lt;NA&gt;</span>
+<span class="co">#&gt; 10 Latrell Sprewell             1.96            Warriors  Small forward</span>
+<span class="co">#&gt; 11             &lt;NA&gt;               NA              Knicks           &lt;NA&gt;</span>
+<span class="co">#&gt; 12             &lt;NA&gt;               NA        Timberwolves           &lt;NA&gt;</span></pre></div>
+<p>Unwrap the elements in the variable that defines the groups, separating with commas.</p>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/unwrap_cols.html">unwrap_cols</a></span>(<span class="no">nyk</span>, <span class="kw">groupingVar</span> <span class="kw">=</span> <span class="no">player</span>, <span class="kw">separator</span> <span class="kw">=</span> <span class="st">", "</span>)
+<span class="co">#&gt; # A tibble: 3 x 4</span>
+<span class="co">#&gt;   player     listed_height_m. teams_chronological                  position     </span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;            &lt;chr&gt;                                &lt;chr&gt;        </span>
+<span class="co">#&gt; 1 Marcus Ca… 2.11             Raptors, Knicks, Nuggets, Clippers,… Power forwar…</span>
+<span class="co">#&gt; 2 Allan Hou… 1.98             Pistons, Knicks                      Shooting gua…</span>
+<span class="co">#&gt; 3 Latrell S… 1.96             Warriors, Knicks, Timberwolves       Small forward</span></pre></div>
 <p><strong><code><a href="reference/unbreak_rows.html">unbreak_rows()</a></code></strong></p>
-<p>This function merges sets of two contiguous rows ‘upwards’ by pasting the values of the lagging row to the values of the leading row (identified using regular expressions).</p>
+<p>This function merges sets of two contiguous rows upwards by pasting the values of the lagging row to the values of the leading row (identified using regular expressions).</p>
 <p>The following table of basketball records has two sets of header rows with values broken across two contiguous rows.</p>
-<table class="table">
-<thead><tr class="header">
-<th align="left">v1</th>
-<th align="left">v2</th>
-<th align="left">v3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Player</td>
-<td align="left">Most points</td>
-<td align="left">Season</td>
-</tr>
-<tr class="even">
-<td align="left">NA</td>
-<td align="left">in a game</td>
-<td align="left">(year ending)</td>
-</tr>
-<tr class="odd">
-<td align="left">Sleve McDichael</td>
-<td align="left">55</td>
-<td align="left">2001</td>
-</tr>
-<tr class="even">
-<td align="left">Dean Wesrey</td>
-<td align="left">43</td>
-<td align="left">2000</td>
-</tr>
-<tr class="odd">
-<td align="left">Karl Dandleton</td>
-<td align="left">41</td>
-<td align="left">2010</td>
-</tr>
-<tr class="even">
-<td align="left">Player</td>
-<td align="left">Most varsity</td>
-<td align="left">Season</td>
-</tr>
-<tr class="odd">
-<td align="left">NA</td>
-<td align="left">games played</td>
-<td align="left">(year ending)</td>
-</tr>
-<tr class="even">
-<td align="left">Mike Sernandez</td>
-<td align="left">111</td>
-<td align="left">2005</td>
-</tr>
-<tr class="odd">
-<td align="left">Glenallen Mixon</td>
-<td align="left">109</td>
-<td align="left">2004</td>
-</tr>
-<tr class="even">
-<td align="left">Rey McSriff</td>
-<td align="left">104</td>
-<td align="left">2002</td>
-</tr>
-</tbody>
-</table>
-<p><code><a href="reference/unbreak_rows.html">unbreak_rows()</a></code> merges these rows if we can match them with a common pattern.</p>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="no">bball</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+<div class="sourceCode" id="cb7"><pre class="r"><span class="no">bball</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
   <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
   <span class="kw">v1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
     <span class="st">"Player"</span>, <span class="fl">NA</span>, <span class="st">"Sleve McDichael"</span>, <span class="st">"Dean Wesrey"</span>,
@@ -549,75 +351,105 @@
     <span class="st">"(year ending)"</span>, <span class="st">"2005"</span>,
     <span class="st">"2004"</span>, <span class="st">"2002"</span>
   )
-)
+)</pre></div>
+<p><code><a href="reference/unbreak_rows.html">unbreak_rows()</a></code> merges these rows if we can match them with a common pattern.</p>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="co"># Match with regex on variable v2</span>
+<span class="fu"><a href="reference/unbreak_rows.html">unbreak_rows</a></span>(<span class="no">bball</span>, <span class="kw">regex</span> <span class="kw">=</span> <span class="st">"^Most"</span>, <span class="kw">ogcol</span> <span class="kw">=</span> <span class="no">v2</span>)
+<span class="co">#&gt; 2 matches</span>
+<span class="co">#&gt;                v1                        v2                   v3</span>
+<span class="co">#&gt; 1          Player     Most points in a game Season (year ending)</span>
+<span class="co">#&gt; 2 Sleve McDichael                        55                 2001</span>
+<span class="co">#&gt; 3     Dean Wesrey                        43                 2000</span>
+<span class="co">#&gt; 4  Karl Dandleton                        41                 2010</span>
+<span class="co">#&gt; 5          Player Most varsity games played Season (year ending)</span>
+<span class="co">#&gt; 6  Mike Sernandez                       111                 2005</span>
+<span class="co">#&gt; 7 Glenallen Mixon                       109                 2004</span>
+<span class="co">#&gt; 8     Rey McSriff                       104                 2002</span></pre></div>
+<p><strong><code><a href="reference/mash_colnames.html">mash_colnames()</a></code></strong></p>
+<p>When column names are broken up across the top <em>n</em> rows of a data frame or tibble, <code><a href="reference/mash_colnames.html">mash_colnames()</a></code> makes many header rows into column names. Existing names can be kept or ignored.</p>
+<div class="sourceCode" id="cb9"><pre class="r"><span class="co"># Data with broken headers</span>
+<span class="no">babies</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+    <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+    <span class="kw">Baby</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Angie"</span>, <span class="st">"Yean"</span>, <span class="st">"Pierre"</span>),
+    <span class="kw">Age</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"in"</span>, <span class="st">"months"</span>, <span class="st">"11"</span>, <span class="st">"9"</span>, <span class="st">"7"</span>),
+    <span class="kw">Weight</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"kg"</span>, <span class="fl">NA</span>, <span class="st">"2"</span>, <span class="st">"3"</span>, <span class="st">"4"</span>),
+    <span class="kw">Ward</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)
+  )
 
-<span class="co"># Match with regex on variable v2</span>
-<span class="fu"><a href="reference/unbreak_rows.html">unbreak_rows</a></span>(<span class="no">bb3</span>,<span class="st">"^Most"</span>,<span class="no">v2</span>)</pre></div>
-<p>The resulting table:</p>
-<table class="table">
-<thead><tr class="header">
-<th align="left">v1</th>
-<th align="left">v2</th>
-<th align="left">v3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Player</td>
-<td align="left">Most points in a game</td>
-<td align="left">Season (year ending)</td>
-</tr>
-<tr class="even">
-<td align="left">Sleve McDichael</td>
-<td align="left">55</td>
-<td align="left">2001</td>
-</tr>
-<tr class="odd">
-<td align="left">Dean Wesrey</td>
-<td align="left">43</td>
-<td align="left">2000</td>
-</tr>
-<tr class="even">
-<td align="left">Karl Dandleton</td>
-<td align="left">41</td>
-<td align="left">2010</td>
-</tr>
-<tr class="odd">
-<td align="left">Player</td>
-<td align="left">Most varsity games played</td>
-<td align="left">Season (year ending)</td>
-</tr>
-<tr class="even">
-<td align="left">Mike Sernandez</td>
-<td align="left">111</td>
-<td align="left">2005</td>
-</tr>
-<tr class="odd">
-<td align="left">Glenallen Mixon</td>
-<td align="left">109</td>
-<td align="left">2004</td>
-</tr>
-<tr class="even">
-<td align="left">Rey McSriff</td>
-<td align="left">104</td>
-<td align="left">2002</td>
-</tr>
-</tbody>
-</table>
+<span class="no">babies</span>
+<span class="co">#&gt;     Baby    Age Weight Ward</span>
+<span class="co">#&gt; 1   &lt;NA&gt;     in     kg &lt;NA&gt;</span>
+<span class="co">#&gt; 2   &lt;NA&gt; months   &lt;NA&gt; &lt;NA&gt;</span>
+<span class="co">#&gt; 3  Angie     11      2    A</span>
+<span class="co">#&gt; 4   Yean      9      3    B</span>
+<span class="co">#&gt; 5 Pierre      7      4    C</span></pre></div>
+<div class="sourceCode" id="cb10"><pre class="r"><span class="co"># Mash, including the object names</span>
+<span class="fu"><a href="reference/mash_colnames.html">mash_colnames</a></span>(<span class="no">babies</span>, <span class="kw">n_name_rows</span> <span class="kw">=</span> <span class="fl">2</span>, <span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="co">#&gt;     Baby Age_in_months Weight_kg Ward</span>
+<span class="co">#&gt; 3  Angie            11         2    A</span>
+<span class="co">#&gt; 4   Yean             9         3    B</span>
+<span class="co">#&gt; 5 Pierre             7         4    C</span></pre></div>
+<p>For inputs with ragged column names (NA values in the first row), the first row can be filled row-wise before mashing.</p>
+<div class="sourceCode" id="cb11"><pre class="r"><span class="co"># Data with ragged headers</span>
+<span class="no">survey</span> <span class="kw">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+    <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+    <span class="kw">X1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Participant"</span>, <span class="fl">NA</span>, <span class="st">"12"</span>, <span class="st">"34"</span>, <span class="st">"45"</span>, <span class="st">"123"</span>),
+    <span class="kw">X2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+      <span class="st">"How did you hear about us?"</span>,
+      <span class="st">"TV"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>
+    ),
+    <span class="kw">X3</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Social Media"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>),
+    <span class="kw">X4</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Radio"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>),
+    <span class="kw">X5</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Flyer"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>),
+    <span class="kw">X6</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Age"</span>, <span class="fl">NA</span>, <span class="st">"31"</span>, <span class="st">"23"</span>, <span class="st">"19"</span>, <span class="st">"24"</span>)
+  )
+<span class="no">survey</span>
+<span class="co">#&gt;            X1                         X2           X3    X4    X5   X6</span>
+<span class="co">#&gt; 1 Participant How did you hear about us?         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Age</span>
+<span class="co">#&gt; 2        &lt;NA&gt;                         TV Social Media Radio Flyer &lt;NA&gt;</span>
+<span class="co">#&gt; 3          12                       TRUE        FALSE FALSE FALSE   31</span>
+<span class="co">#&gt; 4          34                      FALSE         TRUE  TRUE FALSE   23</span>
+<span class="co">#&gt; 5          45                      FALSE        FALSE FALSE FALSE   19</span>
+<span class="co">#&gt; 6         123                      FALSE        FALSE  TRUE FALSE   24</span></pre></div>
+<div class="sourceCode" id="cb12"><pre class="r"><span class="co"># Ignoring names and using sliding headers</span>
+<span class="fu"><a href="reference/mash_colnames.html">mash_colnames</a></span>(<span class="no">survey</span>,<span class="fl">2</span>,<span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">FALSE</span>,<span class="kw">sliding_headers</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">"_"</span>)
+<span class="co">#&gt;   Participant How did you hear about us?_TV</span>
+<span class="co">#&gt; 3          12                          TRUE</span>
+<span class="co">#&gt; 4          34                         FALSE</span>
+<span class="co">#&gt; 5          45                         FALSE</span>
+<span class="co">#&gt; 6         123                         FALSE</span>
+<span class="co">#&gt;   How did you hear about us?_Social Media How did you hear about us?_Radio</span>
+<span class="co">#&gt; 3                                   FALSE                            FALSE</span>
+<span class="co">#&gt; 4                                    TRUE                             TRUE</span>
+<span class="co">#&gt; 5                                   FALSE                            FALSE</span>
+<span class="co">#&gt; 6                                   FALSE                             TRUE</span>
+<span class="co">#&gt;   How did you hear about us?_Flyer Age</span>
+<span class="co">#&gt; 3                            FALSE  31</span>
+<span class="co">#&gt; 4                            FALSE  23</span>
+<span class="co">#&gt; 5                            FALSE  19</span>
+<span class="co">#&gt; 6                            FALSE  24</span></pre></div>
 <p><strong><code><a href="reference/annotate_mf.html">annotate_mf()</a></code> and <code><a href="reference/annotate_mf_all.html">annotate_mf_all()</a></code></strong></p>
 <p>Sometimes embedded subheaders can’t be matched by content or context, but they share the same formatting in a spreadsheet file.</p>
 <p><code><a href="reference/annotate_mf.html">annotate_mf()</a></code> flattens four common approaches to confer meaningful formatting to cells and adds this as a character string to the target variable.</p>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="no">example_spreadsheet</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/dog_test.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
+<div class="sourceCode" id="cb13"><pre class="r"><span class="no">example_spreadsheet</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/dog_test.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
 <span class="fu"><a href="reference/annotate_mf.html">annotate_mf</a></span>(<span class="no">example_spreadsheet</span>,<span class="kw">orig</span> <span class="kw">=</span> <span class="no">Task</span>, <span class="kw">new</span><span class="kw">=</span><span class="no">Task_annotated</span>)</pre></div>
 <p><code><a href="reference/annotate_mf_all.html">annotate_mf_all()</a></code> applies the same approach to all values in the dataset.</p>
-<div class="sourceCode" id="cb11"><pre class="r"><span class="no">example_spreadsheet_all</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/boutiques.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
+<div class="sourceCode" id="cb14"><pre class="r"><span class="no">example_spreadsheet_all</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/boutiques.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
 <span class="fu"><a href="reference/annotate_mf.html">annotate_mf</a></span>(<span class="no">example_spreadsheet_all</span>)</pre></div>
 <p>Lastly, <code><a href="reference/regex_valign.html">regex_valign()</a></code> can adjust the whitespace (padding) within a character vector with one element per line, for easier parsing with <code>readr</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
+<div class="sourceCode" id="cb15"><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
   <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"6     COAHUILA        20/03/2020
 712        COAHUILA             20/03/2020"</span>),<span class="st">"\n"</span>))
 <span class="no">guests</span>
-<span class="fu"><a href="reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)</pre></div>
+<span class="co">#&gt; [1] "6     COAHUILA        20/03/2020"          </span>
+<span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span>
+<span class="fu"><a href="reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)
+<span class="co">#&gt; [1] "6          COAHUILA        20/03/2020"     </span>
+<span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></div>
 <p>The inconsistent whitespace between the elements in each line can be adjusted after matching a position of interest through regular expressions.</p>
+</div>
 </div>
 </div>
   </div>

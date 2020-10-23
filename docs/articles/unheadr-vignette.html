@@ -86,7 +86,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="unheadr-vignette_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to unheadr</h1>
@@ -113,6 +113,7 @@
 <li>Broken values</li>
 <li>Merged cells and values wrapped within columns</li>
 <li>Broken rows</li>
+<li>Broken headers</li>
 </ul>
 <p><strong>Embedded subheaders</strong> are usually grouping variables embedded into another variable, used to show hierarchical data or create small multiples of data.</p>
 <p>A simple example would be a coffee shop menu:</p>
@@ -164,8 +165,10 @@
 <span class="co">#&gt; 7 2012             &lt;NA&gt;      &lt;NA&gt;</span></pre></body></html></div>
 <p>In this case, we can use <code><a href="../reference/unbreak_vals.html">unbreak_vals()</a></code> to ‘unbreak’ the lines in the ‘Games’ variable, matching the strings that start with numbers.</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">OGames</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/unbreak_vals.html">unbreak_vals</a></span>(<span class="st">"^[0-9]"</span>, <span class="no">Games</span>, <span class="no">Games_unbroken</span>, <span class="kw">.slice_groups</span> <span class="kw">=</span> <span class="fl">TRUE</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/unbreak_vals.html">unbreak_vals</a></span>(<span class="st">"^[0-9]"</span>, <span class="no">Games</span>, <span class="no">Games_unbroken</span>, <span class="kw">slice_groups</span> <span class="kw">=</span> <span class="fl">TRUE</span>) <span class="kw">%&gt;%</span>
   <span class="fu">select</span>(<span class="no">Games_unbroken</span>, <span class="fu">everything</span>())
+<span class="co">#&gt; Warning: argument slice_groups is deprecated; extra rows and the variable with</span>
+<span class="co">#&gt; broken values are now dropped by default.</span>
 <span class="co">#&gt; # A tibble: 5 x 3</span>
 <span class="co">#&gt;   Games_unbroken   Country   Soccer_gold_medal</span>
 <span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;     &lt;chr&gt;            </span>
@@ -195,7 +198,7 @@
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">knicks</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/unwrap_cols.html">unwrap_cols</a></span>(<span class="kw">groupingVar</span> <span class="kw">=</span> <span class="no">player</span>, <span class="kw">separator</span> <span class="kw">=</span> <span class="st">", "</span>)
 <span class="co">#&gt; # A tibble: 2 x 3</span>
 <span class="co">#&gt;   player           teams                          position      </span>
-<span class="co">#&gt; * &lt;chr&gt;            &lt;chr&gt;                          &lt;chr&gt;         </span>
+<span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;                          &lt;chr&gt;         </span>
 <span class="co">#&gt; 1 Allan Houston    Pistons, Knicks                Shooting guard</span>
 <span class="co">#&gt; 2 Latrell Sprewell Warriors, Knicks, Timberwolves Small forward</span></pre></body></html></div>
 <p>This is more or less the opposite to <code>separate_rows()</code> from <code>tidyr</code>.</p>
@@ -237,51 +240,157 @@
 <span class="co">#&gt; 5  Mike Sernandez                   111                 2000</span>
 <span class="co">#&gt; 6 Glenallen Mixon                   109                 2002</span>
 <span class="co">#&gt; 7     Rey McSriff                   104                 2001</span></pre></body></html></div>
+<p><strong>Broken headers</strong> are variable names broken up across the first few rows.</p>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">vehicles</span> <span class="kw">&lt;-</span>
+<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+           <span class="kw">Vehicle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Truck"</span>, <span class="st">"Motorcycle"</span>, <span class="st">"Sedan"</span>, <span class="st">"Van"</span>),
+             <span class="kw">Price</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"in"</span>,<span class="st">"2014"</span>,
+                       <span class="st">"(local currency)"</span>,<span class="st">"50000"</span>,<span class="st">"44000"</span>,<span class="st">"33000"</span>,<span class="st">"50000"</span>),
+             <span class="kw">Color</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"White"</span>),
+         <span class="kw">Emissions</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Certificate"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>)
+)
+<span class="no">vehicles</span>
+<span class="co">#&gt;      Vehicle            Price Color   Emissions</span>
+<span class="co">#&gt; 1       &lt;NA&gt;               in  &lt;NA&gt; Certificate</span>
+<span class="co">#&gt; 2       &lt;NA&gt;             2014  &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt; 3       &lt;NA&gt; (local currency)  &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt; 4      Truck            50000 White        TRUE</span>
+<span class="co">#&gt; 5 Motorcycle            44000 Black       FALSE</span>
+<span class="co">#&gt; 6      Sedan            33000   Red        TRUE</span>
+<span class="co">#&gt; 7        Van            50000 White        TRUE</span></pre></body></html></div>
+<p>Here, the column names are broken. The top <em>three</em> rows (in addition to the column name) contain fragments of the name and should be mashed together column-wise.</p>
+<p>The <code><a href="../reference/mash_colnames.html">mash_colnames()</a></code> function makes these many header rows into column names. The names are broken up across the top three rows, which goes in to the <code>n_name_rows</code> argument. Unlike other functions in <code>unheadr</code>, we provide the number of rows directly, rather than attempt any string matching.</p>
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span>(<span class="kw">df</span><span class="kw">=</span> <span class="no">vehicles</span>, <span class="kw">n_name_rows</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="co">#&gt;      Vehicle Price_in_2014_(local currency) Color Emissions_Certificate</span>
+<span class="co">#&gt; 4      Truck                          50000 White                  TRUE</span>
+<span class="co">#&gt; 5 Motorcycle                          44000 Black                 FALSE</span>
+<span class="co">#&gt; 6      Sedan                          33000   Red                  TRUE</span>
+<span class="co">#&gt; 7        Van                          50000 White                  TRUE</span></pre></body></html></div>
+<p>When importing data with broken headers into R, variable names are not always assigned from the values in top row, leaving us with automatically generated names (e.g. X1, X2, X3, etc.).</p>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">vehicles_skip</span> <span class="kw">&lt;-</span>
+<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+                <span class="kw">X1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Vehicle"</span>,<span class="fl">NA</span>,<span class="fl">NA</span>,<span class="fl">NA</span>,<span class="st">"Truck"</span>,
+                       <span class="st">"Motorcycle"</span>,<span class="st">"Sedan"</span>,<span class="st">"Van"</span>),
+                <span class="kw">X2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Price"</span>,<span class="st">"in"</span>,<span class="st">"2014"</span>,
+                       <span class="st">"(local currency)"</span>,<span class="st">"50000"</span>,<span class="st">"44000"</span>,<span class="st">"33000"</span>,<span class="st">"50000"</span>),
+                <span class="kw">X3</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Color"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"White"</span>),
+                <span class="kw">X4</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Emissions"</span>,<span class="st">"Certificate"</span>,<span class="fl">NA</span>,
+                       <span class="fl">NA</span>,<span class="st">"TRUE"</span>,<span class="st">"FALSE"</span>,<span class="st">"TRUE"</span>,<span class="st">"TRUE"</span>)
+)
+<span class="no">vehicles_skip</span>
+<span class="co">#&gt;           X1               X2    X3          X4</span>
+<span class="co">#&gt; 1    Vehicle            Price Color   Emissions</span>
+<span class="co">#&gt; 2       &lt;NA&gt;               in  &lt;NA&gt; Certificate</span>
+<span class="co">#&gt; 3       &lt;NA&gt;             2014  &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt; 4       &lt;NA&gt; (local currency)  &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt; 5      Truck            50000 White        TRUE</span>
+<span class="co">#&gt; 6 Motorcycle            44000 Black       FALSE</span>
+<span class="co">#&gt; 7      Sedan            33000   Red        TRUE</span>
+<span class="co">#&gt; 8        Van            50000 White        TRUE</span></pre></body></html></div>
+<p>In this case, the <code>keep_names</code> argument in <code><a href="../reference/mash_colnames.html">mash_colnames()</a></code> lets us ignore the object names when building new names from the first four rows of the data.</p>
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span>(<span class="kw">df</span><span class="kw">=</span> <span class="no">vehicles_skip</span>, <span class="kw">n_name_rows</span> <span class="kw">=</span> <span class="fl">4</span>, <span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+<span class="co">#&gt;      Vehicle Price_in_2014_(local currency) Color Emissions_Certificate</span>
+<span class="co">#&gt; 5      Truck                          50000 White                  TRUE</span>
+<span class="co">#&gt; 6 Motorcycle                          44000 Black                 FALSE</span>
+<span class="co">#&gt; 7      Sedan                          33000   Red                  TRUE</span>
+<span class="co">#&gt; 8        Van                          50000 White                  TRUE</span></pre></body></html></div>
+<p>Lastly, the <code>sliding_headers</code> argument in <code>mash_colnames</code> can be used for tables with ragged names, in which not every column has a value in the very first row. In such cases, attribution by adjacency is assumed, and when <code>sliding_headers = TRUE</code> the names are filled row-wise. This can be useful for tables reporting survey data or experimental designs in an untidy manner.</p>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">survey</span> <span class="kw">&lt;-</span>
+<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+                <span class="kw">X1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Participant"</span>, <span class="fl">NA</span>, <span class="st">"12"</span>, <span class="st">"34"</span>, <span class="st">"45"</span>, <span class="st">"123"</span>),
+                <span class="kw">X2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"How did you hear about us?"</span>,
+                       <span class="st">"TV"</span>,<span class="st">"TRUE"</span>,<span class="st">"FALSE"</span>,<span class="st">"FALSE"</span>,<span class="st">"FALSE"</span>),
+                <span class="kw">X3</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Social Media"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>),
+                <span class="kw">X4</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Radio"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>),
+                <span class="kw">X5</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Flyer"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>),
+                <span class="kw">X6</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Age"</span>, <span class="fl">NA</span>, <span class="st">"31"</span>, <span class="st">"23"</span>, <span class="st">"19"</span>, <span class="st">"24"</span>)
+)
+
+<span class="no">survey</span>
+<span class="co">#&gt;            X1                         X2           X3    X4    X5   X6</span>
+<span class="co">#&gt; 1 Participant How did you hear about us?         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Age</span>
+<span class="co">#&gt; 2        &lt;NA&gt;                         TV Social Media Radio Flyer &lt;NA&gt;</span>
+<span class="co">#&gt; 3          12                       TRUE        FALSE FALSE FALSE   31</span>
+<span class="co">#&gt; 4          34                      FALSE         TRUE  TRUE FALSE   23</span>
+<span class="co">#&gt; 5          45                      FALSE        FALSE FALSE FALSE   19</span>
+<span class="co">#&gt; 6         123                      FALSE        FALSE  TRUE FALSE   24</span>
+<span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span>(<span class="no">survey</span>,<span class="fl">2</span>,<span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">FALSE</span>,<span class="kw">sliding_headers</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">"_"</span>)
+<span class="co">#&gt;   Participant How did you hear about us?_TV</span>
+<span class="co">#&gt; 3          12                          TRUE</span>
+<span class="co">#&gt; 4          34                         FALSE</span>
+<span class="co">#&gt; 5          45                         FALSE</span>
+<span class="co">#&gt; 6         123                         FALSE</span>
+<span class="co">#&gt;   How did you hear about us?_Social Media How did you hear about us?_Radio</span>
+<span class="co">#&gt; 3                                   FALSE                            FALSE</span>
+<span class="co">#&gt; 4                                    TRUE                             TRUE</span>
+<span class="co">#&gt; 5                                   FALSE                            FALSE</span>
+<span class="co">#&gt; 6                                   FALSE                             TRUE</span>
+<span class="co">#&gt;   How did you hear about us?_Flyer Age</span>
+<span class="co">#&gt; 3                            FALSE  31</span>
+<span class="co">#&gt; 4                            FALSE  23</span>
+<span class="co">#&gt; 5                            FALSE  19</span>
+<span class="co">#&gt; 6                            FALSE  24</span></pre></body></html></div>
 </div>
 <div id="spreadsheets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#spreadsheets" class="anchor"></a>Spreadsheets</h3>
 <p><code>unheadr</code> also includes a function for flattening font and cell formatting in spreadsheet files into character strings in the corresponding cell.</p>
+<div id="supported-formatting" class="section level4">
+<h4 class="hasAnchor">
+<a href="#supported-formatting" class="anchor"></a>Supported formatting:</h4>
+<ul>
+<li>bold text</li>
+<li>colored text</li>
+<li>italic text,</li>
+<li>text with strikethrough</li>
+<li>underlined text</li>
+<li>double underlined text</li>
+<li>cell highlighting</li>
+</ul>
 <p>One of the example files bundled with <code>unheadr</code> looks like this:</p>
 <p><img src="dogtest.png" width="300"></p>
-<p>Font formatting and cell highlighting is being used to label an embedded grouping variable (meaningful formatting). The <code><a href="../reference/annotate_mf.html">annotate_mf()</a></code> function flattens the formatting into a character string describing the formatting. The HTML code of the colors used for cell highlighting is also included.</p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">example_spreadsheet</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/dog_test.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
+<p>Font formatting and cell highlighting is being used to label an embedded grouping variable (meaningful formatting). The <code><a href="../reference/annotate_mf.html">annotate_mf()</a></code> function flattens the formatting into a character string describing the formatting. The hex8 code of the colors used for cell or text highlighting is also included.</p>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="no">example_spreadsheet</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/dog_test.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
 <span class="fu"><a href="../reference/annotate_mf.html">annotate_mf</a></span>(<span class="no">example_spreadsheet</span>, <span class="kw">orig</span> <span class="kw">=</span> <span class="no">Task</span>, <span class="kw">new</span> <span class="kw">=</span> <span class="no">Task_annotated</span>)
 <span class="co">#&gt; # A tibble: 11 x 3</span>
-<span class="co">#&gt;    Task                          Task_annotated                            Score</span>
-<span class="co">#&gt;    &lt;chr&gt;                         &lt;chr&gt;                                     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Outdoor activities            (bolded, highlighted-FFFFF200) Outdoor a…  7.67</span>
-<span class="co">#&gt;  2 Walks on a loose leash witho… Walks on a loose leash without pulling     7   </span>
-<span class="co">#&gt;  3 Walks without chasing bicycl… Walks without chasing bicycles, animals,…  6   </span>
-<span class="co">#&gt;  4 Greets friends and strangers… Greets friends and strangers without jum… 10   </span>
-<span class="co">#&gt;  5 Home behavior                 (bolded, highlighted-FFFFF200) Home beha…  8.5 </span>
-<span class="co">#&gt;  6 Moves location when directed… Moves location when directed without gro…  9   </span>
-<span class="co">#&gt;  7 Does not rush through doorwa… Does not rush through doorways             8   </span>
-<span class="co">#&gt;  8 General social skills and ob… (bolded, highlighted-FFFFF200) General s…  7   </span>
-<span class="co">#&gt;  9 Can play or interact appropr… Can play or interact appropriately with …  7   </span>
-<span class="co">#&gt; 10 Can be groomed or handled wi… Can be groomed or handled without squirm…  8   </span>
-<span class="co">#&gt; 11 Stops barking on command      Stops barking on command                   6</span></pre></body></html></div>
-<p>To apply this approach to all cells in a spreadsheet, we call <code><a href="../reference/annotate_mf_all.html">annotate_mf_all()</a></code>. In this other bundled example file, negative values (first quarer losses) are indicated by bold.</p>
+<span class="co">#&gt;    Task                           Task_annotated                           Score</span>
+<span class="co">#&gt;    &lt;chr&gt;                          &lt;chr&gt;                                    &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 Outdoor activities             (bold, highlight-FFFFF200) Outdoor acti…  7.67</span>
+<span class="co">#&gt;  2 Walks on a loose leash withou… Walks on a loose leash without pulling    7   </span>
+<span class="co">#&gt;  3 Walks without chasing bicycle… Walks without chasing bicycles, animals…  6   </span>
+<span class="co">#&gt;  4 Greets friends and strangers … Greets friends and strangers without ju… 10   </span>
+<span class="co">#&gt;  5 Home behavior                  (bold, highlight-FFFFF200) Home behavior  8.5 </span>
+<span class="co">#&gt;  6 Moves location when directed … Moves location when directed without gr…  9   </span>
+<span class="co">#&gt;  7 Does not rush through doorways Does not rush through doorways            8   </span>
+<span class="co">#&gt;  8 General social skills and obe… (bold, highlight-FFFFF200) General soci…  7   </span>
+<span class="co">#&gt;  9 Can play or interact appropri… Can play or interact appropriately with…  7   </span>
+<span class="co">#&gt; 10 Can be groomed or handled wit… Can be groomed or handled without squir…  8   </span>
+<span class="co">#&gt; 11 Stops barking on command       Stops barking on command                  6</span></pre></body></html></div>
+<p>To apply this approach to all cells in a spreadsheet, we call <code><a href="../reference/annotate_mf_all.html">annotate_mf_all()</a></code>. In this other bundled example file, negative values (first quarter losses) are indicated by bold.</p>
 <p><img src="boutiques.png" width="300"></p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">example_spreadsheetb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/boutiques.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="no">example_spreadsheetb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/boutiques.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
 <span class="fu"><a href="../reference/annotate_mf_all.html">annotate_mf_all</a></span>(<span class="no">example_spreadsheetb</span>)
 <span class="co">#&gt; # A tibble: 7 x 6</span>
 <span class="co">#&gt;   `Store Location`    Q1_2012     Q1_2013     Q1_2014     Q1_2015     Q1_2016   </span>
 <span class="co">#&gt;   &lt;chr&gt;               &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;     </span>
-<span class="co">#&gt; 1 (highlighted-FFADC… (highlight… (bolded, h… (highlight… (highlight… (bolded, …</span>
-<span class="co">#&gt; 2 (highlighted-FFADC… (highlight… (highlight… (highlight… (bolded, h… (highligh…</span>
-<span class="co">#&gt; 3 (highlighted-FFF37… (bolded, h… (highlight… (highlight… (highlight… (highligh…</span>
-<span class="co">#&gt; 4 (highlighted-FFADC… (highlight… (bolded, h… (bolded, h… (bolded, h… (highligh…</span>
-<span class="co">#&gt; 5 (highlighted-FFADC… (highlight… (highlight… (highlight… (highlight… (highligh…</span>
-<span class="co">#&gt; 6 (highlighted-FFF37… (bolded, h… (highlight… (bolded, h… (highlight… (bolded, …</span>
-<span class="co">#&gt; 7 (italic, highlight… (highlight… (highlight… (highlight… (highlight… (highligh…</span></pre></body></html></div>
+<span class="co">#&gt; 1 (highlight-FFADC5E… (highlight… (bold, hig… (highlight… (highlight… (bold, hi…</span>
+<span class="co">#&gt; 2 (highlight-FFADC5E… (highlight… (highlight… (highlight… (bold, hig… (highligh…</span>
+<span class="co">#&gt; 3 (highlight-FFF37B7… (bold, hig… (highlight… (highlight… (highlight… (highligh…</span>
+<span class="co">#&gt; 4 (highlight-FFADC5E… (highlight… (bold, hig… (bold, hig… (bold, hig… (highligh…</span>
+<span class="co">#&gt; 5 (highlight-FFADC5E… (highlight… (highlight… (highlight… (highlight… (highligh…</span>
+<span class="co">#&gt; 6 (highlight-FFF37B7… (bold, hig… (highlight… (bold, hig… (highlight… (bold, hi…</span>
+<span class="co">#&gt; 7 (highlight-FFADC5E… (highlight… (highlight… (highlight… (highlight… (highligh…</span></pre></body></html></div>
+</div>
 </div>
 <div id="character-vectors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#character-vectors" class="anchor"></a>Character vectors</h3>
-<p>Tables from PDF or other similar sources can often be imported into R as character vectors with one element for each line. These can then be parsed as fixed width files or separated into colums. <code>unheadr</code> now includes the <code><a href="../reference/regex_valign.html">regex_valign()</a></code> function for aligning elements in these vectors vertically by inserting padding whitespace (and optional separators) at positions along each line matched by a regular expression.</p>
+<p>Tables from PDF or other similar sources can often be imported into R as character vectors with one element for each line. These can then be parsed as fixed width files or separated into columns. <code>unheadr</code> now includes the <code><a href="../reference/regex_valign.html">regex_valign()</a></code> function for aligning elements in these vectors vertically by inserting padding whitespace (and optional separators) at positions along each line matched by a regular expression.</p>
 <p>This example is based on how data on hotel guests (ID, State of Origin, and Date) in a PDF is parsed by <code><a href="https://docs.ropensci.org/pdftools/reference/pdftools.html">pdftools::pdf_text</a></code>.</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
+<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
   <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"6     COAHUILA        20/03/2020
 712        COAHUILA             20/03/2020"</span>),<span class="st">"\n"</span>))
 
@@ -289,7 +398,7 @@
 <span class="co">#&gt; [1] "6     COAHUILA        20/03/2020"          </span>
 <span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></body></html></div>
 <p>There is inconsistent whitespace between the first and second data ‘columns’. With a regular expression that matches a word boundary and uppercase letters, we can adjust the whitespace so that the matched positions are the same across lines.</p>
-<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="../reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)
+<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="../reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)
 <span class="co">#&gt; [1] "6          COAHUILA        20/03/2020"     </span>
 <span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></body></html></div>
 <p>This output is easier to parse with <code>readr</code> or other data-munging approaches.</p>

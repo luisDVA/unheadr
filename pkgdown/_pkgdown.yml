@@ -35,6 +35,7 @@ reference:
 - title: Data rectangling functions
   desc:
   contents:
+  - '`mash_colnames`'
   - '`unbreak_rows`'
   - '`unbreak_vals`'
   - '`untangle2`'
@@ -51,6 +52,8 @@ reference:
 - title: Example data
   desc:
   contents:
+  - 'AOEunits'
+  - 'AOEunits_raw'
   - '`boutiques.xlsx`'
   - '`dog_test.xlsx`'
   - '`primates2017`'

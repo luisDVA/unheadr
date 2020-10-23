@@ -189,8 +189,10 @@
 #&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Presbytis comata        Javan Langur       EN                 6.7  CERCOPITH…
 #&gt; </span><span style='color: #BCBCBC;'>10</span><span> Macaca pagensis         Pagai Macaque      CR                 4.5  CERCOPITH…
 #&gt; </span><span style='color: #949494;'># … with 48 more rows</span><span></div><div class='input'><span class='co'># put geographic regions in their own variable (matching them all by name)</span>
-<span class='fu'>untangle2</span>(<span class='no'>primates2017</span>, <span class='st'>"Asia|Madagascar|Mainland Africa|Neotropics"</span>,
-          <span class='no'>scientific_name</span>, <span class='no'>family</span>)</div><div class='output co'>#&gt; <span class='message'>4 matches</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 65 x 5</span><span>
+<span class='fu'>untangle2</span>(
+  <span class='no'>primates2017</span>, <span class='st'>"Asia|Madagascar|Mainland Africa|Neotropics"</span>,
+  <span class='no'>scientific_name</span>, <span class='no'>family</span>
+)</div><div class='output co'>#&gt; <span class='message'>4 matches</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 65 x 5</span><span>
 #&gt;    scientific_name           common_name          red_list_status mass_kg family
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> 
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> CERCOPITHECIDAE           </span><span style='color: #BB0000;'>NA</span><span>                   </span><span style='color: #BB0000;'>NA</span><span>                </span><span style='color: #BB0000;'>NA</span><span>    Asia  
@@ -206,8 +208,10 @@
 #&gt; </span><span style='color: #949494;'># … with 55 more rows</span><span></div><div class='input'><span class='co'># with magrittr pipes (re-exported in this package)</span>
 <span class='no'>primates2017</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>untangle2</span>(<span class='st'>"DAE$"</span>, <span class='no'>scientific_name</span>, <span class='no'>family</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>untangle2</span>(<span class='st'>"Asia|Madagascar|Mainland Africa|Neotropics"</span>,
-             <span class='no'>scientific_name</span>, <span class='no'>region</span>)</div><div class='output co'>#&gt; <span class='message'>11 matches</span></div><div class='output co'>#&gt; <span class='message'>4 matches</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 54 x 6</span><span>
+  <span class='fu'>untangle2</span>(
+    <span class='st'>"Asia|Madagascar|Mainland Africa|Neotropics"</span>,
+    <span class='no'>scientific_name</span>, <span class='no'>region</span>
+  )</div><div class='output co'>#&gt; <span class='message'>11 matches</span></div><div class='output co'>#&gt; <span class='message'>4 matches</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 54 x 6</span><span>
 #&gt;    scientific_name      common_name     red_list_status mass_kg family    region
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> 
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Trachypithecus obsc… Dusky Langur    NT                 7.13 CERCOPIT… Asia  

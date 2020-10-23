@@ -4,6 +4,12 @@
     <loc>unheadr.liomys.mx/index.html</loc>
   </url>
   <url>
+    <loc>unheadr.liomys.mx/reference/AOEunits.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/reference/AOEunits_raw.html</loc>
+  </url>
+  <url>
     <loc>unheadr.liomys.mx/reference/annotate_mf.html</loc>
   </url>
   <url>
@@ -14,6 +20,9 @@
   </url>
   <url>
     <loc>unheadr.liomys.mx/reference/dog_test.xlsx.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/reference/mash_colnames.html</loc>
   </url>
   <url>
     <loc>unheadr.liomys.mx/reference/pipe.html</loc>

@@ -163,24 +163,36 @@ positions matched by the regular expression.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A character vector with one element for each line, with padding
-  inserted at the matched postitions so that elements are vertically aligned
+  inserted at the matched positions so that elements are vertically aligned
   across lines.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function is based on `textutils::valign()`, and may be handy
-  for reading fixed width files, text, or tables parsed from PDFs.</p>
+    <p>Written mainly for reading fixed width files, text, or tables parsed
+  from PDFs.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>This function is based loosely on
+  <code><a href='https://rdrr.io/pkg/textutils/man/valign.html'>textutils::valign()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>guests</span> <span class='kw'>&lt;-</span>
-<span class='kw pkg'>readr</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_lines.html'>read_lines</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"6       COAHUILA        20/03/2020
+  <span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/strsplit.html'>strsplit</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"6       COAHUILA        20/03/2020
 7       COAHUILA             20/03/2020
 18 BAJA CALIFORNIA     16/03/2020
 109       CDMX      12/03/2020
-1230   QUERETARO       21/03/2020"</span>))
+1230   QUERETARO       21/03/2020"</span>), <span class='st'>"\n"</span>))
 
 <span class='co'># align at first uppercase word boundary , inserting a separator</span>
-<span class='fu'>regex_valign</span>(<span class='no'>guests_lines</span>, <span class='st'>"\\b(?=[A-Z])"</span>, <span class='st'>" - "</span>)</div><div class='output co'>#&gt; <span class='error'>Error in regex_valign(guests_lines, "\\b(?=[A-Z])", " - "): object 'guests_lines' not found</span></div><div class='input'><span class='co'># align dates at end of string</span>
-<span class='fu'>regex_valign</span>(<span class='no'>guests_lines</span>, <span class='st'>"\\b(?=[0-9]{2}[\\/]{1}[0-9]{2}[\\/]{1}[0-9]{4}$)"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in regex_valign(guests_lines, "\\b(?=[0-9]{2}[\\/]{1}[0-9]{2}[\\/]{1}[0-9]{4}$)"): object 'guests_lines' not found</span></div></pre>
+<span class='fu'>regex_valign</span>(<span class='no'>guests</span>, <span class='st'>"\\b(?=[A-Z])"</span>, <span class='st'>" - "</span>)</div><div class='output co'>#&gt; [1] "6          - COAHUILA        20/03/2020"     
+#&gt; [2] "7          - COAHUILA             20/03/2020"
+#&gt; [3] "18         - BAJA CALIFORNIA     16/03/2020" 
+#&gt; [4] "109        - CDMX      12/03/2020"           
+#&gt; [5] "1230       - QUERETARO       21/03/2020"     </div><div class='input'><span class='co'># align dates at end of string</span>
+<span class='fu'>regex_valign</span>(<span class='no'>guests</span>, <span class='st'>"\\b(?=[0-9]{2}[\\/]{1}[0-9]{2}[\\/]{1}[0-9]{4}$)"</span>)</div><div class='output co'>#&gt; [1] "6       COAHUILA             20/03/2020"
+#&gt; [2] "7       COAHUILA             20/03/2020"
+#&gt; [3] "18 BAJA CALIFORNIA           16/03/2020"
+#&gt; [4] "109       CDMX               12/03/2020"
+#&gt; [5] "1230   QUERETARO             21/03/2020"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -15,18 +15,18 @@ annotate_mf(xlfilepath, orig, new)
 }
 \value{
 A tibble with a new column with meaningful formatting embedded as
-  text.
+text.
 }
 \description{
 Turns cell formatting into annotations for values in the target row.
 }
 \details{
 At this point, seven popular approaches for meaningful
-  formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
-  the function. `sheets`, `skip`, and `range` arguments for spreadsheet input
-  are not supported. The hex8 code of the fill color used for text color and cell
-  highlighting is also appended in the output. Ensure the data in the
-  spreadsheet are rectangular before running.
+formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
+the function. \code{sheets}, \code{skip}, and \code{range} arguments for spreadsheet input
+are not supported. The hex8 code of the fill color used for text color and cell
+highlighting is also appended in the output. Ensure the data in the
+spreadsheet are rectangular before running.
 }
 \examples{
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")

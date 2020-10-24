@@ -19,8 +19,8 @@ space).}
 }
 \value{
 A tibble or data frame with merged rows. Values of the
-  lagging rows are pasted onto the values in the leading row, whitespace is
-  squished, and the lagging row is dropped.
+lagging rows are pasted onto the values in the leading row, whitespace is
+squished, and the lagging row is dropped.
 }
 \description{
 Merge rows up

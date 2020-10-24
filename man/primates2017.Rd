@@ -7,18 +7,18 @@
 \format{
 A data frame with 69 rows and 4 variables:
 \describe{
-    \item{scientific_name}{scientific names, with geographic region and
-    taxonomic family embedded as subheaders.}
-    \item{common_name}{vernacular name, as listed in Estrada et al.
-        (2017)}
-    \item{red_list_status}{IUCN Red List Status in January 2017}
-    \item{mass_kg}{mean body mass in kilograms}
+\item{scientific_name}{scientific names, with geographic region and
+taxonomic family embedded as subheaders.}
+\item{common_name}{vernacular name, as listed in Estrada et al.
+(2017)}
+\item{red_list_status}{IUCN Red List Status in January 2017}
+\item{mass_kg}{mean body mass in kilograms}
 }
 }
 \source{
 Estrada, Alejandro, et al. "Impending extinction crisis of the
-        world's primates: Why primates matter." Science Advances 3.1 (2017):
-        e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
+world's primates: Why primates matter." Science Advances 3.1 (2017):
+e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
 }
 \usage{
 primates2017

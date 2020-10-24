@@ -107,7 +107,7 @@ NULL
 #'     \item{melee_armor}{Armor against melee attacks}
 #'     \item{pierce_armor}{Armor against projectiles}
 #' }
-#' @source Age of Empires II © Microsoft Corporation. This dataset was created
+#' @source Age of Empires II. Copyright Microsoft Corporation. This dataset was created
 #'   under Microsoft's "Game Content Usage Rules"
 #'   \url{https://www.xbox.com/en-us/developers/rules} using assets from Age of
 #'   Empires II, and it is not endorsed by or affiliated with Microsoft. All
@@ -120,7 +120,8 @@ NULL
 #' A messy version of the \code{\link{AOEunits}} dataset, meant for demonstrating data cleaning functions.
 #'
 #' @format A data frame with 139 observations of 15 variables. See `AOEunits` for variable descriptions.
-#' @source Age of Empires II © Microsoft Corporation. This dataset was created
+#' @encoding UTF-8
+#' @source Age of Empires II. Copyright Microsoft Corporation. This dataset was created
 #'   under Microsoft's "Game Content Usage Rules"
 #'   \url{https://www.xbox.com/en-us/developers/rules} using assets from Age of
 #'   Empires II, and it is not endorsed by or affiliated with Microsoft. All

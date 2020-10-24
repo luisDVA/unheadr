@@ -11,5 +11,5 @@ colors indicate continent, and italic indicates a second location in the same
 city.
 }
 \details{
-This data is used in the example for `annotate_mf_all()`.
+This data is used in the example for \code{annotate_mf_all()}.
 }

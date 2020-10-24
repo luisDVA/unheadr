@@ -17,14 +17,14 @@ untangle2(df, regex, orig, new)
 }
 \value{
 A tibble without the matched subheaders and a new variable containing
-  the grouping data.
+the grouping data.
 }
 \description{
 Rectangling embedded subheaders
 }
 \details{
 Special thanks to Jenny Bryan for fixing the initial tidyeval code
-  and overall function structure.
+and overall function structure.
 }
 \examples{
 data(primates2017)

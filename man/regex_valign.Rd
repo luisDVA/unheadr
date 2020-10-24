@@ -16,15 +16,15 @@ positions matched by the regular expression.}
 }
 \value{
 A character vector with one element for each line, with padding
-  inserted at the matched positions so that elements are vertically aligned
-  across lines.
+inserted at the matched positions so that elements are vertically aligned
+across lines.
 }
 \description{
 Aligning strings with regex.
 }
 \details{
 Written mainly for reading fixed width files, text, or tables parsed
-  from PDFs.
+from PDFs.
 }
 \examples{
 guests <-
@@ -41,5 +41,5 @@ regex_valign(guests, "\\\\b(?=[0-9]{2}[\\\\/]{1}[0-9]{2}[\\\\/]{1}[0-9]{4}$)")
 }
 \seealso{
 This function is based loosely on
-  \code{\link[textutils:valign]{textutils::valign()}}.
+\code{textutils::valign()}.
 }

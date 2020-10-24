@@ -24,18 +24,18 @@ space).}
 }
 \value{
 A tibble with 'unbroken' values. The variable that originally
-  contained the broken values gets dropped, and the new variable with the
-  unified values is placed as the first column. The \code{slice_groups}
-  argument is now deprecated; the extra rows and the variable with broken
-  values will be dropped.
+contained the broken values gets dropped, and the new variable with the
+unified values is placed as the first column. The \code{slice_groups}
+argument is now deprecated; the extra rows and the variable with broken
+values will be dropped.
 }
 \description{
 Unbreak values using regex to match the broken half of the value
 }
 \details{
 This function is limited to quite specific cases, but useful when
-  dealing with tables that contain scientific names broken across two rows.
-  For unwrapping values, see \code{\link{unwrap_cols}}.
+dealing with tables that contain scientific names broken across two rows.
+For unwrapping values, see \code{\link{unwrap_cols}}.
 }
 \examples{
 data(primates2017_broken)

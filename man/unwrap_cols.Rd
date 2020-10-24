@@ -17,13 +17,13 @@ the elements of the unwrapped value.}
 }
 \value{
 A summarized tibble. Order is preserved in the grouping variable by
-  making it a factor.
+making it a factor.
 }
 \description{
 Unwrap values and clean up NAs used as padding
 }
 \details{
-This is roughly the opposite of `tidyr::separate_rows()`.
+This is roughly the opposite of \code{tidyr::separate_rows()}.
 }
 \examples{
 data(primates2017_wrapped)

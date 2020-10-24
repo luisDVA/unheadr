@@ -13,7 +13,7 @@
 #' @details Written mainly for reading fixed width files, text, or tables parsed
 #'   from PDFs.
 #' @seealso This function is based loosely on
-#'   \code{\link[textutils:valign]{textutils::valign()}}.
+#'   \code{textutils::valign()}.
 #' @examples
 #' guests <-
 #'   unlist(strsplit(c("6       COAHUILA        20/03/2020

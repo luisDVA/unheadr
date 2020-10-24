@@ -13,7 +13,7 @@ into three categories which appear along with their average scores as
 embedded subheaders with meaningful formatting.
 }
 \details{
-This data is used in the example for `annotate_mf()`.
+This data is used in the example for \code{annotate_mf()}.
 }
 \references{
 http://www.dogtrainingbasics.com/checklist-well-behaved-dog/

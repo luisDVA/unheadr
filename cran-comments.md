@@ -11,7 +11,11 @@ No ERRORs, WARNINGs, or NOTEs.
 ## Good Practice Checks (goodpractice pckg)
 Found 25 lines > 80 characters wide, leaving as is since code is still readable.
 
-## Revdep results
-* There are currently no downstream dependencies for this package.
+## revdepcheck results
+
+Checked 0 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
+
+ * 0 new problems
+ * Failed to check 0 packages
 
 * This is a Minor increment, adding two improved versions of existing functions, a helper function, and a new example dataset.

@@ -177,38 +177,38 @@ space).</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble with 'unbroken' values. The variable that originally
-  contained the broken values gets dropped, and the new variable with the
-  unified values is placed as the first column. The <code>slice_groups</code>
-  argument is now deprecated; the extra rows and the variable with broken
-  values will be dropped.</p>
+contained the broken values gets dropped, and the new variable with the
+unified values is placed as the first column. The <code>slice_groups</code>
+argument is now deprecated; the extra rows and the variable with broken
+values will be dropped.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This function is limited to quite specific cases, but useful when
-  dealing with tables that contain scientific names broken across two rows.
-  For unwrapping values, see <code><a href='unwrap_cols.html'>unwrap_cols</a></code>.</p>
+dealing with tables that contain scientific names broken across two rows.
+For unwrapping values, see <code><a href='unwrap_cols.html'>unwrap_cols</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>primates2017_broken</span>)
 <span class='co'># regex matches strings starting in lowercase (broken species epithets)</span>
 <span class='fu'>unbreak_vals</span>(<span class='no'>primates2017_broken</span>, <span class='st'>"^[a-z]"</span>, <span class='no'>scientific_name</span>, <span class='no'>sciname_new</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 16 x 4</span><span>
 #&gt;    sciname_new                common_name                red_list_status mass_kg
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Semnopithecus johnii       Nilgiri Langur             VU                11.4 
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Trachypithecus obscurus    Dusky Langur               NT                 7.13
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Presbytis sumatra          Black Sumatran Langur      EN                 6   
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Trachypithecus auratus     East Javan Langur          VU                 6.25
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Trachypithecus delacouri   Delacour's Langur          CR                </span><span style='color: #BB0000;'>NA</span><span>   
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Trachypithecus leucocepha… White-headed Langur        CR                 8   
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Presbytis comata           Javan Langur               EN                 6.7 
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> Macaca pagensis            Pagai Macaque              CR                 4.5 
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Trachypithecus germaini    Germain's Langur           EN                 8.83
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Macaca munzala             Arunachal Macaque          EN                </span><span style='color: #BB0000;'>NA</span><span>   
-#&gt; </span><span style='color: #BCBCBC;'>11</span><span> Macaca mulatta             Rhesus Macaque             LC                 9.9 
-#&gt; </span><span style='color: #BCBCBC;'>12</span><span> Semnopithecus hector       Terai Sacred Langur        NT                15.2 
-#&gt; </span><span style='color: #BCBCBC;'>13</span><span> Hylobates klossii          Kloss's Gibbon             EN                 5.8 
-#&gt; </span><span style='color: #BCBCBC;'>14</span><span> Nycticebus menagensis      Philippine Slow Loris      VU                 0.28
-#&gt; </span><span style='color: #BCBCBC;'>15</span><span> Nycticebus bengalensis     Bengal Slow Loris          VU                 1.21
-#&gt; </span><span style='color: #BCBCBC;'>16</span><span> Nomascus concolor          Western Black Crested Gib… CR                 7.71</div></span></pre>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Semnopithecus johnii       Nilgiri Langur             VU              11.45  
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Trachypithecus obscurus    Dusky Langur               NT              7.13   
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Presbytis sumatra          Black Sumatran Langur      EN              6      
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Trachypithecus auratus     East Javan Langur          VU              6.25   
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Trachypithecus delacouri   Delacour's Langur          CR              </span><span style='color: #BB0000;'>NA</span><span>     
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Trachypithecus leucocepha… White-headed Langur        CR              8      
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Presbytis comata           Javan Langur               EN              6.7    
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> Macaca pagensis            Pagai Macaque              CR              4.5    
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Trachypithecus germaini    Germain's Langur           EN              8.83   
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Macaca munzala             Arunachal Macaque          EN              </span><span style='color: #BB0000;'>NA</span><span>     
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> Macaca mulatta             Rhesus Macaque             LC              9.9    
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> Semnopithecus hector       Terai Sacred Langur        NT              15.2   
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> Hylobates klossii          Kloss's Gibbon             EN              5.8    
+#&gt; </span><span style='color: #BCBCBC;'>14</span><span> Nycticebus menagensis      Philippine Slow Loris      VU              0.28   
+#&gt; </span><span style='color: #BCBCBC;'>15</span><span> Nycticebus bengalensis     Bengal Slow Loris          VU              1.21   
+#&gt; </span><span style='color: #BCBCBC;'>16</span><span> Nomascus concolor          Western Black Crested Gib… CR              7.71   </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

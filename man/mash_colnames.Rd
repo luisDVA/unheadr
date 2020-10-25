@@ -14,7 +14,7 @@ mash_colnames(
 }
 \arguments{
 \item{df}{A \code{data.frame} or \code{tibble} object in which the names are broken up
-across the top n rows.}
+across the top \emph{n} rows.}
 
 \item{n_name_rows}{Number of rows at the top of the data to be used to create
 the new variable (column) names. Must be >= 1.}

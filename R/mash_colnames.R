@@ -1,7 +1,7 @@
 #' Make many header rows into column names
 #'
 #' @param df A `data.frame` or `tibble` object in which the names are broken up
-#'   across the top n rows.
+#'   across the top _n_ rows.
 #' @param n_name_rows Number of rows at the top of the data to be used to create
 #'   the new variable (column) names. Must be >= 1.
 #' @param keep_names If TRUE, existing names will be included in building the

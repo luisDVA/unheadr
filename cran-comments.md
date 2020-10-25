@@ -9,8 +9,9 @@ No ERRORs, WARNINGs, or NOTEs.
 No ERRORs, WARNINGs, or NOTEs. 
   
 ## Good Practice Checks (goodpractice pckg)
-Found 15 lines > 80 characters wide, leaving as is since code is still readable.
+Found 25 lines > 80 characters wide, leaving as is since code is still readable.
 
+## Revdep results
 * There are currently no downstream dependencies for this package.
 
-* This is a Minor Patch, adding a generalized version of an extisting function and a minor   helper function.
+* This is a Minor increment, adding two improved versions of existing functions, a helper function, and a new example dataset.

@@ -1,0 +1,12 @@
+unheadr-package	unheadr-package
+%>%	pipe
+annotate_mf	annotate_mf
+dog_test	dog_test
+primates2017	primates2017
+primates2017_broken	primates2017_broken
+primates2017_wrapped	primates2017_wrapped
+unbreak_rows	unbreak_rows
+unbreak_vals	unbreak_vals
+unheadr	unheadr-package
+untangle2	untangle2
+unwrap_cols	unwrap_cols

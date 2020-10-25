@@ -1,0 +1,12 @@
+%>%                     re-export magrittr pipe operator
+annotate_mf             Annotate meaningful formatting
+dog_test                dog_test.xlsx spreadsheet
+primates2017            Comparative data for 54 species of primates
+primates2017_broken     Comparative data for 16 species of primates
+                        with some broken values
+primates2017_wrapped    Comparative data for two species of primates
+unbreak_rows            Merge rows up
+unbreak_vals            Unbreak values using regex to match the broken
+                        half of the value
+untangle2               Rectangling embedded subheaders
+unwrap_cols             Unwrap values and clean up NAs used as padding

@@ -142,7 +142,7 @@ mash_colnames <- function(df,
   # strip the first few rows of the data frame
   df <- df[-seq_len(n_name_rows), ]
   # Check for NAs in names
-  if (any(grepl("NA", names(df)) == TRUE)) warning("NA values in variable names, check the `n_name_rows` argument ")
+  if (any(grepl("^NA$", names(df)) == TRUE)) warning("possible NA values in variable names, check the `n_name_rows` argument ")
   # Return
   df
 }

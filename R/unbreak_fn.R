@@ -1,8 +1,8 @@
-#' Unbreak values using regex to match the broken half of the value
+#' Unbreak values using regex to match the lagging half of the broken value
 #'
 #' @param df A data frame with one or more values within a variable broken up
 #'   across two rows.
-#' @param regex Regular expression for matching the second half of the broken
+#' @param regex Regular expression for matching the lagging half of the broken
 #'   values.
 #' @param ogcol Variable to unbreak.
 #' @param newcol Name of the new variable with the unified values.
@@ -16,7 +16,7 @@
 #'   values will be dropped.
 #'
 #' @details This function is limited to quite specific cases, but useful when
-#'   dealing with tables that contain scientific names broken across two rows.
+#'   dealing with tables that contain, for example, scientific names broken across two rows.
 #'   For unwrapping values, see \code{\link{unwrap_cols}}.
 #'
 #' @examples

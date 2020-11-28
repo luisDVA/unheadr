@@ -25,6 +25,9 @@ squished, and the lagging row is dropped.
 \description{
 Merge rows up
 }
+\details{
+This function recodes empty strings ("") to \code{NA} for smoother pattern matching.
+}
 \examples{
 bball <-
   data.frame(

@@ -2,7 +2,7 @@
 % Please edit documentation in R/unbreak_fn.R
 \name{unbreak_vals}
 \alias{unbreak_vals}
-\title{Unbreak values using regex to match the broken half of the value}
+\title{Unbreak values using regex to match the lagging half of the broken value}
 \usage{
 unbreak_vals(df, regex, ogcol, newcol, sep = " ", slice_groups)
 }
@@ -10,7 +10,7 @@ unbreak_vals(df, regex, ogcol, newcol, sep = " ", slice_groups)
 \item{df}{A data frame with one or more values within a variable broken up
 across two rows.}
 
-\item{regex}{Regular expression for matching the second half of the broken
+\item{regex}{Regular expression for matching the lagging half of the broken
 values.}
 
 \item{ogcol}{Variable to unbreak.}
@@ -30,11 +30,11 @@ argument is now deprecated; the extra rows and the variable with broken
 values will be dropped.
 }
 \description{
-Unbreak values using regex to match the broken half of the value
+Unbreak values using regex to match the lagging half of the broken value
 }
 \details{
 This function is limited to quite specific cases, but useful when
-dealing with tables that contain scientific names broken across two rows.
+dealing with tables that contain, for example, scientific names broken across two rows.
 For unwrapping values, see \code{\link{unwrap_cols}}.
 }
 \examples{

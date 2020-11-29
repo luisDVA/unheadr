@@ -41,6 +41,8 @@ unbreak_rows <- function(df, regex, ogcol, sep = " ") {
   else {
     message(paste(nmatches, "matches"))
   }
+
+  slice_ind <- which(stringr::str_detect(df[[dplyr::quo_name(ogcol)]], stringr::regex(regex))) + 1
   dfind <- dplyr::mutate_all(df, ~
   ifelse(stringr::str_detect(tidyr::replace_na(df[[dplyr::quo_name(ogcol)]], "blank"), stringr::regex(regex)),
     yes = stringr::str_squish(paste(ifelse(is.na(.), "", .),
@@ -49,6 +51,6 @@ unbreak_rows <- function(df, regex, ogcol, sep = " ") {
     )), no = ifelse(is.na(.), "", .)
   ))
   dfindna <- dplyr::mutate_all(dfind, ~ dplyr::na_if(., ""))
-  dfsliced <- dplyr::slice(dfindna, -(which(stringr::str_detect(!!ogcol, stringr::regex(regex))) + 1))
+  dfsliced <- dplyr::slice(dfindna, -slice_ind)
   dfsliced
 }

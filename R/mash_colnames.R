@@ -20,13 +20,14 @@
 #'   names, and mashes the values column-wise into a single string for each
 #'   column. The \code{keep_names} argument can be helpful for tables we
 #'   imported using a `skip` argument. If \code{keep_names} is set to `FALSE`,
-#'   adjust the value of `n_name_rows` accordingly. This function will throw a
-#'   warning when `NA` values end up in the variable names.
-#'   \code{sliding_headers} can be used for tables with ragged names in which
-#'   not every column has a value in the very first row. In these cases
-#'   attribution by adjacency is assumed, and when \code{sliding_headers} is set
-#'   to `TRUE` the names in the topmost row are filled row-wise. This can be
-#'   useful for tables reporting survey data or experimental designs in an
+#'   adjust the value of `n_name_rows` accordingly.
+#'
+#'   This function will throw a warning when possible `NA` values end up in the
+#'   variable names. \code{sliding_headers} can be used for tables with ragged
+#'   names in which not every column has a value in the very first row. In these
+#'   cases attribution by adjacency is assumed, and when \code{sliding_headers}
+#'   is set to `TRUE` the names in the topmost row are filled row-wise. This can
+#'   be useful for tables reporting survey data or experimental designs in an
 #'   untidy manner.
 #' @author This function was originally contributed by Jarrett Byrnes through a
 #'   GitHub issue.

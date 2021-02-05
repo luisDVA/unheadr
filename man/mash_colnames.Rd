@@ -42,13 +42,14 @@ table that hold the broken up names and whether or not to include the
 names, and mashes the values column-wise into a single string for each
 column. The \code{keep_names} argument can be helpful for tables we
 imported using a \code{skip} argument. If \code{keep_names} is set to \code{FALSE},
-adjust the value of \code{n_name_rows} accordingly. This function will throw a
-warning when \code{NA} values end up in the variable names.
-\code{sliding_headers} can be used for tables with ragged names in which
-not every column has a value in the very first row. In these cases
-attribution by adjacency is assumed, and when \code{sliding_headers} is set
-to \code{TRUE} the names in the topmost row are filled row-wise. This can be
-useful for tables reporting survey data or experimental designs in an
+adjust the value of \code{n_name_rows} accordingly.
+
+This function will throw a warning when possible \code{NA} values end up in the
+variable names. \code{sliding_headers} can be used for tables with ragged
+names in which not every column has a value in the very first row. In these
+cases attribution by adjacency is assumed, and when \code{sliding_headers}
+is set to \code{TRUE} the names in the topmost row are filled row-wise. This can
+be useful for tables reporting survey data or experimental designs in an
 untidy manner.
 }
 \examples{

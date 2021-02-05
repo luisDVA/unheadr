@@ -1,5 +1,3 @@
-# unheadr 0.3.1
-
 # unheadr 
 
 # unheadr 0.1.0
@@ -26,3 +24,7 @@
 * Adds `mash_colnames` to make many header rows into column names.
 * Drops leading dot notation from `unbreak_vals` _slice/__groups_ argument and ultimately deprecates the argument.
 * Two datasets added for teaching and demonstration purposes.
+
+# unheadr 0.3.1
+* More informative warning messages for `mash_colnames`
+* Re-converted character columns in new datasets.

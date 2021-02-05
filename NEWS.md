@@ -1,4 +1,4 @@
-# unheadr (development version)
+# unheadr 0.3.1
 
 # unheadr 
 

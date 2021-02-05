@@ -18,4 +18,4 @@ Checked 0 reverse dependencies, comparing R CMD check results across CRAN and de
  * 0 new problems
  * Failed to check 0 packages
 
-* This is a Minor increment, adding two improved versions of existing functions, a helper function, and a new example dataset.
+* This is patch adds more informative documentation, and makes example datasets more usable by type-converting character variables.

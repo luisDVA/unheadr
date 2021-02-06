@@ -10,3 +10,4 @@ No ERRORs, WARNINGs, or NOTEs.
 ## No depdendency issues
 
 * This is patch adds more informative documentation, and makes example datasets more usable by type-converting character variables.
+* This submission fixes three doi urls in the dataset documentation

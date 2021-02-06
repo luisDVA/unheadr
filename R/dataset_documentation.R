@@ -6,14 +6,13 @@
 #' \describe{
 #'     \item{scientific_name}{scientific names, with geographic region and
 #'     taxonomic family embedded as subheaders.}
-#'     \item{common_name}{vernacular name, as listed in Estrada et al.
-#'         (2017)}
+#'     \item{common_name}{vernacular name}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
 #' }
 #' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'         world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'         e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
+#'         e1600946. \doi{10.1126/sciadv.1600946}
 "primates2017"
 #' Comparative data for 16 species of primates with some broken values
 #'
@@ -25,14 +24,13 @@
 #' \describe{
 #'     \item{scientific_name}{scientific names, with embedded subheaders
 #'         for geographic region and taxonomic family and broken values}
-#'     \item{common_name}{vernacular name, as listed in Estrada et al.
-#'         (2017)}
+#'     \item{common_name}{vernacular name}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
 #' }
 #' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'         world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'         e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
+#'         e1600946. \doi{10.1126/sciadv.1600946}
 "primates2017_broken"
 #' Comparative data for two species of primates
 #'
@@ -40,8 +38,7 @@
 #' @format A data frame with 9 rows and 6 variables:
 #' \describe{
 #'     \item{scientific_name}{scientific names, see reference}
-#'     \item{common_name}{vernacular name, as listed in Estrada et al.
-#'         (2017)}
+#'     \item{common_name}{vernacular name}
 #'     \item{habitat}{habitat types listed in the IUCN Red List assessments}
 #'     \item{red_list_status}{IUCN Red List Status in January 2017}
 #'     \item{mass_kg}{mean body mass in kilograms}
@@ -50,7 +47,7 @@
 #' }
 #' @source Estrada, Alejandro, et al. "Impending extinction crisis of the
 #'         world's primates: Why primates matter." Science Advances 3.1 (2017):
-#'         e1600946. \url{https://doi.org/10.1126/sciadv.1600946}
+#'         e1600946. \doi{10.1126/sciadv.1600946}
 "primates2017_wrapped"
 #' dog_test.xlsx spreadsheet
 #'

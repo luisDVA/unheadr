@@ -1,5 +1,3 @@
-# unheadr 0.3.2
-
 # unheadr 
 
 # unheadr 0.1.0
@@ -30,3 +28,8 @@
 # unheadr 0.3.1
 * More informative warning messages for `mash_colnames`
 * Re-converted character columns in new datasets.
+
+# unheadr 0.3.2
+
+* Fixed issue in `mash_colnames` that broke output when separator was not an underscore.
+* Improve wording in documentation for unbreaking trailing halves of broken values.

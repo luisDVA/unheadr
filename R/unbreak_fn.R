@@ -2,7 +2,7 @@
 #'
 #' @param df A data frame with one or more values within a variable broken up
 #'   across two rows.
-#' @param regex Regular expression for matching the lagging half of the broken
+#' @param regex Regular expression for matching the trailing (lagging) half of the broken
 #'   values.
 #' @param ogcol Variable to unbreak.
 #' @param newcol Name of the new variable with the unified values.

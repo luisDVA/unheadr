@@ -10,7 +10,7 @@ unbreak_vals(df, regex, ogcol, newcol, sep = " ", slice_groups)
 \item{df}{A data frame with one or more values within a variable broken up
 across two rows.}
 
-\item{regex}{Regular expression for matching the lagging half of the broken
+\item{regex}{Regular expression for matching the trailing (lagging) half of the broken
 values.}
 
 \item{ogcol}{Variable to unbreak.}

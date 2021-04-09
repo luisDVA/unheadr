@@ -129,7 +129,7 @@ mash_colnames <- function(df,
     summrzddf$headers <- NULL
   }
   # Remove NAs
-  summrzddf$values <- gsub("NA_|_NA", "", summrzddf$values)
+  summrzddf$values <- gsub(paste0(NA,sep,"|",sep,NA), "", summrzddf$values)
 
   # Pivot wide with the correct column order
   summrzddfwide <-

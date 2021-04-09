@@ -7,7 +7,6 @@ No ERRORs, WARNINGs, or NOTEs.
 ## R CMD check results
 No ERRORs, WARNINGs, or NOTEs. 
   
-## No depdendency issues
+## No dependency issues
 
-* This is patch adds more informative documentation, and makes example datasets more usable by type-converting character variables.
-* This submission fixes three doi urls in the dataset documentation
+* This minor patch fixes a hardcoded pattern in a gsub call that caused misleading outputs, and improves the wording in the respective documentation.

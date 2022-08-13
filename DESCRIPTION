@@ -22,7 +22,7 @@ Imports:
     tidyxl,
     readxl,
     tibble
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 Suggests: 
     knitr,

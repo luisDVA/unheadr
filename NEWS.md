@@ -33,3 +33,7 @@
 
 * Fixed issue in `mash_colnames` that broke output when separator was not an underscore.
 * Improve wording in documentation for unbreaking trailing halves of broken values.
+
+# unheadr 0.3.3
+
+* Documentation fix for HTML5 checks

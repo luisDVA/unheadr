@@ -1,10 +1,13 @@
 title: unheadr
 url: unheadr.liomys.mx
 template:
-  bootsrap: 5
+  bootstrap: 5
+  bootswatch: litera
   bslib:
-    bootswatch: litera
-    base_font: {google: "Rubik"}
+    base_font:
+      google: {family: "Rethink Sans", wght: [300, 400, 700], ital: [0, 1]}
+    code_font: {google: "Red Hat Mono"}
+
 navbar:
   structure:
     left:

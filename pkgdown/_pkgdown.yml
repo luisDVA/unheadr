@@ -2,7 +2,6 @@ title: unheadr
 url: unheadr.liomys.mx
 template:
   bootstrap: 5
-  bootswatch: litera
   bslib:
     base_font:
       google: {family: "Rethink Sans", wght: [300, 400, 700], ital: [0, 1]}

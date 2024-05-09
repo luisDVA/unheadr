@@ -9,24 +9,25 @@ annotate_mf(xlfilepath, orig, new)
 \arguments{
 \item{xlfilepath}{Path to a single-sheet spreadsheet file (xls or xlsx).}
 
-\item{orig}{Variable to annotate formatting in.}
+\item{orig}{Target variable to annotate formatting in.}
 
 \item{new}{Name of new variable with cell formatting pasted as a string.}
 }
 \value{
-A tibble with a new column with meaningful formatting embedded as
-text.
+A tibble with a new column in which the meaningful formatting is
+embedded as text.
 }
 \description{
-Turns cell formatting into annotations for values in the target row.
+Turns cell formatting into annotations for values in the target variable.
 }
 \details{
-At this point, seven popular approaches for meaningful
-formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
-the function. \code{sheets}, \code{skip}, and \code{range} arguments for spreadsheet input
-are not supported. The hex8 code of the fill color used for text color and cell
-highlighting is also appended in the output. Ensure the data in the
-spreadsheet are rectangular before running.
+Seven popular approaches for meaningful formatting (bold, colored
+text, italic, strikethrough, underline, double underline, and cell
+highlighting) are hardcoded in the function. \code{sheets}, \code{skip}, and \code{range}
+arguments for spreadsheet input are not supported. The hex8 code of the
+fill color used for text color and cell highlighting is also appended in
+the output. Ensure the data in the spreadsheet are rectangular before
+running; this includes blank but formatted cells beyond the data rectangle.
 }
 \examples{
 example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")

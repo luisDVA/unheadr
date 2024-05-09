@@ -17,12 +17,13 @@ columns.
 Turns cell formatting into annotations for all values across all variables.
 }
 \details{
-At this point, seven popular approaches for meaningful
-formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
-the function. \code{sheets}, \code{skip}, and \code{range} arguments for spreadsheet input
-are not supported. The hex8 code of the fill color used for text color and cell
-highlighting is also appended in the output. Ensure the data in the
-spreadsheet are rectangular before running.
+Seven popular approaches for meaningful formatting (bold, colored
+text, italic, strikethrough, underline, double underline, and cell
+highlighting) are supported in this function. \code{sheets}, \code{skip}, and \code{range}
+arguments for spreadsheet input are not supported. The hex8 code of the
+fill color used for text color and cell highlighting is also appended in
+the output. Ensure the data in the spreadsheet are rectangular before
+running; this includes blank but formatted cells beyond the data rectangle.
 }
 \examples{
 example_spreadsheet <- system.file("extdata/boutiques.xlsx", package = "unheadr")

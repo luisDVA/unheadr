@@ -6,3 +6,4 @@
 \description{
 re-export magrittr pipe operator
 }
+\keyword{internal}

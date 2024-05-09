@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">unheadr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.3</span>
       </span>
     </div>
 
@@ -46,7 +48,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -54,7 +56,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -71,8 +73,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/luisDVA/unheadr">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/luisDVA/unheadr" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -86,28 +88,36 @@
 
       
 
-      </header><script src="unheadr-vignette_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to unheadr</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/luisDVA/unheadr/blob/master/vignettes/unheadr-vignette.Rmd"><code>vignettes/unheadr-vignette.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/luisDVA/unheadr/blob/HEAD/vignettes/unheadr-vignette.Rmd" class="external-link"><code>vignettes/unheadr-vignette.Rmd</code></a></small>
       <div class="hidden name"><code>unheadr-vignette.Rmd</code></div>
 
     </div>
 
     
     
-<p>When we work with other people’s data, we often have to struggle through multiple unexpected steps before we get to a flexible, usable structure. Popular ways of structuring and presenting data can place content beyond the reach of code-based routines to tackle repetitive tasks efficiently.</p>
-<div id="package-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#package-functions" class="anchor"></a>Package functions</h2>
-<p>The functions in <code>unheadr</code> help us rework data shared by other people, from a human-readable structure to a tidier machine-readable structure on which we can perform common data manipulation tasks.</p>
-<div id="data-frames-and-tibbles" class="section level3">
-<h3 class="hasAnchor">
-<a href="#data-frames-and-tibbles" class="anchor"></a>Data frames and tibbles</h3>
-<p>Here is how <code>unheadr</code> works with tibble and data frame objects that suffer from common issues such as:</p>
+<p>When we work with other people’s data, we often have to struggle
+through multiple unexpected steps before we get to a flexible, usable
+structure. Popular ways of structuring and presenting data can place
+content beyond the reach of code-based routines to tackle repetitive
+tasks efficiently.</p>
+<div class="section level2">
+<h2 id="package-functions">Package functions<a class="anchor" aria-label="anchor" href="#package-functions"></a>
+</h2>
+<p>The functions in <code>unheadr</code> help us rework data shared by
+other people, from a human-readable structure to a tidier
+machine-readable structure on which we can perform common data
+manipulation tasks.</p>
+<div class="section level3">
+<h3 id="data-frames-and-tibbles">Data frames and tibbles<a class="anchor" aria-label="anchor" href="#data-frames-and-tibbles"></a>
+</h3>
+<p>Here is how <code>unheadr</code> works with tibble and data frame
+objects that suffer from common issues such as:</p>
 <ul>
 <li>Embedded subheaders</li>
 <li>Broken values</li>
@@ -115,232 +125,312 @@
 <li>Broken rows</li>
 <li>Broken headers</li>
 </ul>
-<p><strong>Embedded subheaders</strong> are usually grouping variables embedded into another variable, used to show hierarchical data or create small multiples of data.</p>
+<p><strong>Embedded subheaders</strong> are usually grouping variables
+embedded into another variable, used to show hierarchical data or create
+small multiples of data.</p>
 <p>A simple example would be a coffee shop menu:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="no">dat</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  <span class="kw">drink</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
-    <span class="st">"Cold Drinks"</span>, <span class="st">"Soda"</span>, <span class="st">"Water"</span>, <span class="st">"Juice"</span>, <span class="st">"Lemonade"</span>,
-    <span class="st">"Hot Drinks"</span>, <span class="st">"Tea"</span>, <span class="st">"Coffee"</span>
-  ),
-  <span class="kw">price</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">2.99</span>, <span class="fl">1.99</span>, <span class="fl">3.15</span>, <span class="fl">2</span>, <span class="fl">NA</span>, <span class="fl">3.99</span>, <span class="fl">1.99</span>), <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>
-)
-
-<span class="no">dat</span>
-<span class="co">#&gt;         drink price</span>
-<span class="co">#&gt; 1 Cold Drinks    NA</span>
-<span class="co">#&gt; 2        Soda  2.99</span>
-<span class="co">#&gt; 3       Water  1.99</span>
-<span class="co">#&gt; 4       Juice  3.15</span>
-<span class="co">#&gt; 5    Lemonade  2.00</span>
-<span class="co">#&gt; 6  Hot Drinks    NA</span>
-<span class="co">#&gt; 7         Tea  3.99</span>
-<span class="co">#&gt; 8      Coffee  1.99</span></pre></body></html></div>
-<p>The beverage type is embedded in the ‘drinks’ variable. If we can match them with regular expressions, we can move the grouping values into their own variable using <code><a href="../reference/untangle2.html">untangle2()</a></code></p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/untangle2.html">untangle2</a></span>(<span class="no">dat</span>, <span class="st">"Drinks$"</span>, <span class="no">drink</span>, <span class="st">"beverage_type"</span>)
-<span class="co">#&gt; 2 matches</span>
-<span class="co">#&gt;      drink price beverage_type</span>
-<span class="co">#&gt; 1     Soda  2.99   Cold Drinks</span>
-<span class="co">#&gt; 2    Water  1.99   Cold Drinks</span>
-<span class="co">#&gt; 3    Juice  3.15   Cold Drinks</span>
-<span class="co">#&gt; 4 Lemonade  2.00   Cold Drinks</span>
-<span class="co">#&gt; 5      Tea  3.99    Hot Drinks</span>
-<span class="co">#&gt; 6   Coffee  1.99    Hot Drinks</span></pre></body></html></div>
-<p><strong>Broken values</strong> usually happen when we’re pressed for space.</p>
-<p>For whatever reason, the entries for the Barcelona 1992 and London 2012 Olympics are broken across two contiguous rows and NAs are used as padding in the other variables.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">OGames</span> <span class="kw">&lt;-</span> <span class="fu">tibble</span>(
-  <span class="kw">Games</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Los Angeles 1984"</span>, <span class="st">"Barcelona"</span>, <span class="st">"1992"</span>, <span class="st">"Atlanta 1996"</span>, <span class="st">"Sydney 2000"</span>, <span class="st">"London"</span>, <span class="st">"2012"</span>),
-  <span class="kw">Country</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"USA"</span>, <span class="st">"Spain"</span>, <span class="fl">NA</span>, <span class="st">"USA"</span>, <span class="st">"Australia"</span>, <span class="st">"UK"</span>, <span class="fl">NA</span>),
-  <span class="kw">Soccer_gold_medal</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"France"</span>, <span class="st">"Spain"</span>, <span class="fl">NA</span>, <span class="st">"Nigeria"</span>, <span class="st">"Cameroon"</span>, <span class="st">"Mexico"</span>, <span class="fl">NA</span>)
-)
-<span class="no">OGames</span>
-<span class="co">#&gt; # A tibble: 7 x 3</span>
-<span class="co">#&gt;   Games            Country   Soccer_gold_medal</span>
-<span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;     &lt;chr&gt;            </span>
-<span class="co">#&gt; 1 Los Angeles 1984 USA       France           </span>
-<span class="co">#&gt; 2 Barcelona        Spain     Spain            </span>
-<span class="co">#&gt; 3 1992             &lt;NA&gt;      &lt;NA&gt;             </span>
-<span class="co">#&gt; 4 Atlanta 1996     USA       Nigeria          </span>
-<span class="co">#&gt; 5 Sydney 2000      Australia Cameroon         </span>
-<span class="co">#&gt; 6 London           UK        Mexico           </span>
-<span class="co">#&gt; 7 2012             &lt;NA&gt;      &lt;NA&gt;</span></pre></body></html></div>
-<p>In this case, we can use <code><a href="../reference/unbreak_vals.html">unbreak_vals()</a></code> to ‘unbreak’ the lines in the ‘Games’ variable, matching the strings that start with numbers.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">OGames</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/unbreak_vals.html">unbreak_vals</a></span>(<span class="st">"^[0-9]"</span>, <span class="no">Games</span>, <span class="no">Games_unbroken</span>, <span class="kw">slice_groups</span> <span class="kw">=</span> <span class="fl">TRUE</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">select</span>(<span class="no">Games_unbroken</span>, <span class="fu">everything</span>())
-<span class="co">#&gt; Warning: argument slice_groups is deprecated; extra rows and the variable with</span>
-<span class="co">#&gt; broken values are now dropped by default.</span>
-<span class="co">#&gt; # A tibble: 5 x 3</span>
-<span class="co">#&gt;   Games_unbroken   Country   Soccer_gold_medal</span>
-<span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;     &lt;chr&gt;            </span>
-<span class="co">#&gt; 1 Los Angeles 1984 USA       France           </span>
-<span class="co">#&gt; 2 Barcelona 1992   Spain     Spain            </span>
-<span class="co">#&gt; 3 Atlanta 1996     USA       Nigeria          </span>
-<span class="co">#&gt; 4 Sydney 2000      Australia Cameroon         </span>
-<span class="co">#&gt; 5 London 2012      UK        Mexico</span></pre></body></html></div>
-<p><strong>Wrapped columns</strong> often happen when we merge cells in spreadsheets or use table formatting in a word processor, resulting in empty or NA values used to pad all the vertical space.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">knicks</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-  <span class="kw">player</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Allan Houston"</span>, <span class="fl">NA</span>, <span class="st">"Latrell Sprewell"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>),
-  <span class="kw">teams</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
-    <span class="st">"Pistons"</span>, <span class="st">"Knicks"</span>, <span class="st">"Warriors"</span>, <span class="st">"Knicks"</span>,
-    <span class="st">"Timberwolves"</span>
-  ),
-  <span class="kw">position</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Shooting guard"</span>, <span class="fl">NA</span>, <span class="st">"Small forward"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>)
-)
-<span class="no">knicks</span>
-<span class="co">#&gt;             player        teams       position</span>
-<span class="co">#&gt; 1    Allan Houston      Pistons Shooting guard</span>
-<span class="co">#&gt; 2             &lt;NA&gt;       Knicks           &lt;NA&gt;</span>
-<span class="co">#&gt; 3 Latrell Sprewell     Warriors  Small forward</span>
-<span class="co">#&gt; 4             &lt;NA&gt;       Knicks           &lt;NA&gt;</span>
-<span class="co">#&gt; 5             &lt;NA&gt; Timberwolves           &lt;NA&gt;</span></pre></body></html></div>
-<p>We can unwrap the ‘teams’ values into a single string using <code>unrwap_cols()</code>.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">knicks</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/unwrap_cols.html">unwrap_cols</a></span>(<span class="kw">groupingVar</span> <span class="kw">=</span> <span class="no">player</span>, <span class="kw">separator</span> <span class="kw">=</span> <span class="st">", "</span>)
-<span class="co">#&gt; # A tibble: 2 x 3</span>
-<span class="co">#&gt;   player           teams                          position      </span>
-<span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;                          &lt;chr&gt;         </span>
-<span class="co">#&gt; 1 Allan Houston    Pistons, Knicks                Shooting guard</span>
-<span class="co">#&gt; 2 Latrell Sprewell Warriors, Knicks, Timberwolves Small forward</span></pre></body></html></div>
-<p>This is more or less the opposite to <code>separate_rows()</code> from <code>tidyr</code>.</p>
-<p><strong>Broken rows</strong> have values of two contiguous rows broken up and padded with empty or NA values.</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">basketball</span> <span class="kw">&lt;-</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-    <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-    <span class="kw">v1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
-      <span class="st">"Player"</span>, <span class="fl">NA</span>, <span class="st">"Sleve McDichael"</span>, <span class="st">"Dean Wesrey"</span>,
-      <span class="st">"Karl Dandleton"</span>, <span class="st">"Mike Sernandez"</span>,
-      <span class="st">"Glenallen Mixon"</span>, <span class="st">"Rey McSriff"</span>
-    ),
-    <span class="kw">v2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
-      <span class="st">"Most points"</span>, <span class="st">"in a game"</span>, <span class="st">"55"</span>, <span class="st">"43"</span>, <span class="st">"41"</span>, <span class="st">"111"</span>, <span class="st">"109"</span>, <span class="st">"104"</span>
-    ),
-    <span class="kw">v3</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
-      <span class="st">"Season"</span>, <span class="st">"(year ending)"</span>, <span class="st">"2001"</span>, <span class="st">"2000"</span>, <span class="st">"2002"</span>,
-      <span class="st">"2000"</span>, <span class="st">"2002"</span>, <span class="st">"2001"</span>
-    )
-  )
-<span class="no">basketball</span>
-<span class="co">#&gt;                v1          v2            v3</span>
-<span class="co">#&gt; 1          Player Most points        Season</span>
-<span class="co">#&gt; 2            &lt;NA&gt;   in a game (year ending)</span>
-<span class="co">#&gt; 3 Sleve McDichael          55          2001</span>
-<span class="co">#&gt; 4     Dean Wesrey          43          2000</span>
-<span class="co">#&gt; 5  Karl Dandleton          41          2002</span>
-<span class="co">#&gt; 6  Mike Sernandez         111          2000</span>
-<span class="co">#&gt; 7 Glenallen Mixon         109          2002</span>
-<span class="co">#&gt; 8     Rey McSriff         104          2001</span></pre></body></html></div>
-<p>In this case, we can match any value in any variable along the row that has broken values.</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/unbreak_rows.html">unbreak_rows</a></span>(<span class="no">basketball</span>, <span class="st">"^Most"</span>, <span class="no">v2</span>)
-<span class="co">#&gt; 1 match</span>
-<span class="co">#&gt;                v1                    v2                   v3</span>
-<span class="co">#&gt; 1          Player Most points in a game Season (year ending)</span>
-<span class="co">#&gt; 2 Sleve McDichael                    55                 2001</span>
-<span class="co">#&gt; 3     Dean Wesrey                    43                 2000</span>
-<span class="co">#&gt; 4  Karl Dandleton                    41                 2002</span>
-<span class="co">#&gt; 5  Mike Sernandez                   111                 2000</span>
-<span class="co">#&gt; 6 Glenallen Mixon                   109                 2002</span>
-<span class="co">#&gt; 7     Rey McSriff                   104                 2001</span></pre></body></html></div>
-<p><strong>Broken headers</strong> are variable names broken up across the first few rows.</p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">vehicles</span> <span class="kw">&lt;-</span>
-<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-           <span class="kw">Vehicle</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"Truck"</span>, <span class="st">"Motorcycle"</span>, <span class="st">"Sedan"</span>, <span class="st">"Van"</span>),
-             <span class="kw">Price</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"in"</span>,<span class="st">"2014"</span>,
-                       <span class="st">"(local currency)"</span>,<span class="st">"50000"</span>,<span class="st">"44000"</span>,<span class="st">"33000"</span>,<span class="st">"50000"</span>),
-             <span class="kw">Color</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"White"</span>),
-         <span class="kw">Emissions</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Certificate"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>)
-)
-<span class="no">vehicles</span>
-<span class="co">#&gt;      Vehicle            Price Color   Emissions</span>
-<span class="co">#&gt; 1       &lt;NA&gt;               in  &lt;NA&gt; Certificate</span>
-<span class="co">#&gt; 2       &lt;NA&gt;             2014  &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt; 3       &lt;NA&gt; (local currency)  &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt; 4      Truck            50000 White        TRUE</span>
-<span class="co">#&gt; 5 Motorcycle            44000 Black       FALSE</span>
-<span class="co">#&gt; 6      Sedan            33000   Red        TRUE</span>
-<span class="co">#&gt; 7        Van            50000 White        TRUE</span></pre></body></html></div>
-<p>Here, the column names are broken. The top <em>three</em> rows (in addition to the column name) contain fragments of the name and should be mashed together column-wise.</p>
-<p>The <code><a href="../reference/mash_colnames.html">mash_colnames()</a></code> function makes these many header rows into column names. The names are broken up across the top three rows, which goes in to the <code>n_name_rows</code> argument. Unlike other functions in <code>unheadr</code>, we provide the number of rows directly, rather than attempt any string matching.</p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span>(<span class="kw">df</span><span class="kw">=</span> <span class="no">vehicles</span>, <span class="kw">n_name_rows</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-<span class="co">#&gt;      Vehicle Price_in_2014_(local currency) Color Emissions_Certificate</span>
-<span class="co">#&gt; 4      Truck                          50000 White                  TRUE</span>
-<span class="co">#&gt; 5 Motorcycle                          44000 Black                 FALSE</span>
-<span class="co">#&gt; 6      Sedan                          33000   Red                  TRUE</span>
-<span class="co">#&gt; 7        Van                          50000 White                  TRUE</span></pre></body></html></div>
-<p>When importing data with broken headers into R, variable names are not always assigned from the values in top row, leaving us with automatically generated names (e.g. X1, X2, X3, etc.).</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">vehicles_skip</span> <span class="kw">&lt;-</span>
-<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-                <span class="kw">X1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Vehicle"</span>,<span class="fl">NA</span>,<span class="fl">NA</span>,<span class="fl">NA</span>,<span class="st">"Truck"</span>,
-                       <span class="st">"Motorcycle"</span>,<span class="st">"Sedan"</span>,<span class="st">"Van"</span>),
-                <span class="kw">X2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Price"</span>,<span class="st">"in"</span>,<span class="st">"2014"</span>,
-                       <span class="st">"(local currency)"</span>,<span class="st">"50000"</span>,<span class="st">"44000"</span>,<span class="st">"33000"</span>,<span class="st">"50000"</span>),
-                <span class="kw">X3</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Color"</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="fl">NA</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"White"</span>),
-                <span class="kw">X4</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Emissions"</span>,<span class="st">"Certificate"</span>,<span class="fl">NA</span>,
-                       <span class="fl">NA</span>,<span class="st">"TRUE"</span>,<span class="st">"FALSE"</span>,<span class="st">"TRUE"</span>,<span class="st">"TRUE"</span>)
-)
-<span class="no">vehicles_skip</span>
-<span class="co">#&gt;           X1               X2    X3          X4</span>
-<span class="co">#&gt; 1    Vehicle            Price Color   Emissions</span>
-<span class="co">#&gt; 2       &lt;NA&gt;               in  &lt;NA&gt; Certificate</span>
-<span class="co">#&gt; 3       &lt;NA&gt;             2014  &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt; 4       &lt;NA&gt; (local currency)  &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt; 5      Truck            50000 White        TRUE</span>
-<span class="co">#&gt; 6 Motorcycle            44000 Black       FALSE</span>
-<span class="co">#&gt; 7      Sedan            33000   Red        TRUE</span>
-<span class="co">#&gt; 8        Van            50000 White        TRUE</span></pre></body></html></div>
-<p>In this case, the <code>keep_names</code> argument in <code><a href="../reference/mash_colnames.html">mash_colnames()</a></code> lets us ignore the object names when building new names from the first four rows of the data.</p>
-<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span>(<span class="kw">df</span><span class="kw">=</span> <span class="no">vehicles_skip</span>, <span class="kw">n_name_rows</span> <span class="kw">=</span> <span class="fl">4</span>, <span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
-<span class="co">#&gt;      Vehicle Price_in_2014_(local currency) Color Emissions_Certificate</span>
-<span class="co">#&gt; 5      Truck                          50000 White                  TRUE</span>
-<span class="co">#&gt; 6 Motorcycle                          44000 Black                 FALSE</span>
-<span class="co">#&gt; 7      Sedan                          33000   Red                  TRUE</span>
-<span class="co">#&gt; 8        Van                          50000 White                  TRUE</span></pre></body></html></div>
-<p>Lastly, the <code>sliding_headers</code> argument in <code>mash_colnames</code> can be used for tables with ragged names, in which not every column has a value in the very first row. In such cases, attribution by adjacency is assumed, and when <code>sliding_headers = TRUE</code> the names are filled row-wise. This can be useful for tables reporting survey data or experimental designs in an untidy manner.</p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">survey</span> <span class="kw">&lt;-</span>
-<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  <span class="kw">stringsAsFactors</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-                <span class="kw">X1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Participant"</span>, <span class="fl">NA</span>, <span class="st">"12"</span>, <span class="st">"34"</span>, <span class="st">"45"</span>, <span class="st">"123"</span>),
-                <span class="kw">X2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"How did you hear about us?"</span>,
-                       <span class="st">"TV"</span>,<span class="st">"TRUE"</span>,<span class="st">"FALSE"</span>,<span class="st">"FALSE"</span>,<span class="st">"FALSE"</span>),
-                <span class="kw">X3</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Social Media"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>),
-                <span class="kw">X4</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Radio"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>),
-                <span class="kw">X5</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">NA</span>, <span class="st">"Flyer"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>),
-                <span class="kw">X6</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Age"</span>, <span class="fl">NA</span>, <span class="st">"31"</span>, <span class="st">"23"</span>, <span class="st">"19"</span>, <span class="st">"24"</span>)
-)
-
-<span class="no">survey</span>
-<span class="co">#&gt;            X1                         X2           X3    X4    X5   X6</span>
-<span class="co">#&gt; 1 Participant How did you hear about us?         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Age</span>
-<span class="co">#&gt; 2        &lt;NA&gt;                         TV Social Media Radio Flyer &lt;NA&gt;</span>
-<span class="co">#&gt; 3          12                       TRUE        FALSE FALSE FALSE   31</span>
-<span class="co">#&gt; 4          34                      FALSE         TRUE  TRUE FALSE   23</span>
-<span class="co">#&gt; 5          45                      FALSE        FALSE FALSE FALSE   19</span>
-<span class="co">#&gt; 6         123                      FALSE        FALSE  TRUE FALSE   24</span>
-<span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span>(<span class="no">survey</span>,<span class="fl">2</span>,<span class="kw">keep_names</span> <span class="kw">=</span> <span class="fl">FALSE</span>,<span class="kw">sliding_headers</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">"_"</span>)
-<span class="co">#&gt;   Participant How did you hear about us?_TV</span>
-<span class="co">#&gt; 3          12                          TRUE</span>
-<span class="co">#&gt; 4          34                         FALSE</span>
-<span class="co">#&gt; 5          45                         FALSE</span>
-<span class="co">#&gt; 6         123                         FALSE</span>
-<span class="co">#&gt;   How did you hear about us?_Social Media How did you hear about us?_Radio</span>
-<span class="co">#&gt; 3                                   FALSE                            FALSE</span>
-<span class="co">#&gt; 4                                    TRUE                             TRUE</span>
-<span class="co">#&gt; 5                                   FALSE                            FALSE</span>
-<span class="co">#&gt; 6                                   FALSE                             TRUE</span>
-<span class="co">#&gt;   How did you hear about us?_Flyer Age</span>
-<span class="co">#&gt; 3                            FALSE  31</span>
-<span class="co">#&gt; 4                            FALSE  23</span>
-<span class="co">#&gt; 5                            FALSE  19</span>
-<span class="co">#&gt; 6                            FALSE  24</span></pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  drink <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"Cold Drinks"</span>, <span class="st">"Soda"</span>, <span class="st">"Water"</span>, <span class="st">"Juice"</span>, <span class="st">"Lemonade"</span>,</span>
+<span>    <span class="st">"Hot Drinks"</span>, <span class="st">"Tea"</span>, <span class="st">"Coffee"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  price <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">2.99</span>, <span class="fl">1.99</span>, <span class="fl">3.15</span>, <span class="fl">2</span>, <span class="cn">NA</span>, <span class="fl">3.99</span>, <span class="fl">1.99</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dat</span></span>
+<span><span class="co">#&gt;         drink price</span></span>
+<span><span class="co">#&gt; 1 Cold Drinks    NA</span></span>
+<span><span class="co">#&gt; 2        Soda  2.99</span></span>
+<span><span class="co">#&gt; 3       Water  1.99</span></span>
+<span><span class="co">#&gt; 4       Juice  3.15</span></span>
+<span><span class="co">#&gt; 5    Lemonade  2.00</span></span>
+<span><span class="co">#&gt; 6  Hot Drinks    NA</span></span>
+<span><span class="co">#&gt; 7         Tea  3.99</span></span>
+<span><span class="co">#&gt; 8      Coffee  1.99</span></span></code></pre></div>
+<p>The beverage type is embedded in the ‘drinks’ variable. If we can
+match them with regular expressions, we can move the grouping values
+into their own variable using <code><a href="../reference/untangle2.html">untangle2()</a></code></p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/untangle2.html">untangle2</a></span><span class="op">(</span><span class="va">dat</span>, <span class="st">"Drinks$"</span>, <span class="va">drink</span>, <span class="st">"beverage_type"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; 2 matches</span></span>
+<span><span class="co">#&gt;      drink price beverage_type</span></span>
+<span><span class="co">#&gt; 1     Soda  2.99   Cold Drinks</span></span>
+<span><span class="co">#&gt; 2    Water  1.99   Cold Drinks</span></span>
+<span><span class="co">#&gt; 3    Juice  3.15   Cold Drinks</span></span>
+<span><span class="co">#&gt; 4 Lemonade  2.00   Cold Drinks</span></span>
+<span><span class="co">#&gt; 5      Tea  3.99    Hot Drinks</span></span>
+<span><span class="co">#&gt; 6   Coffee  1.99    Hot Drinks</span></span></code></pre></div>
+<p><strong>Broken values</strong> usually happen when we’re pressed for
+space.</p>
+<p>For whatever reason, the entries for the Barcelona 1992 and London
+2012 Olympics are broken across two contiguous rows and NAs are used as
+padding in the other variables.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">OGames</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<span>  Games <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Los Angeles 1984"</span>, <span class="st">"Barcelona"</span>, <span class="st">"1992"</span>, <span class="st">"Atlanta 1996"</span>, <span class="st">"Sydney 2000"</span>, <span class="st">"London"</span>, <span class="st">"2012"</span><span class="op">)</span>,</span>
+<span>  Country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"USA"</span>, <span class="st">"Spain"</span>, <span class="cn">NA</span>, <span class="st">"USA"</span>, <span class="st">"Australia"</span>, <span class="st">"UK"</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>  Soccer_gold_medal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"France"</span>, <span class="st">"Spain"</span>, <span class="cn">NA</span>, <span class="st">"Nigeria"</span>, <span class="st">"Cameroon"</span>, <span class="st">"Mexico"</span>, <span class="cn">NA</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">OGames</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 3</span></span></span>
+<span><span class="co">#&gt;   Games            Country   Soccer_gold_medal</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Los Angeles 1984 USA       France           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Barcelona        Spain     Spain            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 1992             <span style="color: #BB0000;">NA</span>        <span style="color: #BB0000;">NA</span>               </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Atlanta 1996     USA       Nigeria          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Sydney 2000      Australia Cameroon         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> London           UK        Mexico           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> 2012             <span style="color: #BB0000;">NA</span>        <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
+<p>In this case, we can use <code><a href="../reference/unbreak_vals.html">unbreak_vals()</a></code> to ‘unbreak’ the
+lines in the ‘Games’ variable, matching the strings that start with
+numbers.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">OGames</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/unbreak_vals.html">unbreak_vals</a></span><span class="op">(</span><span class="st">"^[0-9]"</span>, <span class="va">Games</span>, <span class="va">Games_unbroken</span>, slice_groups <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">Games_unbroken</span>, <span class="fu">everything</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: argument slice_groups is deprecated; extra rows and the variable with</span></span>
+<span><span class="co">#&gt; broken values are now dropped by default.</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 3</span></span></span>
+<span><span class="co">#&gt;   Games_unbroken   Country   Soccer_gold_medal</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Los Angeles 1984 USA       France           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Barcelona 1992   Spain     Spain            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Atlanta 1996     USA       Nigeria          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Sydney 2000      Australia Cameroon         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> London 2012      UK        Mexico</span></span></code></pre></div>
+<p><strong>Wrapped columns</strong> often happen when we merge cells in
+spreadsheets or use table formatting in a word processor, resulting in
+empty or NA values used to pad all the vertical space.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">knicks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  player <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Allan Houston"</span>, <span class="cn">NA</span>, <span class="st">"Latrell Sprewell"</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>  teams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"Pistons"</span>, <span class="st">"Knicks"</span>, <span class="st">"Warriors"</span>, <span class="st">"Knicks"</span>,</span>
+<span>    <span class="st">"Timberwolves"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Shooting guard"</span>, <span class="cn">NA</span>, <span class="st">"Small forward"</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">knicks</span></span>
+<span><span class="co">#&gt;             player        teams       position</span></span>
+<span><span class="co">#&gt; 1    Allan Houston      Pistons Shooting guard</span></span>
+<span><span class="co">#&gt; 2             &lt;NA&gt;       Knicks           &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 3 Latrell Sprewell     Warriors  Small forward</span></span>
+<span><span class="co">#&gt; 4             &lt;NA&gt;       Knicks           &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 5             &lt;NA&gt; Timberwolves           &lt;NA&gt;</span></span></code></pre></div>
+<p>We can unwrap the ‘teams’ values into a single string using
+<code>unrwap_cols()</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">knicks</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/unwrap_cols.html">unwrap_cols</a></span><span class="op">(</span>groupingVar <span class="op">=</span> <span class="va">player</span>, separator <span class="op">=</span> <span class="st">", "</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 3</span></span></span>
+<span><span class="co">#&gt;   player           teams                          position      </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Allan Houston    Pistons, Knicks                Shooting guard</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Latrell Sprewell Warriors, Knicks, Timberwolves Small forward</span></span></code></pre></div>
+<p>This is more or less the opposite to <code>separate_rows()</code>
+from <code>tidyr</code>.</p>
+<p><strong>Line breaks</strong> meant to separate values inside a merged
+cell can be problematic. This often results from parsing tables from PDF
+or Word documents.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">merged_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  Name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Valery V."</span><span class="op">)</span>,</span>
+<span>  Asset <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Apartment\n\nPlot\nHouse\nOther\nApartment"</span><span class="op">)</span>,</span>
+<span>  Area <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"45.7\n\n69.2\n65.0\n32.2\n36.9\n\n\n"</span><span class="op">)</span>,</span>
+<span>  Status <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Owned\n\nOwned\nIn use\nUnknown\nOwned\n"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">merged_dat</span></span>
+<span><span class="co">#&gt;        Name                                      Asset</span></span>
+<span><span class="co">#&gt; 1 Valery V. Apartment\n\nPlot\nHouse\nOther\nApartment</span></span>
+<span><span class="co">#&gt;                                   Area                                   Status</span></span>
+<span><span class="co">#&gt; 1 45.7\n\n69.2\n65.0\n32.2\n36.9\n\n\n Owned\n\nOwned\nIn use\nUnknown\nOwned\n</span></span></code></pre></div>
+<p>To remove duplicated and trailing new line sequences
+“<code>\n</code>”, we can use <code><a href="../reference/squish_newlines.html">squish_newlines()</a></code>.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">merged_dat</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Asset</span><span class="op">:</span><span class="va">Status</span><span class="op">)</span>, <span class="va">squish_newlines</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html" class="external-link">separate_rows</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Asset</span><span class="op">:</span><span class="va">Status</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
+<span><span class="co">#&gt;   Name      Asset     Area  Status </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Valery V. Apartment 45.7  Owned  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Valery V. Plot      69.2  Owned  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Valery V. House     65.0  In use </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Valery V. Other     32.2  Unknown</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Valery V. Apartment 36.9  Owned</span></span></code></pre></div>
+<p>In this example, after applying the function across the variables
+with problematic line breaks it was possible to separate the rows into a
+tidy structure.</p>
+<p><strong>Broken rows</strong> have values of two contiguous rows
+broken up and padded with empty or NA values.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">basketball</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>    stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    v1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Player"</span>, <span class="cn">NA</span>, <span class="st">"Sleve McDichael"</span>, <span class="st">"Dean Wesrey"</span>,</span>
+<span>      <span class="st">"Karl Dandleton"</span>, <span class="st">"Mike Sernandez"</span>,</span>
+<span>      <span class="st">"Glenallen Mixon"</span>, <span class="st">"Rey McSriff"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    v2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Most points"</span>, <span class="st">"in a game"</span>, <span class="st">"55"</span>, <span class="st">"43"</span>, <span class="st">"41"</span>, <span class="st">"111"</span>, <span class="st">"109"</span>, <span class="st">"104"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    v3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Season"</span>, <span class="st">"(year ending)"</span>, <span class="st">"2001"</span>, <span class="st">"2000"</span>, <span class="st">"2002"</span>,</span>
+<span>      <span class="st">"2000"</span>, <span class="st">"2002"</span>, <span class="st">"2001"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="va">basketball</span></span>
+<span><span class="co">#&gt;                v1          v2            v3</span></span>
+<span><span class="co">#&gt; 1          Player Most points        Season</span></span>
+<span><span class="co">#&gt; 2            &lt;NA&gt;   in a game (year ending)</span></span>
+<span><span class="co">#&gt; 3 Sleve McDichael          55          2001</span></span>
+<span><span class="co">#&gt; 4     Dean Wesrey          43          2000</span></span>
+<span><span class="co">#&gt; 5  Karl Dandleton          41          2002</span></span>
+<span><span class="co">#&gt; 6  Mike Sernandez         111          2000</span></span>
+<span><span class="co">#&gt; 7 Glenallen Mixon         109          2002</span></span>
+<span><span class="co">#&gt; 8     Rey McSriff         104          2001</span></span></code></pre></div>
+<p>In this case, we can match any value in any variable along the row
+that has broken values.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/unbreak_rows.html">unbreak_rows</a></span><span class="op">(</span><span class="va">basketball</span>, <span class="st">"^Most"</span>, <span class="va">v2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; 1 match</span></span>
+<span><span class="co">#&gt;                v1                    v2                   v3</span></span>
+<span><span class="co">#&gt; 1          Player Most points in a game Season (year ending)</span></span>
+<span><span class="co">#&gt; 2 Sleve McDichael                    55                 2001</span></span>
+<span><span class="co">#&gt; 3     Dean Wesrey                    43                 2000</span></span>
+<span><span class="co">#&gt; 4  Karl Dandleton                    41                 2002</span></span>
+<span><span class="co">#&gt; 5  Mike Sernandez                   111                 2000</span></span>
+<span><span class="co">#&gt; 6 Glenallen Mixon                   109                 2002</span></span>
+<span><span class="co">#&gt; 7     Rey McSriff                   104                 2001</span></span></code></pre></div>
+<p><strong>Broken headers</strong> are variable names broken up across
+the first few rows.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">vehicles</span> <span class="op">&lt;-</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>           Vehicle <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"Truck"</span>, <span class="st">"Motorcycle"</span>, <span class="st">"Sedan"</span>, <span class="st">"Van"</span><span class="op">)</span>,</span>
+<span>             Price <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"in"</span>,<span class="st">"2014"</span>,</span>
+<span>                       <span class="st">"(local currency)"</span>,<span class="st">"50000"</span>,<span class="st">"44000"</span>,<span class="st">"33000"</span>,<span class="st">"50000"</span><span class="op">)</span>,</span>
+<span>             Color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"White"</span><span class="op">)</span>,</span>
+<span>         Emissions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Certificate"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">vehicles</span></span>
+<span><span class="co">#&gt;      Vehicle            Price Color   Emissions</span></span>
+<span><span class="co">#&gt; 1       &lt;NA&gt;               in  &lt;NA&gt; Certificate</span></span>
+<span><span class="co">#&gt; 2       &lt;NA&gt;             2014  &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 3       &lt;NA&gt; (local currency)  &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 4      Truck            50000 White        TRUE</span></span>
+<span><span class="co">#&gt; 5 Motorcycle            44000 Black       FALSE</span></span>
+<span><span class="co">#&gt; 6      Sedan            33000   Red        TRUE</span></span>
+<span><span class="co">#&gt; 7        Van            50000 White        TRUE</span></span></code></pre></div>
+<p>Here, the column names are broken. The top <em>three</em> rows (in
+addition to the column name) contain fragments of the name and should be
+mashed together column-wise.</p>
+<p>The <code><a href="../reference/mash_colnames.html">mash_colnames()</a></code> function makes these many header
+rows into column names. The names are broken up across the top three
+rows, which goes in to the <code>n_name_rows</code> argument. Unlike
+other functions in <code>unheadr</code>, we provide the number of rows
+directly, rather than attempt any string matching.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span><span class="op">(</span>df<span class="op">=</span> <span class="va">vehicles</span>, n_name_rows <span class="op">=</span> <span class="fl">3</span>, keep_names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt;      Vehicle Price_in_2014_(local currency) Color Emissions_Certificate</span></span>
+<span><span class="co">#&gt; 4      Truck                          50000 White                  TRUE</span></span>
+<span><span class="co">#&gt; 5 Motorcycle                          44000 Black                 FALSE</span></span>
+<span><span class="co">#&gt; 6      Sedan                          33000   Red                  TRUE</span></span>
+<span><span class="co">#&gt; 7        Van                          50000 White                  TRUE</span></span></code></pre></div>
+<p>When importing data with broken headers into R, variable names are
+not always assigned from the values in top row, leaving us with
+automatically generated names (e.g. X1, X2, X3, etc.).</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">vehicles_skip</span> <span class="op">&lt;-</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Vehicle"</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="st">"Truck"</span>,</span>
+<span>                       <span class="st">"Motorcycle"</span>,<span class="st">"Sedan"</span>,<span class="st">"Van"</span><span class="op">)</span>,</span>
+<span>                X2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Price"</span>,<span class="st">"in"</span>,<span class="st">"2014"</span>,</span>
+<span>                       <span class="st">"(local currency)"</span>,<span class="st">"50000"</span>,<span class="st">"44000"</span>,<span class="st">"33000"</span>,<span class="st">"50000"</span><span class="op">)</span>,</span>
+<span>                X3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Color"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"White"</span><span class="op">)</span>,</span>
+<span>                X4 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Emissions"</span>,<span class="st">"Certificate"</span>,<span class="cn">NA</span>,</span>
+<span>                       <span class="cn">NA</span>,<span class="st">"TRUE"</span>,<span class="st">"FALSE"</span>,<span class="st">"TRUE"</span>,<span class="st">"TRUE"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">vehicles_skip</span></span>
+<span><span class="co">#&gt;           X1               X2    X3          X4</span></span>
+<span><span class="co">#&gt; 1    Vehicle            Price Color   Emissions</span></span>
+<span><span class="co">#&gt; 2       &lt;NA&gt;               in  &lt;NA&gt; Certificate</span></span>
+<span><span class="co">#&gt; 3       &lt;NA&gt;             2014  &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 4       &lt;NA&gt; (local currency)  &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 5      Truck            50000 White        TRUE</span></span>
+<span><span class="co">#&gt; 6 Motorcycle            44000 Black       FALSE</span></span>
+<span><span class="co">#&gt; 7      Sedan            33000   Red        TRUE</span></span>
+<span><span class="co">#&gt; 8        Van            50000 White        TRUE</span></span></code></pre></div>
+<p>In this case, the <code>keep_names</code> argument in
+<code><a href="../reference/mash_colnames.html">mash_colnames()</a></code> lets us ignore the object names when
+building new names from the first four rows of the data.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span><span class="op">(</span>df<span class="op">=</span> <span class="va">vehicles_skip</span>, n_name_rows <span class="op">=</span> <span class="fl">4</span>, keep_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt;      Vehicle Price_in_2014_(local currency) Color Emissions_Certificate</span></span>
+<span><span class="co">#&gt; 5      Truck                          50000 White                  TRUE</span></span>
+<span><span class="co">#&gt; 6 Motorcycle                          44000 Black                 FALSE</span></span>
+<span><span class="co">#&gt; 7      Sedan                          33000   Red                  TRUE</span></span>
+<span><span class="co">#&gt; 8        Van                          50000 White                  TRUE</span></span></code></pre></div>
+<p>Lastly, the <code>sliding_headers</code> argument in
+<code>mash_colnames</code> can be used for tables with ragged names, in
+which not every column has a value in the very first row. In such cases,
+attribution by adjacency is assumed, and when
+<code>sliding_headers = TRUE</code> the names are filled row-wise. This
+can be useful for tables reporting survey data or experimental designs
+in an untidy manner.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">survey</span> <span class="op">&lt;-</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                X1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Participant"</span>, <span class="cn">NA</span>, <span class="st">"12"</span>, <span class="st">"34"</span>, <span class="st">"45"</span>, <span class="st">"123"</span><span class="op">)</span>,</span>
+<span>                X2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"How did you hear about us?"</span>,</span>
+<span>                       <span class="st">"TV"</span>,<span class="st">"TRUE"</span>,<span class="st">"FALSE"</span>,<span class="st">"FALSE"</span>,<span class="st">"FALSE"</span><span class="op">)</span>,</span>
+<span>                X3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Social Media"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span><span class="op">)</span>,</span>
+<span>                X4 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Radio"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>, <span class="st">"TRUE"</span><span class="op">)</span>,</span>
+<span>                X5 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Flyer"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span>, <span class="st">"FALSE"</span><span class="op">)</span>,</span>
+<span>                X6 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Age"</span>, <span class="cn">NA</span>, <span class="st">"31"</span>, <span class="st">"23"</span>, <span class="st">"19"</span>, <span class="st">"24"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">survey</span></span>
+<span><span class="co">#&gt;            X1                         X2           X3    X4    X5   X6</span></span>
+<span><span class="co">#&gt; 1 Participant How did you hear about us?         &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  Age</span></span>
+<span><span class="co">#&gt; 2        &lt;NA&gt;                         TV Social Media Radio Flyer &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 3          12                       TRUE        FALSE FALSE FALSE   31</span></span>
+<span><span class="co">#&gt; 4          34                      FALSE         TRUE  TRUE FALSE   23</span></span>
+<span><span class="co">#&gt; 5          45                      FALSE        FALSE FALSE FALSE   19</span></span>
+<span><span class="co">#&gt; 6         123                      FALSE        FALSE  TRUE FALSE   24</span></span>
+<span><span class="fu"><a href="../reference/mash_colnames.html">mash_colnames</a></span><span class="op">(</span><span class="va">survey</span>,<span class="fl">2</span>,keep_names <span class="op">=</span> <span class="cn">FALSE</span>,sliding_headers <span class="op">=</span> <span class="cn">TRUE</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Participant How did you hear about us?_TV</span></span>
+<span><span class="co">#&gt; 3          12                          TRUE</span></span>
+<span><span class="co">#&gt; 4          34                         FALSE</span></span>
+<span><span class="co">#&gt; 5          45                         FALSE</span></span>
+<span><span class="co">#&gt; 6         123                         FALSE</span></span>
+<span><span class="co">#&gt;   How did you hear about us?_Social Media How did you hear about us?_Radio</span></span>
+<span><span class="co">#&gt; 3                                   FALSE                            FALSE</span></span>
+<span><span class="co">#&gt; 4                                    TRUE                             TRUE</span></span>
+<span><span class="co">#&gt; 5                                   FALSE                            FALSE</span></span>
+<span><span class="co">#&gt; 6                                   FALSE                             TRUE</span></span>
+<span><span class="co">#&gt;   How did you hear about us?_Flyer Age</span></span>
+<span><span class="co">#&gt; 3                            FALSE  31</span></span>
+<span><span class="co">#&gt; 4                            FALSE  23</span></span>
+<span><span class="co">#&gt; 5                            FALSE  19</span></span>
+<span><span class="co">#&gt; 6                            FALSE  24</span></span></code></pre></div>
 </div>
-<div id="spreadsheets" class="section level3">
-<h3 class="hasAnchor">
-<a href="#spreadsheets" class="anchor"></a>Spreadsheets</h3>
-<p><code>unheadr</code> also includes a function for flattening font and cell formatting in spreadsheet files into character strings in the corresponding cell.</p>
-<div id="supported-formatting" class="section level4">
-<h4 class="hasAnchor">
-<a href="#supported-formatting" class="anchor"></a>Supported formatting:</h4>
+<div class="section level3">
+<h3 id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a>
+</h3>
+<p><code>unheadr</code> also includes a function for flattening font and
+cell formatting in spreadsheet files into character strings in the
+corresponding cell.</p>
+<div class="section level4">
+<h4 id="supported-formatting">Supported formatting:<a class="anchor" aria-label="anchor" href="#supported-formatting"></a>
+</h4>
 <ul>
 <li>bold text</li>
 <li>colored text</li>
@@ -350,65 +440,93 @@
 <li>double underlined text</li>
 <li>cell highlighting</li>
 </ul>
-<p>One of the example files bundled with <code>unheadr</code> looks like this:</p>
+<p>One of the example files bundled with <code>unheadr</code> looks like
+this:</p>
 <p><img src="dogtest.png" width="300"></p>
-<p>Font formatting and cell highlighting is being used to label an embedded grouping variable (meaningful formatting). The <code><a href="../reference/annotate_mf.html">annotate_mf()</a></code> function flattens the formatting into a character string describing the formatting. The hex8 code of the colors used for cell or text highlighting is also included.</p>
-<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="no">example_spreadsheet</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/dog_test.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
-<span class="fu"><a href="../reference/annotate_mf.html">annotate_mf</a></span>(<span class="no">example_spreadsheet</span>, <span class="kw">orig</span> <span class="kw">=</span> <span class="no">Task</span>, <span class="kw">new</span> <span class="kw">=</span> <span class="no">Task_annotated</span>)
-<span class="co">#&gt; # A tibble: 11 x 3</span>
-<span class="co">#&gt;    Task                           Task_annotated                           Score</span>
-<span class="co">#&gt;    &lt;chr&gt;                          &lt;chr&gt;                                    &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Outdoor activities             (bold, highlight-FFFFF200) Outdoor acti…  7.67</span>
-<span class="co">#&gt;  2 Walks on a loose leash withou… Walks on a loose leash without pulling    7   </span>
-<span class="co">#&gt;  3 Walks without chasing bicycle… Walks without chasing bicycles, animals…  6   </span>
-<span class="co">#&gt;  4 Greets friends and strangers … Greets friends and strangers without ju… 10   </span>
-<span class="co">#&gt;  5 Home behavior                  (bold, highlight-FFFFF200) Home behavior  8.5 </span>
-<span class="co">#&gt;  6 Moves location when directed … Moves location when directed without gr…  9   </span>
-<span class="co">#&gt;  7 Does not rush through doorways Does not rush through doorways            8   </span>
-<span class="co">#&gt;  8 General social skills and obe… (bold, highlight-FFFFF200) General soci…  7   </span>
-<span class="co">#&gt;  9 Can play or interact appropri… Can play or interact appropriately with…  7   </span>
-<span class="co">#&gt; 10 Can be groomed or handled wit… Can be groomed or handled without squir…  8   </span>
-<span class="co">#&gt; 11 Stops barking on command       Stops barking on command                  6</span></pre></body></html></div>
-<p>To apply this approach to all cells in a spreadsheet, we call <code><a href="../reference/annotate_mf_all.html">annotate_mf_all()</a></code>. In this other bundled example file, negative values (first quarter losses) are indicated by bold.</p>
+<p>Font formatting and cell highlighting is being used to label an
+embedded grouping variable (meaningful formatting). The
+<code><a href="../reference/annotate_mf.html">annotate_mf()</a></code> function flattens the formatting into a
+character string describing the formatting. The hex8 code of the colors
+used for cell or text highlighting is also included.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">example_spreadsheet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/dog_test.xlsx"</span>, package <span class="op">=</span> <span class="st">"unheadr"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/annotate_mf.html">annotate_mf</a></span><span class="op">(</span><span class="va">example_spreadsheet</span>, orig <span class="op">=</span> <span class="va">Task</span>, new <span class="op">=</span> <span class="va">Task_annotated</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 3</span></span></span>
+<span><span class="co">#&gt;    Task                                               Task_annotated       Score</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Outdoor activities                                 (bold, highlight-FF…  7.67</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Walks on a loose leash without pulling             Walks on a loose le…  7   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Walks without chasing bicycles, animals, etc.      Walks without chasi…  6   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Greets friends and strangers without jumping       Greets friends and … 10   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Home behavior                                      (bold, highlight-FF…  8.5 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Moves location when directed without growling      Moves location when…  9   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Does not rush through doorways                     Does not rush throu…  8   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> General social skills and obedience                (bold, highlight-FF…  7   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Can play or interact appropriately with other dogs Can play or interac…  7   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Can be groomed or handled without squirming        Can be groomed or h…  8   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> Stops barking on command                           Stops barking on co…  6</span></span></code></pre></div>
+<p>To apply this approach to all cells in a spreadsheet, we call
+<code><a href="../reference/annotate_mf_all.html">annotate_mf_all()</a></code>. In this other bundled example file,
+negative values (first quarter losses) are indicated by bold.</p>
 <p><img src="boutiques.png" width="300"></p>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="no">example_spreadsheetb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/boutiques.xlsx"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"unheadr"</span>)
-<span class="fu"><a href="../reference/annotate_mf_all.html">annotate_mf_all</a></span>(<span class="no">example_spreadsheetb</span>)
-<span class="co">#&gt; # A tibble: 7 x 6</span>
-<span class="co">#&gt;   `Store Location`    Q1_2012     Q1_2013     Q1_2014     Q1_2015     Q1_2016   </span>
-<span class="co">#&gt;   &lt;chr&gt;               &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;     </span>
-<span class="co">#&gt; 1 (highlight-FFADC5E… (highlight… (bold, hig… (highlight… (highlight… (bold, hi…</span>
-<span class="co">#&gt; 2 (highlight-FFADC5E… (highlight… (highlight… (highlight… (bold, hig… (highligh…</span>
-<span class="co">#&gt; 3 (highlight-FFF37B7… (bold, hig… (highlight… (highlight… (highlight… (highligh…</span>
-<span class="co">#&gt; 4 (highlight-FFADC5E… (highlight… (bold, hig… (bold, hig… (bold, hig… (highligh…</span>
-<span class="co">#&gt; 5 (highlight-FFADC5E… (highlight… (highlight… (highlight… (highlight… (highligh…</span>
-<span class="co">#&gt; 6 (highlight-FFF37B7… (bold, hig… (highlight… (bold, hig… (highlight… (bold, hi…</span>
-<span class="co">#&gt; 7 (highlight-FFADC5E… (highlight… (highlight… (highlight… (highlight… (highligh…</span></pre></body></html></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">example_spreadsheetb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/boutiques.xlsx"</span>, package <span class="op">=</span> <span class="st">"unheadr"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/annotate_mf_all.html">annotate_mf_all</a></span><span class="op">(</span><span class="va">example_spreadsheetb</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 6</span></span></span>
+<span><span class="co">#&gt;   `Store Location`                  Q1_2012      Q1_2013 Q1_2014 Q1_2015 Q1_2016</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> (highlight-FFADC5E7) London       (highlight-… (bold,… (highl… (highl… (bold,…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> (highlight-FFADC5E7) Paris        (highlight-… (highl… (highl… (bold,… (highl…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> (highlight-FFF37B70) Atlanta      (bold, high… (highl… (highl… (highl… (highl…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> (highlight-FFADC5E7) Madrid       (highlight-… (bold,… (bold,… (bold,… (highl…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> (highlight-FFADC5E7) Rome         (highlight-… (highl… (highl… (highl… (highl…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> (highlight-FFF37B70) Mexico City  (bold, high… (highl… (bold,… (highl… (bold,…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> (highlight-FFADC5E7, italic) Rome (highlight-… (highl… (highl… (highl… (highl…</span></span></code></pre></div>
 </div>
 </div>
-<div id="character-vectors" class="section level3">
-<h3 class="hasAnchor">
-<a href="#character-vectors" class="anchor"></a>Character vectors</h3>
-<p>Tables from PDF or other similar sources can often be imported into R as character vectors with one element for each line. These can then be parsed as fixed width files or separated into columns. <code>unheadr</code> now includes the <code><a href="../reference/regex_valign.html">regex_valign()</a></code> function for aligning elements in these vectors vertically by inserting padding whitespace (and optional separators) at positions along each line matched by a regular expression.</p>
-<p>This example is based on how data on hotel guests (ID, State of Origin, and Date) in a PDF is parsed by <code><a href="https://docs.ropensci.org/pdftools/reference/pdftools.html">pdftools::pdf_text</a></code>.</p>
-<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="no">guests</span> <span class="kw">&lt;-</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"6     COAHUILA        20/03/2020
-712        COAHUILA             20/03/2020"</span>),<span class="st">"\n"</span>))
-
-<span class="no">guests</span>
-<span class="co">#&gt; [1] "6     COAHUILA        20/03/2020"          </span>
-<span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></body></html></div>
-<p>There is inconsistent whitespace between the first and second data ‘columns’. With a regular expression that matches a word boundary and uppercase letters, we can adjust the whitespace so that the matched positions are the same across lines.</p>
-<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="../reference/regex_valign.html">regex_valign</a></span>(<span class="no">guests</span>, <span class="st">"\\b(?=[A-Z])"</span>)
-<span class="co">#&gt; [1] "6          COAHUILA        20/03/2020"     </span>
-<span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></pre></body></html></div>
-<p>This output is easier to parse with <code>readr</code> or other data-munging approaches.</p>
+<div class="section level3">
+<h3 id="character-vectors">Character vectors<a class="anchor" aria-label="anchor" href="#character-vectors"></a>
+</h3>
+<p>Tables from PDF or other similar sources can often be imported into R
+as character vectors with one element for each line. These can then be
+parsed as fixed width files or separated into columns.
+<code>unheadr</code> now includes the <code><a href="../reference/regex_valign.html">regex_valign()</a></code>
+function for aligning elements in these vectors vertically by inserting
+padding whitespace (and optional separators) at positions along each
+line matched by a regular expression.</p>
+<p>This example is based on how data on hotel guests (ID, State of
+Origin, and Date) in a PDF is parsed by
+<code>pdftools::pdf_text</code>.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">guests</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/strsplit.html" class="external-link">strsplit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"6     COAHUILA        20/03/2020</span></span>
+<span><span class="st">712        COAHUILA             20/03/2020"</span><span class="op">)</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">guests</span></span>
+<span><span class="co">#&gt; [1] "6     COAHUILA        20/03/2020"          </span></span>
+<span><span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></span></code></pre></div>
+<p>There is inconsistent whitespace between the first and second data
+‘columns’. With a regular expression that matches a word boundary and
+uppercase letters, we can adjust the whitespace so that the matched
+positions are the same across lines.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/regex_valign.html">regex_valign</a></span><span class="op">(</span><span class="va">guests</span>, <span class="st">"\\b(?=[A-Z])"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "6          COAHUILA        20/03/2020"     </span></span>
+<span><span class="co">#&gt; [2] "712        COAHUILA             20/03/2020"</span></span></code></pre></div>
+<p>This output is easier to parse with <code>readr</code> or other
+data-munging approaches.</p>
 </div>
 </div>
-<div id="further-reading" class="section level2">
-<h2 class="hasAnchor">
-<a href="#further-reading" class="anchor"></a>Further reading</h2>
-<p>The underlying reasoning, background, and possible uses of <code>unheadr</code> are described in this publication:</p>
-<p>Verde Arregoitia, L. D., Cooper, N., D’Elía, G. (2018). Good practices for sharing analysis-ready data in mammalogy and biodiversity research. <em>Hystrix, the Italian Journal of Mammalogy</em>, 29(2), 155-161. <a href="https://doi.org/10.4404/hystrix-00133-2018">Open Access, 10.4404/hystrix-00133-2018</a>. </p>
+<div class="section level2">
+<h2 id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</h2>
+<p>The underlying reasoning, background, and possible uses of
+<code>unheadr</code> are described in this publication:</p>
+<p>Verde Arregoitia, L. D., Cooper, N., D’Elía, G. (2018). Good
+practices for sharing analysis-ready data in mammalogy and biodiversity
+research. <em>Hystrix, the Italian Journal of Mammalogy</em>, 29(2),
+155-161. <a href="https://doi.org/10.4404/hystrix-00133-2018" class="external-link">Open
+Access, 10.4404/hystrix-00133-2018</a>. </p>
 </div>
   </div>
 
@@ -423,11 +541,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Luis D. Verde Arregoitia.</p>
+  <p></p>
+<p>Developed by Luis D. Verde Arregoitia.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>
@@ -435,6 +555,8 @@
 
   
 
+
+  
 
   </body>
 </html>

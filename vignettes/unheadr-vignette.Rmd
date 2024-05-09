@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 )
 library(unheadr)
 library(dplyr)
+library(tidyr)
 ```
 
 When we work with other people's data, we often have to struggle through multiple unexpected steps before we get to a flexible, usable structure. Popular ways of structuring and presenting data can place content beyond the reach of code-based routines to tackle repetitive tasks efficiently. 
@@ -100,7 +101,30 @@ knicks %>% unwrap_cols(groupingVar = player, separator = ", ")
 
 This is more or less the opposite to `separate_rows()` from `tidyr`.  
 
-  
+**Line breaks** meant to separate values inside a merged cell can be problematic. This often results from parsing tables from PDF or Word documents.
+
+
+```{r}
+merged_dat <- data.frame(
+  stringsAsFactors = FALSE,
+  Name = c("Valery V."),
+  Asset = c("Apartment\n\nPlot\nHouse\nOther\nApartment"),
+  Area = c("45.7\n\n69.2\n65.0\n32.2\n36.9\n\n\n"),
+  Status = c("Owned\n\nOwned\nIn use\nUnknown\nOwned\n")
+)
+merged_dat
+```
+
+To remove duplicated and trailing new line sequences "`\n`", we can use `squish_newlines()`.
+
+```{r}
+merged_dat %>%
+  mutate(across(c(Asset:Status), squish_newlines)) %>%
+  tidyr::separate_rows(c(Asset:Status), sep = "\n")
+```
+
+In this example, after applying the function across the variables with problematic line breaks it was possible to separate the rows into a tidy structure.
+
 **Broken rows** have values of two contiguous rows broken up and padded with empty or NA values.
 
 ```{r}
@@ -231,7 +255,7 @@ annotate_mf_all(example_spreadsheetb)
 
 ### Character vectors
 
-Tables from PDF or other similar sources can often be imported into R as  character vectors with one element for each line. These can then be parsed as fixed width files or separated into columns. `unheadr` now includes the `regex_valign()` function for aligning elements in these vectors vertically by inserting padding whitespace (and optional separators) at positions along each line matched by a regular expression.
+Tables from PDF or other similar sources can often be imported into R as character vectors with one element for each line. These can then be parsed as fixed width files or separated into columns. `unheadr` now includes the `regex_valign()` function for aligning elements in these vectors vertically by inserting padding whitespace (and optional separators) at positions along each line matched by a regular expression.
 
 This example is based on how data on hotel guests (ID, State of Origin, and Date) in a PDF is parsed by `pdftools::pdf_text`. 
 

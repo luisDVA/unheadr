@@ -1,8 +1,10 @@
 title: unheadr
 url: unheadr.liomys.mx
 template:
-  params:
-    bootswatch: spacelab
+  bootsrap: 5
+  bslib:
+    bootswatch: litera
+    base_font: {google: "Rubik"}
 navbar:
   structure:
     left:
@@ -40,6 +42,7 @@ reference:
   - '`unbreak_vals`'
   - '`untangle2`'
   - '`unwrap_cols`'
+  - '`squish_newlines`'
 - title: General data cleaning
   desc:
   contents:
@@ -59,3 +62,6 @@ reference:
   - '`primates2017`'
   - '`primates2017_broken`'
   - '`primates2017_wrapped`'
+- title: internal
+  contents:
+  - '`%>%`'

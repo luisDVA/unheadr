@@ -6,12 +6,14 @@
 #'
 #' @return A tibble with meaningful formatting embedded as text for all rows and
 #'   columns.
-#' @details At this point, seven popular approaches for meaningful
-#'   formatting (bold, colored text, italic, strikethrough, underline, double underline, and cell highlighting) are hardcoded in
-#'   the function. `sheets`, `skip`, and `range` arguments for spreadsheet input
-#'   are not supported. The hex8 code of the fill color used for text color and cell
-#'   highlighting is also appended in the output. Ensure the data in the
-#'   spreadsheet are rectangular before running.
+#' @details Seven popular approaches for meaningful formatting (bold, colored
+#'   text, italic, strikethrough, underline, double underline, and cell
+#'   highlighting) are supported in this function. `sheets`, `skip`, and `range`
+#'   arguments for spreadsheet input are not supported. The hex8 code of the
+#'   fill color used for text color and cell highlighting is also appended in
+#'   the output. Ensure the data in the spreadsheet are rectangular before
+#'   running; this includes blank but formatted cells beyond the data rectangle.
+#'
 #' @examples
 #' example_spreadsheet <- system.file("extdata/boutiques.xlsx", package = "unheadr")
 #' annotate_mf_all(example_spreadsheet)
@@ -20,14 +22,26 @@
 #' @export
 annotate_mf_all <- function(xlfilepath) {
   spsheet <- readxl::read_excel(xlfilepath)
+
   if (any(grepl("^\\.\\.\\.", names(spsheet)))) {
     stop("Check the spreadsheet for empty values in the header row")
   }
+
   m_formatting <- tidyxl::xlsx_cells(xlfilepath)
-  rowtally <- dplyr::count(m_formatting, row)
-  if (length(unique(rowtally$n)) != 1) {
+
+  m_formatting <-
+    dplyr::ungroup(tidyr::complete(dplyr::group_by(m_formatting, col),
+                                   row = tidyr::full_seq(row, 1)
+    ))
+
+  if (nrow(spsheet) != max(m_formatting$row) - 1) {
+    stop("Check spreadsheet for blank cells in seemingly empty rows")
+  }
+
+  if (length(unique(stats::na.omit(m_formatting$sheet))) != 1) {
     stop("Data in spreadsheet does not appear to be rectangular (this includes multisheet files)")
   }
+
   format_defs <- tidyxl::xlsx_formats(xlfilepath)
 
   bold <- format_defs$local$font$bold
@@ -57,9 +71,11 @@ annotate_mf_all <- function(xlfilepath) {
     orig_format <- dplyr::filter(format_joined, row >= 2 & col == col_ind)
     orig_format <- dplyr::select(orig_format, bold:underlined)
     formatted <- dplyr::bind_cols(spsheet, orig_format)
-    formatted <- dplyr::mutate_at(
-      formatted, dplyr::vars(bold:underlined),
-      ~ replace(., is.na(.), FALSE)
+    formatted <- dplyr::mutate(
+      formatted, dplyr::across(
+        bold:underlined,
+        \(x) replace(x, is.na(x), FALSE)
+      )
     )
     # set up multi-category annotations
     formatted$highlighted <- gsub(
@@ -78,20 +94,24 @@ annotate_mf_all <- function(xlfilepath) {
       pattern = "FALSE", replacement = "",
       formatted$hl_color
     )
-    formatted <- dplyr::mutate_at(
-      formatted, dplyr::vars(bold, italic, strikethrough),
-      as.logical
+    formatted <- dplyr::mutate(
+      formatted, dplyr::across(
+        c(bold, italic, strikethrough),
+        as.logical
+      )
     )
     # swap na with variable names
-    formatted <- dplyr::mutate_at(
-      formatted, dplyr::vars(bold:underlined),
-      function(x) {
-        ifelse(x == TRUE, deparse(substitute(x)), x)
-      }
+    formatted <- dplyr::mutate(
+      formatted, dplyr::across(
+        bold:underlined,
+        \(x) {
+          ifelse(x == TRUE, deparse(substitute(x)), x)
+        }
+      )
     )
-    formatted <- dplyr::mutate_at(
+    formatted <- dplyr::mutate(
       formatted,
-      dplyr::vars(bold:underlined), ~ replace(., . == "FALSE", "")
+      dplyr::across(bold:underlined, \(x) replace(x, x == "FALSE", ""))
     )
     # build annotation strings
     formatted$highlighted <- ifelse(formatted$highlighted != "",
@@ -122,6 +142,10 @@ annotate_mf_all <- function(xlfilepath) {
     spsheet[, names(spsheet)[i]] <- target_var_fmt(i)
   }
 
-  spsheet
-  dplyr::mutate_all(spsheet, stringr::str_remove, "^\\(\\) ")
+
+  dplyr::mutate(spsheet, dplyr::across(
+    dplyr::everything(),
+    \(x) stringr::str_remove(x, "^\\(\\) ")
+  ))
 }
+

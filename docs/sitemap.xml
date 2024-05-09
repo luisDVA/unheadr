@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>unheadr.liomys.mx/404.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/articles/unheadr-vignette.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/authors.html</loc>
+  </url>
+  <url>
     <loc>unheadr.liomys.mx/index.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/news/index.html</loc>
   </url>
   <url>
     <loc>unheadr.liomys.mx/reference/AOEunits.html</loc>
@@ -19,7 +40,13 @@
     <loc>unheadr.liomys.mx/reference/boutiques.xlsx.html</loc>
   </url>
   <url>
+    <loc>unheadr.liomys.mx/reference/dog_test.html</loc>
+  </url>
+  <url>
     <loc>unheadr.liomys.mx/reference/dog_test.xlsx.html</loc>
+  </url>
+  <url>
+    <loc>unheadr.liomys.mx/reference/index.html</loc>
   </url>
   <url>
     <loc>unheadr.liomys.mx/reference/mash_colnames.html</loc>
@@ -40,6 +67,9 @@
     <loc>unheadr.liomys.mx/reference/regex_valign.html</loc>
   </url>
   <url>
+    <loc>unheadr.liomys.mx/reference/squish_newlines.html</loc>
+  </url>
+  <url>
     <loc>unheadr.liomys.mx/reference/unbreak_rows.html</loc>
   </url>
   <url>
@@ -53,8 +83,5 @@
   </url>
   <url>
     <loc>unheadr.liomys.mx/reference/unwrap_cols.html</loc>
-  </url>
-  <url>
-    <loc>unheadr.liomys.mx/articles/unheadr-vignette.html</loc>
   </url>
 </urlset>

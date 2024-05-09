@@ -28,3 +28,8 @@ test_that("error when data is non-rectangular", {
 test_that("error when path does not exist", {
   expect_error(annotate_mf_all("./wrongpath.xlsx"))
 })
+
+
+test_that("error with invisible cells with blank formatting", {
+  expect_error(annotate_mf_all("./dog_testblank.xlsx"))
+})

@@ -37,27 +37,25 @@ unbreak_vals <- function(df, regex, ogcol, newcol, sep = " ", slice_groups) {
   }
   if (!missing(slice_groups)) {
     warning("argument slice_groups is deprecated; extra rows and the variable with broken values are now dropped by default.",
-      call. = FALSE
+            call. = FALSE
     )
   }
-  # tidyeval
-  ogcol <- dplyr::enquo(ogcol)
-  newcol <- dplyr::enquo(newcol)
   # conditionally unbreak vals
   dfind <- dplyr::mutate(
     df,
-    !!newcol := ifelse(stringr::str_detect(!!ogcol, stringr::regex(regex)),
-      yes = paste(dplyr::lag(!!ogcol), !!ogcol, sep = sep),
-      no = !!ogcol
+    {{ newcol }} := ifelse(stringr::str_detect({{ ogcol }}, stringr::regex(regex)),
+                           yes = paste(dplyr::lag({{ ogcol }}), {{ ogcol }}, sep = sep),
+                           no = {{ ogcol }}
     )
   )
 
   # shuffle up
   matchedrows <-
-    which(stringr::str_detect(dplyr::pull(dfind, !!ogcol), regex))
-  dfind[matchedrows - 1, rlang::as_name(newcol)] <- dfind[matchedrows, rlang::as_name(newcol)]
+    which(stringr::str_detect(dplyr::pull(dfind, {{ ogcol }}), regex))
+  newcolstr <- deparse(substitute(newcol))
+  dfind[matchedrows - 1, newcolstr] <- dfind[matchedrows, newcolstr]
   # slice
-  dfsliced <- dplyr::slice(dfind, -(which(stringr::str_detect(!!ogcol, stringr::regex(regex)))))
-  dfout <- dplyr::select(dfsliced, -!!ogcol)
-  dplyr::select(dfout, !!newcol, dplyr::everything())
+  dfsliced <- dplyr::slice(dfind, -(which(stringr::str_detect({{ ogcol }}, stringr::regex(regex)))))
+  dfout <- dplyr::select(dfsliced, -{{ ogcol }})
+  dplyr::select(dfout, {{ newcol }}, dplyr::everything())
 }

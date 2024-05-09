@@ -4,7 +4,7 @@
 #'   across the top _n_ rows.
 #' @param n_name_rows Number of rows at the top of the data to be used to create
 #'   the new variable (column) names. Must be >= 1.
-#' @param keep_names If TRUE, existing names will be included in building the
+#' @param keep_names If TRUE, existing names will be included when building the
 #'   new variable names. Defaults to TRUE.
 #' @param sliding_headers If TRUE, empty values in the first (topmost) header
 #'   header row be filled column-wise. Defaults to FALSE. See details.
@@ -12,7 +12,7 @@
 #'   underscore).
 #'
 #' @return The original data frame, but with new column names and without the
-#'   top n rows that held the broken up names.
+#'   top _n_ rows that held the broken up names.
 #'
 #' @details Tables are often shared with the column names broken up across the
 #'   first few rows. This function takes the number of rows at the top of a

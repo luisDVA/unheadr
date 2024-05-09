@@ -19,7 +19,7 @@ across the top \emph{n} rows.}
 \item{n_name_rows}{Number of rows at the top of the data to be used to create
 the new variable (column) names. Must be >= 1.}
 
-\item{keep_names}{If TRUE, existing names will be included in building the
+\item{keep_names}{If TRUE, existing names will be included when building the
 new variable names. Defaults to TRUE.}
 
 \item{sliding_headers}{If TRUE, empty values in the first (topmost) header
@@ -30,7 +30,7 @@ underscore).}
 }
 \value{
 The original data frame, but with new column names and without the
-top n rows that held the broken up names.
+top \emph{n} rows that held the broken up names.
 }
 \description{
 Make many header rows into column names

@@ -1,5 +1,3 @@
-# unheadr 0.4.0
-
 # unheadr 
 
 # unheadr 0.1.0
@@ -39,3 +37,11 @@
 # unheadr 0.3.3
 
 * Documentation fix for HTML5 checks
+
+# unheadr 0.4.0
+
+* Add function for cleaning line breaks
+
+* Update non standard evaluation in most functions
+
+* Replace deprecated mutate operations

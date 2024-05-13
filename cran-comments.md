@@ -10,6 +10,8 @@ No ERRORs, WARNINGs, or NOTEs.
   
 ## No dependency issues
 
+* Replaced oldstyle function in CITATION file
+
 * Adds minor improvements to documentation, nse code, and a helper function.
 
 

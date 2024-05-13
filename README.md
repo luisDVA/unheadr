@@ -9,12 +9,8 @@
 [![](https://www.r-pkg.org/badges/version/unheadr?color=purple)](https://cran.r-project.org/package=unheadr)
 [![](http://cranlogs.r-pkg.org/badges/last-month/unheadr?color=orange)](https://cran.r-project.org/package=unheadr)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/unheadr?color=blue)](https://cran.r-project.org/package=unheadr)
-[![CRAN
-checks](https://cranchecks.info/badges/summary/unheadr)](https://cran.r-project.org/web/checks/check_results_unheadr.html)
-[![Travis build
-status](https://travis-ci.org/luisDVA/unheadr.svg?branch=master)](https://travis-ci.org/luisDVA/unheadr)
 [![Codecov test
-coverage](https://codecov.io/gh/luisDVA/unheadr/branch/master/graph/badge.svg)](https://codecov.io/gh/luisDVA/unheadr?branch=master)
+coverage](https://codecov.io/gh/luisDVA/unheadr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/luisDVA/unheadr?branch=master)
 <!-- badges: end -->
 
 The goal of `unheadr` is to help wrangle data when it has embedded
@@ -40,8 +36,8 @@ The reasoning behind the package and some of the possible uses of
 Verde Arregoitia, L. D., Cooper, N., D’Elía, G. (2018). Good practices
 for sharing analysis-ready data in mammalogy and biodiversity research.
 *Hystrix, the Italian Journal of Mammalogy*, 29(2), 155-161. [Open
-Access,
-DOI 10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
+Access, DOI
+10.4404/hystrix-00133-2018](https://doi.org/10.4404/hystrix-00133-2018)
 
 ## Usage
 
@@ -70,23 +66,23 @@ an implicit “taxonomic family” variable are embedded in the column that
 contains the observational units (the scientific names of various
 primates).
 
-| scientific\_name        | common\_name                 | red\_list\_status | mass\_kg |
-| :---------------------- | :--------------------------- | :---------------- | -------: |
-| Asia                    | NA                           | NA                |       NA |
-| CERCOPITHECIDAE         | NA                           | NA                |       NA |
-| Trachypithecus obscurus | Dusky Langur                 | NT                |     7.13 |
-| Presbytis sumatra       | Black Sumatran Langur        | EN                |     6.00 |
-| Rhinopithecus roxellana | Golden Snub-nosed Monkey     | EN                |       NA |
-| HYLOBATIDAE             | NA                           | NA                |       NA |
-| Hylobates funereus      | East Bornean Gray Gibbon     | EN                |       NA |
-| Hylobates klossii       | Kloss’s Gibbon               | EN                |     5.80 |
-| Nomascus concolor       | Western Black Crested Gibbon | CR                |     7.71 |
+| scientific_name         | common_name                  | red_list_status | mass_kg |
+|:------------------------|:-----------------------------|:----------------|--------:|
+| Asia                    | NA                           | NA              |      NA |
+| CERCOPITHECIDAE         | NA                           | NA              |      NA |
+| Trachypithecus obscurus | Dusky Langur                 | NT              |    7.13 |
+| Presbytis sumatra       | Black Sumatran Langur        | EN              |    6.00 |
+| Rhinopithecus roxellana | Golden Snub-nosed Monkey     | EN              |      NA |
+| HYLOBATIDAE             | NA                           | NA              |      NA |
+| Hylobates funereus      | East Bornean Gray Gibbon     | EN              |      NA |
+| Hylobates klossii       | Kloss’s Gibbon               | EN              |    5.80 |
+| Nomascus concolor       | Western Black Crested Gibbon | CR              |    7.71 |
 
-For a tidier structure, the subheaders embedded in the
-*scientific\_name* column need to be plucked out and placed in their own
-variable. This was initially the main objective of `unheadr` and what
-`untangle2()` was made for. The function can be used with `magrittr`
-pipes as a `dplyr`-type verb.
+For a tidier structure, the subheaders embedded in the *scientific_name*
+column need to be plucked out and placed in their own variable. This was
+initially the main objective of `unheadr` and what `untangle2()` was
+made for. The function can be used with `magrittr` pipes as a
+`dplyr`-type verb.
 
 If these subheaders can be matched in bulk with a regular expression
 because they share a prefix, suffix, or anything in common, we can save
@@ -95,14 +91,14 @@ see the examples and vignette.
 
 The ‘untangled’ version of the data:
 
-| scientific\_name        | common\_name                 | red\_list\_status | mass\_kg | family          | region |
-| :---------------------- | :--------------------------- | :---------------- | -------: | :-------------- | :----- |
-| Trachypithecus obscurus | Dusky Langur                 | NT                |     7.13 | CERCOPITHECIDAE | Asia   |
-| Presbytis sumatra       | Black Sumatran Langur        | EN                |     6.00 | CERCOPITHECIDAE | Asia   |
-| Rhinopithecus roxellana | Golden Snub-nosed Monkey     | EN                |       NA | CERCOPITHECIDAE | Asia   |
-| Hylobates funereus      | East Bornean Gray Gibbon     | EN                |       NA | HYLOBATIDAE     | Asia   |
-| Hylobates klossii       | Kloss’s Gibbon               | EN                |     5.80 | HYLOBATIDAE     | Asia   |
-| Nomascus concolor       | Western Black Crested Gibbon | CR                |     7.71 | HYLOBATIDAE     | Asia   |
+| scientific_name         | common_name                  | red_list_status | mass_kg | family          | region |
+|:------------------------|:-----------------------------|:----------------|--------:|:----------------|:-------|
+| Trachypithecus obscurus | Dusky Langur                 | NT              |    7.13 | CERCOPITHECIDAE | Asia   |
+| Presbytis sumatra       | Black Sumatran Langur        | EN              |    6.00 | CERCOPITHECIDAE | Asia   |
+| Rhinopithecus roxellana | Golden Snub-nosed Monkey     | EN              |      NA | CERCOPITHECIDAE | Asia   |
+| Hylobates funereus      | East Bornean Gray Gibbon     | EN              |      NA | HYLOBATIDAE     | Asia   |
+| Hylobates klossii       | Kloss’s Gibbon               | EN              |    5.80 | HYLOBATIDAE     | Asia   |
+| Nomascus concolor       | Western Black Crested Gibbon | CR              |    7.71 | HYLOBATIDAE     | Asia   |
 
 Now we can easily perform grouping operations and summarize the data
 (e.g. calculating average body mass by Family).
@@ -199,12 +195,12 @@ with commas.
 
 ``` r
 unwrap_cols(nyk, groupingVar = player, separator = ", ")
-#> # A tibble: 3 x 4
-#>   player     listed_height_m. teams_chronological                  position     
-#>   <chr>      <chr>            <chr>                                <chr>        
-#> 1 Marcus Ca… 2.11             Raptors, Knicks, Nuggets, Clippers,… Power forwar…
-#> 2 Allan Hou… 1.98             Pistons, Knicks                      Shooting gua…
-#> 3 Latrell S… 1.96             Warriors, Knicks, Timberwolves       Small forward
+#> # A tibble: 3 × 4
+#>   player           listed_height_m. teams_chronological                 position
+#>   <chr>            <chr>            <chr>                               <chr>   
+#> 1 Marcus Camby     2.11             Raptors, Knicks, Nuggets, Clippers… Power f…
+#> 2 Allan Houston    1.98             Pistons, Knicks                     Shootin…
+#> 3 Latrell Sprewell 1.96             Warriors, Knicks, Timberwolves      Small f…
 ```
 
 **`unbreak_rows()`**

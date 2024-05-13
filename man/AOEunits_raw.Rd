@@ -10,8 +10,7 @@ A data frame with 139 observations of 15 variables. See \code{AOEunits} for vari
 }
 \source{
 Age of Empires II. Copyright Microsoft Corporation. This dataset was created
-under Microsoft's "Game Content Usage Rules"
-\url{https://www.xbox.com/en-us/developers/rules} using assets from Age of
+under Microsoft's Usage rules for Digital Goods using assets from Age of
 Empires II, and it is not endorsed by or affiliated with Microsoft. All
 information shown is an interpretation of data collected in-game with no
 guarantee on the accuracy of any of the data presented.

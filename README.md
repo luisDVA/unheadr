@@ -66,17 +66,17 @@ an implicit “taxonomic family” variable are embedded in the column that
 contains the observational units (the scientific names of various
 primates).
 
-| scientific_name         | common_name                  | red_list_status | mass_kg |
-|:------------------------|:-----------------------------|:----------------|--------:|
-| Asia                    | NA                           | NA              |      NA |
-| CERCOPITHECIDAE         | NA                           | NA              |      NA |
-| Trachypithecus obscurus | Dusky Langur                 | NT              |    7.13 |
-| Presbytis sumatra       | Black Sumatran Langur        | EN              |    6.00 |
-| Rhinopithecus roxellana | Golden Snub-nosed Monkey     | EN              |      NA |
-| HYLOBATIDAE             | NA                           | NA              |      NA |
-| Hylobates funereus      | East Bornean Gray Gibbon     | EN              |      NA |
-| Hylobates klossii       | Kloss’s Gibbon               | EN              |    5.80 |
-| Nomascus concolor       | Western Black Crested Gibbon | CR              |    7.71 |
+| scientific_name | common_name | red_list_status | mass_kg |
+|:---|:---|:---|---:|
+| Asia | NA | NA | NA |
+| CERCOPITHECIDAE | NA | NA | NA |
+| Trachypithecus obscurus | Dusky Langur | NT | 7.13 |
+| Presbytis sumatra | Black Sumatran Langur | EN | 6.00 |
+| Rhinopithecus roxellana | Golden Snub-nosed Monkey | EN | NA |
+| HYLOBATIDAE | NA | NA | NA |
+| Hylobates funereus | East Bornean Gray Gibbon | EN | NA |
+| Hylobates klossii | Kloss’s Gibbon | EN | 5.80 |
+| Nomascus concolor | Western Black Crested Gibbon | CR | 7.71 |
 
 For a tidier structure, the subheaders embedded in the *scientific_name*
 column need to be plucked out and placed in their own variable. This was
@@ -91,14 +91,14 @@ see the examples and vignette.
 
 The ‘untangled’ version of the data:
 
-| scientific_name         | common_name                  | red_list_status | mass_kg | family          | region |
-|:------------------------|:-----------------------------|:----------------|--------:|:----------------|:-------|
-| Trachypithecus obscurus | Dusky Langur                 | NT              |    7.13 | CERCOPITHECIDAE | Asia   |
-| Presbytis sumatra       | Black Sumatran Langur        | EN              |    6.00 | CERCOPITHECIDAE | Asia   |
-| Rhinopithecus roxellana | Golden Snub-nosed Monkey     | EN              |      NA | CERCOPITHECIDAE | Asia   |
-| Hylobates funereus      | East Bornean Gray Gibbon     | EN              |      NA | HYLOBATIDAE     | Asia   |
-| Hylobates klossii       | Kloss’s Gibbon               | EN              |    5.80 | HYLOBATIDAE     | Asia   |
-| Nomascus concolor       | Western Black Crested Gibbon | CR              |    7.71 | HYLOBATIDAE     | Asia   |
+| scientific_name | common_name | red_list_status | mass_kg | family | region |
+|:---|:---|:---|---:|:---|:---|
+| Trachypithecus obscurus | Dusky Langur | NT | 7.13 | CERCOPITHECIDAE | Asia |
+| Presbytis sumatra | Black Sumatran Langur | EN | 6.00 | CERCOPITHECIDAE | Asia |
+| Rhinopithecus roxellana | Golden Snub-nosed Monkey | EN | NA | CERCOPITHECIDAE | Asia |
+| Hylobates funereus | East Bornean Gray Gibbon | EN | NA | HYLOBATIDAE | Asia |
+| Hylobates klossii | Kloss’s Gibbon | EN | 5.80 | HYLOBATIDAE | Asia |
+| Nomascus concolor | Western Black Crested Gibbon | CR | 7.71 | HYLOBATIDAE | Asia |
 
 Now we can easily perform grouping operations and summarize the data
 (e.g. calculating average body mass by Family).
@@ -337,10 +337,13 @@ mash_colnames(survey,2,keep_names = FALSE,sliding_headers = TRUE, sep = "_")
 #> 6                            FALSE  24
 ```
 
+### Working with formatted spreadsheets
+
 **`annotate_mf()` and `annotate_mf_all()`**
 
 Sometimes embedded subheaders can’t be matched by content or context,
-but they share the same formatting in a spreadsheet file.
+but they share the same formatting in a spreadsheet file. Encoding data
+as formatting is also a very common practice.
 
 `annotate_mf()` flattens four common approaches to confer meaningful
 formatting to cells and adds this as a character string to the target
@@ -352,12 +355,14 @@ annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
 ```
 
 `annotate_mf_all()` applies the same approach to all values in the
-dataset.
+dataset. Similar to working ‘across’ *everything* with dplyr.
 
 ``` r
 example_spreadsheet_all <- system.file("extdata/boutiques.xlsx", package = "unheadr")
 annotate_mf(example_spreadsheet_all)
 ```
+
+### Extras
 
 Lastly, `regex_valign()` can adjust the whitespace (padding) within a
 character vector with one element per line, for easier parsing with

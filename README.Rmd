@@ -251,9 +251,11 @@ mash_colnames(survey,2,keep_names = FALSE,sliding_headers = TRUE, sep = "_")
 ```
 
 
+### Working with formatted spreadsheets
+
 **`annotate_mf()` and `annotate_mf_all()`**
 
-Sometimes embedded subheaders can't be matched by content or context, but they share the same formatting in a spreadsheet file. 
+Sometimes embedded subheaders can't be matched by content or context, but they share the same formatting in a spreadsheet file. Encoding data as formatting is also a very common practice.
 
 `annotate_mf()` flattens four common approaches to confer meaningful formatting to cells and adds this as a character string to the target variable. 
 
@@ -262,12 +264,14 @@ example_spreadsheet <- system.file("extdata/dog_test.xlsx", package = "unheadr")
 annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
 ```
 
-`annotate_mf_all()` applies the same approach to all values in the dataset.
+`annotate_mf_all()` applies the same approach to all values in the dataset. Similar to working 'across' _everything_ with dplyr.
   
 ``` r
 example_spreadsheet_all <- system.file("extdata/boutiques.xlsx", package = "unheadr")
 annotate_mf(example_spreadsheet_all)
 ```
+
+### Extras 
 
 Lastly, `regex_valign()` can adjust the whitespace (padding) within a character vector with one element per line, for easier parsing with `readr`.
 

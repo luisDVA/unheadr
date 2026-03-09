@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# unheadr <img src="man/figures/logosmall.png" align="right" />
+# unheadr <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 [![](https://img.shields.io/badge/doi-10.4404/hystrix--00133--2018-red.svg)](https://doi.org/10.4404/hystrix-00133-2018)

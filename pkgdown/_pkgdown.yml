@@ -1,5 +1,6 @@
 title: unheadr
 url: unheadr.liomys.mx
+logo: man/figures/logo.png
 template:
   bootstrap: 5
   bslib:

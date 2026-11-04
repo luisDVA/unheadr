@@ -268,7 +268,7 @@ annotate_mf(example_spreadsheet,orig = Task, new=Task_annotated)
   
 ``` r
 example_spreadsheet_all <- system.file("extdata/boutiques.xlsx", package = "unheadr")
-annotate_mf(example_spreadsheet_all)
+annotate_mf_all(example_spreadsheet_all)
 ```
 
 ### Extras 

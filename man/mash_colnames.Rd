@@ -23,7 +23,7 @@ the new variable (column) names. Must be >= 1.}
 new variable names. Defaults to TRUE.}
 
 \item{sliding_headers}{If TRUE, empty values in the first (topmost) header
-header row be filled column-wise. Defaults to FALSE. See details.}
+row be filled column-wise. Defaults to FALSE. See details.}
 
 \item{sep}{Character string to separate the unified values (default is
 underscore).}

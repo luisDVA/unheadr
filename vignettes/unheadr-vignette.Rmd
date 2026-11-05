@@ -73,7 +73,7 @@ In this case, we can use `unbreak_vals()` to 'unbreak' the lines in the 'Games' 
 
 ```{r}
 OGames %>%
-  unbreak_vals("^[0-9]", Games, Games_unbroken, slice_groups = TRUE) %>%
+  unbreak_vals("^[0-9]", Games, Games_unbroken) %>%
   select(Games_unbroken, everything())
 ```
 
@@ -93,7 +93,7 @@ knicks <- data.frame(
 knicks
 ```
 
-We can unwrap the 'teams' values into a single string using `unrwap_cols()`.
+We can unwrap the 'teams' values into a single string using `unwrap_cols()`.
 
 ```{r}
 knicks %>% unwrap_cols(groupingVar = player, separator = ", ")

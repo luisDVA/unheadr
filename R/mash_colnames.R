@@ -7,7 +7,7 @@
 #' @param keep_names If TRUE, existing names will be included when building the
 #'   new variable names. Defaults to TRUE.
 #' @param sliding_headers If TRUE, empty values in the first (topmost) header
-#'   header row be filled column-wise. Defaults to FALSE. See details.
+#'   row be filled column-wise. Defaults to FALSE. See details.
 #' @param sep Character string to separate the unified values (default is
 #'   underscore).
 #'
